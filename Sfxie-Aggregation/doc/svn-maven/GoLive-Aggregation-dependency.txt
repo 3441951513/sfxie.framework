@@ -1,0 +1,881 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.golive.extension:GoLive-Extension-Spring4:jar:0.0.1-RELEASE
+[WARNING] 'version' contains an expression but should be a constant. @ com.golive:GoLive-Aggregation:${golive.version}, D:\workspace\sfxie\workspace\GoLive-Aggregation\pom.xml, line 6, column 11
+[WARNING] 'version' contains an expression but should be a constant. @ com.golive:GoLive-Aggregation:${golive.version}, D:\workspace\maven\repository\com\golive\GoLive-Aggregation\0.0.1-RELEASE\GoLive-Aggregation-0.0.1-RELEASE.pom, line 6, column 11
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.golive.extension:GoLive-Extension-Mybatis:jar:0.0.1-RELEASE
+[WARNING] 'version' contains an expression but should be a constant. @ com.golive:GoLive-Aggregation:${golive.version}, D:\workspace\sfxie\workspace\GoLive-Aggregation\pom.xml, line 6, column 11
+[WARNING] 'version' contains an expression but should be a constant. @ com.golive:GoLive-Aggregation:${golive.version}, D:\workspace\maven\repository\com\golive\GoLive-Aggregation\0.0.1-RELEASE\GoLive-Aggregation-0.0.1-RELEASE.pom, line 6, column 11
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.golive.extension:GoLive-Extension-Cxf:jar:0.0.1-RELEASE
+[WARNING] 'version' contains an expression but should be a constant. @ com.golive:GoLive-Aggregation:${golive.version}, D:\workspace\sfxie\workspace\GoLive-Aggregation\pom.xml, line 6, column 11
+[WARNING] 'version' contains an expression but should be a constant. @ com.golive:GoLive-Aggregation:${golive.version}, D:\workspace\maven\repository\com\golive\GoLive-Aggregation\0.0.1-RELEASE\GoLive-Aggregation-0.0.1-RELEASE.pom, line 6, column 11
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.golive.extension:GoLive-Extension-Jasperreports:jar:0.0.1-RELEASE
+[WARNING] 'version' contains an expression but should be a constant. @ com.golive:GoLive-Aggregation:${golive.version}, D:\workspace\sfxie\workspace\GoLive-Aggregation\pom.xml, line 6, column 11
+[WARNING] 'version' contains an expression but should be a constant. @ com.golive:GoLive-Aggregation:${golive.version}, D:\workspace\maven\repository\com\golive\GoLive-Aggregation\0.0.1-RELEASE\GoLive-Aggregation-0.0.1-RELEASE.pom, line 6, column 11
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.golive.core:GoLive-Core:jar:0.0.1-RELEASE
+[WARNING] 'version' contains an expression but should be a constant. @ com.golive:GoLive-Aggregation:${golive.version}, D:\workspace\sfxie\workspace\GoLive-Aggregation\pom.xml, line 6, column 11
+[WARNING] 'version' contains an expression but should be a constant. @ com.golive:GoLive-Aggregation:${golive.version}, D:\workspace\maven\repository\com\golive\GoLive-Aggregation\0.0.1-RELEASE\GoLive-Aggregation-0.0.1-RELEASE.pom, line 6, column 11
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.golive.utils:GoLive-Utils:jar:0.0.1-RELEASE
+[WARNING] 'version' contains an expression but should be a constant. @ com.golive:GoLive-Aggregation:${golive.version}, D:\workspace\sfxie\workspace\GoLive-Aggregation\pom.xml, line 6, column 11
+[WARNING] 'version' contains an expression but should be a constant. @ com.golive:GoLive-Aggregation:${golive.version}, D:\workspace\maven\repository\com\golive\GoLive-Aggregation\0.0.1-RELEASE\GoLive-Aggregation-0.0.1-RELEASE.pom, line 6, column 11
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.golive.extension:GoLive-Message-Websocket:jar:0.0.1-RELEASE
+[WARNING] 'version' contains an expression but should be a constant. @ com.golive:GoLive-Aggregation:${golive.version}, D:\workspace\sfxie\workspace\GoLive-Aggregation\pom.xml, line 6, column 11
+[WARNING] 'version' contains an expression but should be a constant. @ com.golive:GoLive-Aggregation:${golive.version}, D:\workspace\maven\repository\com\golive\GoLive-Aggregation\0.0.1-RELEASE\GoLive-Aggregation-0.0.1-RELEASE.pom, line 6, column 11
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.golive.extension:GoLive-Message-Memcached:jar:0.0.1-RELEASE
+[WARNING] 'version' contains an expression but should be a constant. @ com.golive:GoLive-Aggregation:${golive.version}, D:\workspace\sfxie\workspace\GoLive-Aggregation\pom.xml, line 6, column 11
+[WARNING] 'version' contains an expression but should be a constant. @ com.golive:GoLive-Aggregation:${golive.version}, D:\workspace\maven\repository\com\golive\GoLive-Aggregation\0.0.1-RELEASE\GoLive-Aggregation-0.0.1-RELEASE.pom, line 6, column 11
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.golive.extension:GoLive-Extension-Logger:jar:0.0.1-RELEASE
+[WARNING] 'version' contains an expression but should be a constant. @ com.golive:GoLive-Aggregation:${golive.version}, D:\workspace\sfxie\workspace\GoLive-Aggregation\pom.xml, line 6, column 11
+[WARNING] 'version' contains an expression but should be a constant. @ com.golive:GoLive-Aggregation:${golive.version}, D:\workspace\maven\repository\com\golive\GoLive-Aggregation\0.0.1-RELEASE\GoLive-Aggregation-0.0.1-RELEASE.pom, line 6, column 11
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.golive.extension:GoLive-Extension-Amqp:jar:0.0.1-RELEASE
+[WARNING] 'version' contains an expression but should be a constant. @ com.golive:GoLive-Aggregation:${golive.version}, D:\workspace\sfxie\workspace\GoLive-Aggregation\pom.xml, line 6, column 11
+[WARNING] 'version' contains an expression but should be a constant. @ com.golive:GoLive-Aggregation:${golive.version}, D:\workspace\maven\repository\com\golive\GoLive-Aggregation\0.0.1-RELEASE\GoLive-Aggregation-0.0.1-RELEASE.pom, line 6, column 11
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.golive.test:GoLive-Extension-Test:jar:0.0.1-RELEASE
+[WARNING] 'version' contains an expression but should be a constant. @ com.golive:GoLive-Aggregation:${golive.version}, D:\workspace\sfxie\workspace\GoLive-Aggregation\pom.xml, line 6, column 11
+[WARNING] 'version' contains an expression but should be a constant. @ com.golive:GoLive-Aggregation:${golive.version}, D:\workspace\maven\repository\com\golive\GoLive-Aggregation\0.0.1-RELEASE\GoLive-Aggregation-0.0.1-RELEASE.pom, line 6, column 11
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.golive.extension:GoLive-Extension-Zookeeper:jar:0.0.1-RELEASE
+[WARNING] 'version' contains an expression but should be a constant. @ com.golive:GoLive-Aggregation:${golive.version}, D:\workspace\sfxie\workspace\GoLive-Aggregation\pom.xml, line 6, column 11
+[WARNING] 'version' contains an expression but should be a constant. @ com.golive:GoLive-Aggregation:${golive.version}, D:\workspace\maven\repository\com\golive\GoLive-Aggregation\0.0.1-RELEASE\GoLive-Aggregation-0.0.1-RELEASE.pom, line 6, column 11
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.golive.extension:GoLive-Extension-Datasource:jar:0.0.1-RELEASE
+[WARNING] 'version' contains an expression but should be a constant. @ com.golive:GoLive-Aggregation:${golive.version}, D:\workspace\sfxie\workspace\GoLive-Aggregation\pom.xml, line 6, column 11
+[WARNING] 'version' contains an expression but should be a constant. @ com.golive:GoLive-Aggregation:${golive.version}, D:\workspace\maven\repository\com\golive\GoLive-Aggregation\0.0.1-RELEASE\GoLive-Aggregation-0.0.1-RELEASE.pom, line 6, column 11
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.golive:GoLive-Aggregation:pom:0.0.1-RELEASE
+[WARNING] 'version' contains an expression but should be a constant. @ com.golive:GoLive-Aggregation:${golive.version}, D:\workspace\sfxie\workspace\GoLive-Aggregation\pom.xml, line 6, column 11
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] GoLive-Aggregation
+[INFO] GoLive-Utils
+[INFO] GoLive-Core
+[INFO] GoLive-Extension-Logger
+[INFO] GoLive-Extension-Spring4
+[INFO] GoLive-Extension-Zookeeper
+[INFO] GoLive-Extension-Datasource
+[INFO] GoLive-Extension-Mybatis
+[INFO] GoLive-Extension-Cxf
+[INFO] GoLive-Extension-Jasperreports
+[INFO] GoLive-Message-Websocket
+[INFO] GoLive-Message-Memcached
+[INFO] GoLive-Extension-Amqp
+[INFO] GoLive-Extension-Test
+[WARNING] The POM for org.apache.maven.plugins:maven-deploy-plugin:jar:2.3 is missing, no dependency information available
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-antrun-plugin/1.3/maven-antrun-plugin-1.3.pom
+[WARNING] The POM for org.apache.maven.plugins:maven-antrun-plugin:jar:1.3 is missing, no dependency information available
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-antrun-plugin/1.3/maven-antrun-plugin-1.3.jar
+[WARNING] Failed to retrieve plugin descriptor for org.apache.maven.plugins:maven-antrun-plugin:1.3: Plugin org.apache.maven.plugins:maven-antrun-plugin:1.3 or one of its dependencies could not be resolved: Could not find artifact org.apache.maven.plugins:maven-antrun-plugin:jar:1.3 in central (http://repo.maven.apache.org/maven2)
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GoLive-Aggregation 0.0.1-RELEASE
+[INFO] ------------------------------------------------------------------------
+[WARNING] The POM for org.apache.maven.plugins:maven-antrun-plugin:jar:1.3 is missing, no dependency information available
+[WARNING] Failed to retrieve plugin descriptor for org.apache.maven.plugins:maven-antrun-plugin:1.3: Plugin org.apache.maven.plugins:maven-antrun-plugin:1.3 or one of its dependencies could not be resolved: Failure to find org.apache.maven.plugins:maven-antrun-plugin:jar:1.3 in http://repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ GoLive-Aggregation ---
+[INFO] com.golive:GoLive-Aggregation:pom:0.0.1-RELEASE
+[INFO] +- log4j:log4j:jar:1.2.16:compile
+[INFO] \- junit:junit:jar:4.12:compile
+[INFO]    \- org.hamcrest:hamcrest-core:jar:1.3:compile
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GoLive-Utils 0.0.1-RELEASE
+[INFO] ------------------------------------------------------------------------
+[WARNING] The POM for org.apache.maven.plugins:maven-antrun-plugin:jar:1.3 is missing, no dependency information available
+[WARNING] Failed to retrieve plugin descriptor for org.apache.maven.plugins:maven-antrun-plugin:1.3: Plugin org.apache.maven.plugins:maven-antrun-plugin:1.3 or one of its dependencies could not be resolved: Failure to find org.apache.maven.plugins:maven-antrun-plugin:jar:1.3 in http://repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ GoLive-Utils ---
+[INFO] com.golive.utils:GoLive-Utils:jar:0.0.1-RELEASE
+[INFO] +- javax.servlet:servlet-api:jar:2.5:provided
+[INFO] +- taglibs:standard:jar:1.1.2:runtime
+[INFO] +- cglib:cglib-nodep:jar:2.2:compile
+[INFO] +- org.aspectj:aspectjrt:jar:1.5.4:compile
+[INFO] +- org.aspectj:aspectjweaver:jar:1.5.4:compile
+[INFO] +- org.codehaus.jackson:jackson-mapper-asl:jar:1.9.11:compile
+[INFO] |  \- org.codehaus.jackson:jackson-core-asl:jar:1.9.11:compile
+[INFO] +- com.fasterxml.jackson.core:jackson-core:jar:2.4.3:compile
+[INFO] +- com.fasterxml.jackson.core:jackson-databind:jar:2.2.3:compile
+[INFO] |  \- com.fasterxml.jackson.core:jackson-annotations:jar:2.2.3:compile
+[INFO] +- com.jgoodies:forms:jar:1.2.1:compile
+[INFO] +- commons-beanutils:commons-beanutils:jar:1.8.3:compile
+[INFO] |  \- commons-logging:commons-logging:jar:1.1.1:compile
+[INFO] +- commons-lang:commons-lang:jar:2.6:compile
+[INFO] +- org.apache.commons:commons-lang3:jar:3.3.2:compile
+[INFO] +- commons-collections:commons-collections:jar:3.2.1:compile
+[INFO] +- com.github.xsonorg:xson-core:jar:1.0.1:compile
+[INFO] +- mysql:mysql-connector-java:jar:5.1.18:compile
+[INFO] +- log4j:log4j:jar:1.2.16:compile
+[INFO] \- junit:junit:jar:4.12:compile
+[INFO]    \- org.hamcrest:hamcrest-core:jar:1.3:compile
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GoLive-Core 0.0.1-RELEASE
+[INFO] ------------------------------------------------------------------------
+[WARNING] The POM for org.apache.maven.plugins:maven-antrun-plugin:jar:1.3 is missing, no dependency information available
+[WARNING] Failed to retrieve plugin descriptor for org.apache.maven.plugins:maven-antrun-plugin:1.3: Plugin org.apache.maven.plugins:maven-antrun-plugin:1.3 or one of its dependencies could not be resolved: Failure to find org.apache.maven.plugins:maven-antrun-plugin:jar:1.3 in http://repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ GoLive-Core ---
+[INFO] com.golive.core:GoLive-Core:jar:0.0.1-RELEASE
+[INFO] +- org.springframework:spring-tx:jar:4.2.1.RELEASE:compile
+[INFO] |  +- org.springframework:spring-beans:jar:4.2.1.RELEASE:compile
+[INFO] |  \- org.springframework:spring-core:jar:4.2.1.RELEASE:compile
+[INFO] |     \- commons-logging:commons-logging:jar:1.2:compile
+[INFO] +- com.golive.utils:GoLive-Utils:jar:0.0.1-RELEASE:compile
+[INFO] |  +- taglibs:standard:jar:1.1.2:runtime
+[INFO] |  +- cglib:cglib-nodep:jar:2.2:compile
+[INFO] |  +- org.aspectj:aspectjrt:jar:1.5.4:compile
+[INFO] |  +- org.aspectj:aspectjweaver:jar:1.5.4:compile
+[INFO] |  +- org.codehaus.jackson:jackson-mapper-asl:jar:1.9.11:compile
+[INFO] |  |  \- org.codehaus.jackson:jackson-core-asl:jar:1.9.11:compile
+[INFO] |  +- com.fasterxml.jackson.core:jackson-core:jar:2.4.3:compile
+[INFO] |  +- com.fasterxml.jackson.core:jackson-databind:jar:2.2.3:compile
+[INFO] |  |  \- com.fasterxml.jackson.core:jackson-annotations:jar:2.2.3:compile
+[INFO] |  +- com.jgoodies:forms:jar:1.2.1:compile
+[INFO] |  +- commons-beanutils:commons-beanutils:jar:1.8.3:compile
+[INFO] |  +- commons-lang:commons-lang:jar:2.6:compile
+[INFO] |  +- org.apache.commons:commons-lang3:jar:3.3.2:compile
+[INFO] |  +- commons-collections:commons-collections:jar:3.2.1:compile
+[INFO] |  +- com.github.xsonorg:xson-core:jar:1.0.1:compile
+[INFO] |  \- mysql:mysql-connector-java:jar:5.1.18:compile
+[INFO] +- javax.servlet:servlet-api:jar:2.5:provided
+[INFO] +- log4j:log4j:jar:1.2.16:compile
+[INFO] \- junit:junit:jar:4.12:compile
+[INFO]    \- org.hamcrest:hamcrest-core:jar:1.3:compile
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GoLive-Extension-Logger 0.0.1-RELEASE
+[INFO] ------------------------------------------------------------------------
+[WARNING] The POM for org.apache.maven.plugins:maven-antrun-plugin:jar:1.3 is missing, no dependency information available
+[WARNING] Failed to retrieve plugin descriptor for org.apache.maven.plugins:maven-antrun-plugin:1.3: Plugin org.apache.maven.plugins:maven-antrun-plugin:1.3 or one of its dependencies could not be resolved: Failure to find org.apache.maven.plugins:maven-antrun-plugin:jar:1.3 in http://repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ GoLive-Extension-Logger ---
+[INFO] com.golive.extension:GoLive-Extension-Logger:jar:0.0.1-RELEASE
+[INFO] +- com.golive.core:GoLive-Core:jar:0.0.1-RELEASE:compile
+[INFO] |  +- org.springframework:spring-tx:jar:4.2.1.RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-beans:jar:4.2.1.RELEASE:compile
+[INFO] |  |  \- org.springframework:spring-core:jar:4.2.1.RELEASE:compile
+[INFO] |  |     \- commons-logging:commons-logging:jar:1.2:compile
+[INFO] |  \- com.golive.utils:GoLive-Utils:jar:0.0.1-RELEASE:compile
+[INFO] |     +- taglibs:standard:jar:1.1.2:runtime
+[INFO] |     +- cglib:cglib-nodep:jar:2.2:compile
+[INFO] |     +- org.aspectj:aspectjrt:jar:1.5.4:compile
+[INFO] |     +- org.aspectj:aspectjweaver:jar:1.5.4:compile
+[INFO] |     +- org.codehaus.jackson:jackson-mapper-asl:jar:1.9.11:compile
+[INFO] |     |  \- org.codehaus.jackson:jackson-core-asl:jar:1.9.11:compile
+[INFO] |     +- com.fasterxml.jackson.core:jackson-core:jar:2.4.3:compile
+[INFO] |     +- com.fasterxml.jackson.core:jackson-databind:jar:2.2.3:compile
+[INFO] |     |  \- com.fasterxml.jackson.core:jackson-annotations:jar:2.2.3:compile
+[INFO] |     +- com.jgoodies:forms:jar:1.2.1:compile
+[INFO] |     +- commons-beanutils:commons-beanutils:jar:1.8.3:compile
+[INFO] |     +- commons-lang:commons-lang:jar:2.6:compile
+[INFO] |     +- org.apache.commons:commons-lang3:jar:3.3.2:compile
+[INFO] |     +- commons-collections:commons-collections:jar:3.2.1:compile
+[INFO] |     +- com.github.xsonorg:xson-core:jar:1.0.1:compile
+[INFO] |     \- mysql:mysql-connector-java:jar:5.1.18:compile
+[INFO] +- javax.mail:mail:jar:1.4.1:compile
+[INFO] |  \- javax.activation:activation:jar:1.1:compile
+[INFO] +- org.apache.logging.log4j:log4j-core:jar:2.5:compile
+[INFO] +- org.apache.logging.log4j:log4j-api:jar:2.5:compile
+[INFO] +- log4j:log4j:jar:1.2.16:compile
+[INFO] \- junit:junit:jar:4.12:compile
+[INFO]    \- org.hamcrest:hamcrest-core:jar:1.3:compile
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GoLive-Extension-Spring4 0.0.1-RELEASE
+[INFO] ------------------------------------------------------------------------
+[WARNING] The POM for org.apache.maven.plugins:maven-antrun-plugin:jar:1.3 is missing, no dependency information available
+[WARNING] Failed to retrieve plugin descriptor for org.apache.maven.plugins:maven-antrun-plugin:1.3: Plugin org.apache.maven.plugins:maven-antrun-plugin:1.3 or one of its dependencies could not be resolved: Failure to find org.apache.maven.plugins:maven-antrun-plugin:jar:1.3 in http://repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ GoLive-Extension-Spring4 ---
+[INFO] com.golive.extension:GoLive-Extension-Spring4:jar:0.0.1-RELEASE
+[INFO] +- com.golive.core:GoLive-Core:jar:0.0.1-RELEASE:compile
+[INFO] |  \- org.springframework:spring-tx:jar:4.2.1.RELEASE:compile
+[INFO] +- com.golive.extension:GoLive-Extension-Logger:jar:0.0.1-RELEASE:compile
+[INFO] |  +- javax.mail:mail:jar:1.4.1:compile
+[INFO] |  |  \- javax.activation:activation:jar:1.1:compile
+[INFO] |  +- org.apache.logging.log4j:log4j-core:jar:2.5:compile
+[INFO] |  \- org.apache.logging.log4j:log4j-api:jar:2.5:compile
+[INFO] +- com.atomikos:transactions-jdbc:jar:3.7.1:compile
+[INFO] |  \- com.atomikos:transactions-jta:jar:3.7.1:compile
+[INFO] |     \- com.atomikos:transactions:jar:3.7.1:compile
+[INFO] |        \- com.atomikos:transactions-api:jar:3.7.1:compile
+[INFO] |           \- com.atomikos:atomikos-util:jar:3.7.1:compile
+[INFO] +- javax.transaction:jta:jar:1.1:compile
+[INFO] +- com.golive.utils:GoLive-Utils:jar:0.0.1-RELEASE:compile
+[INFO] |  +- taglibs:standard:jar:1.1.2:runtime
+[INFO] |  +- cglib:cglib-nodep:jar:2.2:compile
+[INFO] |  +- org.aspectj:aspectjrt:jar:1.5.4:compile
+[INFO] |  +- org.aspectj:aspectjweaver:jar:1.5.4:compile
+[INFO] |  +- com.jgoodies:forms:jar:1.2.1:compile
+[INFO] |  +- commons-beanutils:commons-beanutils:jar:1.8.3:compile
+[INFO] |  +- commons-lang:commons-lang:jar:2.6:compile
+[INFO] |  +- org.apache.commons:commons-lang3:jar:3.3.2:compile
+[INFO] |  +- commons-collections:commons-collections:jar:3.2.1:compile
+[INFO] |  +- com.github.xsonorg:xson-core:jar:1.0.1:compile
+[INFO] |  \- mysql:mysql-connector-java:jar:5.1.18:compile
+[INFO] +- org.springframework:spring-beans:jar:4.2.2.RELEASE:compile
+[INFO] +- org.springframework:spring-core:jar:4.2.2.RELEASE:compile
+[INFO] |  \- commons-logging:commons-logging:jar:1.2:compile
+[INFO] +- org.springframework:spring-aop:jar:4.2.2.RELEASE:compile
+[INFO] |  \- aopalliance:aopalliance:jar:1.0:compile
+[INFO] +- org.springframework:spring-jdbc:jar:4.2.2.RELEASE:compile
+[INFO] +- org.springframework:spring-orm:jar:4.2.2.RELEASE:compile
+[INFO] +- org.springframework:spring-context-support:jar:4.2.2.RELEASE:compile
+[INFO] |  \- org.springframework:spring-context:jar:4.2.2.RELEASE:compile
+[INFO] +- org.springframework:spring-web:jar:4.2.2.RELEASE:compile
+[INFO] +- org.springframework:spring-webmvc:jar:4.2.2.RELEASE:compile
+[INFO] |  \- org.springframework:spring-expression:jar:4.2.2.RELEASE:compile
+[INFO] +- org.springframework:spring-test:jar:4.2.2.RELEASE:compile
+[INFO] +- org.springframework:spring-oxm:jar:4.2.2.RELEASE:compile
+[INFO] +- javax.servlet:servlet-api:jar:2.5:provided
+[INFO] +- org.codehaus.jackson:jackson-mapper-asl:jar:1.9.11:compile
+[INFO] |  \- org.codehaus.jackson:jackson-core-asl:jar:1.9.11:compile
+[INFO] +- com.fasterxml.jackson.core:jackson-core:jar:2.4.3:compile
+[INFO] +- com.fasterxml.jackson.core:jackson-databind:jar:2.2.3:compile
+[INFO] |  \- com.fasterxml.jackson.core:jackson-annotations:jar:2.2.3:compile
+[INFO] +- org.exolab:castor:jar:1.3:compile
+[INFO] +- org.exolab:castor-core:jar:1.3:compile
+[INFO] +- org.exolab:castor-xml:jar:1.3:compile
+[INFO] +- com.alibaba:druid:jar:1.0.2:compile
+[INFO] +- log4j:log4j:jar:1.2.16:compile
+[INFO] \- junit:junit:jar:4.12:compile
+[INFO]    \- org.hamcrest:hamcrest-core:jar:1.3:compile
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GoLive-Extension-Zookeeper 0.0.1-RELEASE
+[INFO] ------------------------------------------------------------------------
+[WARNING] The POM for org.apache.maven.plugins:maven-antrun-plugin:jar:1.3 is missing, no dependency information available
+[WARNING] Failed to retrieve plugin descriptor for org.apache.maven.plugins:maven-antrun-plugin:1.3: Plugin org.apache.maven.plugins:maven-antrun-plugin:1.3 or one of its dependencies could not be resolved: Failure to find org.apache.maven.plugins:maven-antrun-plugin:jar:1.3 in http://repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ GoLive-Extension-Zookeeper ---
+[INFO] com.golive.extension:GoLive-Extension-Zookeeper:jar:0.0.1-RELEASE
+[INFO] +- org.apache.curator:curator-examples:jar:2.9.1:compile
+[INFO] |  +- org.apache.curator:curator-test:jar:2.9.1:compile
+[INFO] |  |  +- org.apache.zookeeper:zookeeper:jar:3.4.6:compile
+[INFO] |  |  |  +- jline:jline:jar:0.9.94:compile
+[INFO] |  |  |  \- io.netty:netty:jar:3.7.0.Final:compile
+[INFO] |  |  +- org.javassist:javassist:jar:3.18.1-GA:compile
+[INFO] |  |  +- org.apache.commons:commons-math:jar:2.2:compile
+[INFO] |  |  \- com.google.guava:guava:jar:16.0.1:compile
+[INFO] |  \- org.apache.curator:curator-x-discovery:jar:2.9.1:compile
+[INFO] |     \- org.codehaus.jackson:jackson-mapper-asl:jar:1.9.13:compile
+[INFO] |        \- org.codehaus.jackson:jackson-core-asl:jar:1.9.13:compile
+[INFO] +- org.apache.curator:curator-framework:jar:2.9.1:compile
+[INFO] |  \- org.apache.curator:curator-client:jar:2.9.1:compile
+[INFO] |     \- org.slf4j:slf4j-api:jar:1.7.6:compile
+[INFO] +- org.apache.curator:curator-recipes:jar:2.9.1:compile
+[INFO] +- com.golive.extension:GoLive-Extension-Logger:jar:0.0.1-RELEASE:compile
+[INFO] |  +- com.golive.core:GoLive-Core:jar:0.0.1-RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-tx:jar:4.2.1.RELEASE:compile
+[INFO] |  |  |  +- org.springframework:spring-beans:jar:4.2.1.RELEASE:compile
+[INFO] |  |  |  \- org.springframework:spring-core:jar:4.2.1.RELEASE:compile
+[INFO] |  |  |     \- commons-logging:commons-logging:jar:1.2:compile
+[INFO] |  |  \- com.golive.utils:GoLive-Utils:jar:0.0.1-RELEASE:compile
+[INFO] |  |     +- taglibs:standard:jar:1.1.2:runtime
+[INFO] |  |     +- cglib:cglib-nodep:jar:2.2:compile
+[INFO] |  |     +- org.aspectj:aspectjrt:jar:1.5.4:compile
+[INFO] |  |     +- org.aspectj:aspectjweaver:jar:1.5.4:compile
+[INFO] |  |     +- com.fasterxml.jackson.core:jackson-core:jar:2.4.3:compile
+[INFO] |  |     +- com.fasterxml.jackson.core:jackson-databind:jar:2.2.3:compile
+[INFO] |  |     |  \- com.fasterxml.jackson.core:jackson-annotations:jar:2.2.3:compile
+[INFO] |  |     +- com.jgoodies:forms:jar:1.2.1:compile
+[INFO] |  |     +- commons-beanutils:commons-beanutils:jar:1.8.3:compile
+[INFO] |  |     +- commons-lang:commons-lang:jar:2.6:compile
+[INFO] |  |     +- org.apache.commons:commons-lang3:jar:3.3.2:compile
+[INFO] |  |     +- commons-collections:commons-collections:jar:3.2.1:compile
+[INFO] |  |     +- com.github.xsonorg:xson-core:jar:1.0.1:compile
+[INFO] |  |     \- mysql:mysql-connector-java:jar:5.1.18:compile
+[INFO] |  +- javax.mail:mail:jar:1.4.1:compile
+[INFO] |  |  \- javax.activation:activation:jar:1.1:compile
+[INFO] |  +- org.apache.logging.log4j:log4j-core:jar:2.5:compile
+[INFO] |  \- org.apache.logging.log4j:log4j-api:jar:2.5:compile
+[INFO] +- log4j:log4j:jar:1.2.16:compile
+[INFO] \- junit:junit:jar:4.12:compile
+[INFO]    \- org.hamcrest:hamcrest-core:jar:1.3:compile
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GoLive-Extension-Datasource 0.0.1-RELEASE
+[INFO] ------------------------------------------------------------------------
+[WARNING] The POM for org.apache.maven.plugins:maven-antrun-plugin:jar:1.3 is missing, no dependency information available
+[WARNING] Failed to retrieve plugin descriptor for org.apache.maven.plugins:maven-antrun-plugin:1.3: Plugin org.apache.maven.plugins:maven-antrun-plugin:1.3 or one of its dependencies could not be resolved: Failure to find org.apache.maven.plugins:maven-antrun-plugin:jar:1.3 in http://repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ GoLive-Extension-Datasource ---
+[INFO] com.golive.extension:GoLive-Extension-Datasource:jar:0.0.1-RELEASE
+[INFO] +- com.golive.extension:GoLive-Extension-Spring4:jar:0.0.1-RELEASE:compile
+[INFO] |  +- com.golive.core:GoLive-Core:jar:0.0.1-RELEASE:compile
+[INFO] |  |  \- org.springframework:spring-tx:jar:4.2.1.RELEASE:compile
+[INFO] |  +- com.golive.extension:GoLive-Extension-Logger:jar:0.0.1-RELEASE:compile
+[INFO] |  |  +- javax.mail:mail:jar:1.4.1:compile
+[INFO] |  |  |  \- javax.activation:activation:jar:1.1:compile
+[INFO] |  |  +- org.apache.logging.log4j:log4j-core:jar:2.5:compile
+[INFO] |  |  \- org.apache.logging.log4j:log4j-api:jar:2.5:compile
+[INFO] |  +- com.atomikos:transactions-jdbc:jar:3.7.1:compile
+[INFO] |  |  \- com.atomikos:transactions-jta:jar:3.7.1:compile
+[INFO] |  |     \- com.atomikos:transactions:jar:3.7.1:compile
+[INFO] |  |        \- com.atomikos:transactions-api:jar:3.7.1:compile
+[INFO] |  |           \- com.atomikos:atomikos-util:jar:3.7.1:compile
+[INFO] |  +- javax.transaction:jta:jar:1.1:compile
+[INFO] |  +- com.golive.utils:GoLive-Utils:jar:0.0.1-RELEASE:compile
+[INFO] |  |  +- taglibs:standard:jar:1.1.2:runtime
+[INFO] |  |  +- cglib:cglib-nodep:jar:2.2:compile
+[INFO] |  |  +- org.aspectj:aspectjrt:jar:1.5.4:compile
+[INFO] |  |  +- org.aspectj:aspectjweaver:jar:1.5.4:compile
+[INFO] |  |  +- com.jgoodies:forms:jar:1.2.1:compile
+[INFO] |  |  +- commons-beanutils:commons-beanutils:jar:1.8.3:compile
+[INFO] |  |  +- commons-lang:commons-lang:jar:2.6:compile
+[INFO] |  |  +- org.apache.commons:commons-lang3:jar:3.3.2:compile
+[INFO] |  |  +- commons-collections:commons-collections:jar:3.2.1:compile
+[INFO] |  |  +- com.github.xsonorg:xson-core:jar:1.0.1:compile
+[INFO] |  |  \- mysql:mysql-connector-java:jar:5.1.18:compile
+[INFO] |  +- org.springframework:spring-beans:jar:4.2.2.RELEASE:compile
+[INFO] |  +- org.springframework:spring-core:jar:4.2.2.RELEASE:compile
+[INFO] |  |  \- commons-logging:commons-logging:jar:1.2:compile
+[INFO] |  +- org.springframework:spring-aop:jar:4.2.2.RELEASE:compile
+[INFO] |  |  \- aopalliance:aopalliance:jar:1.0:compile
+[INFO] |  +- org.springframework:spring-jdbc:jar:4.2.2.RELEASE:compile
+[INFO] |  +- org.springframework:spring-orm:jar:4.2.2.RELEASE:compile
+[INFO] |  +- org.springframework:spring-context-support:jar:4.2.2.RELEASE:compile
+[INFO] |  |  \- org.springframework:spring-context:jar:4.2.2.RELEASE:compile
+[INFO] |  +- org.springframework:spring-web:jar:4.2.2.RELEASE:compile
+[INFO] |  +- org.springframework:spring-webmvc:jar:4.2.2.RELEASE:compile
+[INFO] |  |  \- org.springframework:spring-expression:jar:4.2.2.RELEASE:compile
+[INFO] |  +- org.springframework:spring-test:jar:4.2.2.RELEASE:compile
+[INFO] |  +- org.springframework:spring-oxm:jar:4.2.2.RELEASE:compile
+[INFO] |  +- org.codehaus.jackson:jackson-mapper-asl:jar:1.9.11:compile
+[INFO] |  |  \- org.codehaus.jackson:jackson-core-asl:jar:1.9.11:compile
+[INFO] |  +- com.fasterxml.jackson.core:jackson-core:jar:2.4.3:compile
+[INFO] |  +- com.fasterxml.jackson.core:jackson-databind:jar:2.2.3:compile
+[INFO] |  |  \- com.fasterxml.jackson.core:jackson-annotations:jar:2.2.3:compile
+[INFO] |  +- org.exolab:castor:jar:1.3:compile
+[INFO] |  +- org.exolab:castor-core:jar:1.3:compile
+[INFO] |  +- org.exolab:castor-xml:jar:1.3:compile
+[INFO] |  \- com.alibaba:druid:jar:1.0.2:compile
+[INFO] +- com.golive.extension:GoLive-Extension-Zookeeper:jar:0.0.1-RELEASE:compile
+[INFO] |  +- org.apache.curator:curator-examples:jar:2.9.1:compile
+[INFO] |  |  +- org.apache.curator:curator-test:jar:2.9.1:compile
+[INFO] |  |  |  +- org.apache.zookeeper:zookeeper:jar:3.4.6:compile
+[INFO] |  |  |  |  +- jline:jline:jar:0.9.94:compile
+[INFO] |  |  |  |  \- io.netty:netty:jar:3.7.0.Final:compile
+[INFO] |  |  |  +- org.javassist:javassist:jar:3.18.1-GA:compile
+[INFO] |  |  |  +- org.apache.commons:commons-math:jar:2.2:compile
+[INFO] |  |  |  \- com.google.guava:guava:jar:16.0.1:compile
+[INFO] |  |  \- org.apache.curator:curator-x-discovery:jar:2.9.1:compile
+[INFO] |  +- org.apache.curator:curator-framework:jar:2.9.1:compile
+[INFO] |  |  \- org.apache.curator:curator-client:jar:2.9.1:compile
+[INFO] |  |     \- org.slf4j:slf4j-api:jar:1.7.6:compile
+[INFO] |  \- org.apache.curator:curator-recipes:jar:2.9.1:compile
+[INFO] +- com.oracle:ojdbc6:jar:1.0:compile
+[INFO] +- log4j:log4j:jar:1.2.16:compile
+[INFO] \- junit:junit:jar:4.12:compile
+[INFO]    \- org.hamcrest:hamcrest-core:jar:1.3:compile
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GoLive-Extension-Mybatis 0.0.1-RELEASE
+[INFO] ------------------------------------------------------------------------
+[WARNING] The POM for org.apache.maven.plugins:maven-antrun-plugin:jar:1.3 is missing, no dependency information available
+[WARNING] Failed to retrieve plugin descriptor for org.apache.maven.plugins:maven-antrun-plugin:1.3: Plugin org.apache.maven.plugins:maven-antrun-plugin:1.3 or one of its dependencies could not be resolved: Failure to find org.apache.maven.plugins:maven-antrun-plugin:jar:1.3 in http://repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ GoLive-Extension-Mybatis ---
+[INFO] com.golive.extension:GoLive-Extension-Mybatis:jar:0.0.1-RELEASE
+[INFO] +- com.golive.extension:GoLive-Extension-Spring4:jar:0.0.1-RELEASE:compile
+[INFO] |  +- com.golive.core:GoLive-Core:jar:0.0.1-RELEASE:compile
+[INFO] |  |  \- org.springframework:spring-tx:jar:4.2.1.RELEASE:compile
+[INFO] |  +- com.golive.extension:GoLive-Extension-Logger:jar:0.0.1-RELEASE:compile
+[INFO] |  |  +- javax.mail:mail:jar:1.4.1:compile
+[INFO] |  |  |  \- javax.activation:activation:jar:1.1:compile
+[INFO] |  |  +- org.apache.logging.log4j:log4j-core:jar:2.5:compile
+[INFO] |  |  \- org.apache.logging.log4j:log4j-api:jar:2.5:compile
+[INFO] |  +- com.atomikos:transactions-jdbc:jar:3.7.1:compile
+[INFO] |  |  \- com.atomikos:transactions-jta:jar:3.7.1:compile
+[INFO] |  |     \- com.atomikos:transactions:jar:3.7.1:compile
+[INFO] |  |        \- com.atomikos:transactions-api:jar:3.7.1:compile
+[INFO] |  |           \- com.atomikos:atomikos-util:jar:3.7.1:compile
+[INFO] |  +- javax.transaction:jta:jar:1.1:compile
+[INFO] |  +- com.golive.utils:GoLive-Utils:jar:0.0.1-RELEASE:compile
+[INFO] |  |  +- taglibs:standard:jar:1.1.2:runtime
+[INFO] |  |  +- cglib:cglib-nodep:jar:2.2:compile
+[INFO] |  |  +- org.aspectj:aspectjrt:jar:1.5.4:compile
+[INFO] |  |  +- org.aspectj:aspectjweaver:jar:1.5.4:compile
+[INFO] |  |  +- com.jgoodies:forms:jar:1.2.1:compile
+[INFO] |  |  +- commons-beanutils:commons-beanutils:jar:1.8.3:compile
+[INFO] |  |  +- commons-lang:commons-lang:jar:2.6:compile
+[INFO] |  |  +- org.apache.commons:commons-lang3:jar:3.3.2:compile
+[INFO] |  |  +- commons-collections:commons-collections:jar:3.2.1:compile
+[INFO] |  |  \- com.github.xsonorg:xson-core:jar:1.0.1:compile
+[INFO] |  +- org.springframework:spring-beans:jar:4.2.2.RELEASE:compile
+[INFO] |  +- org.springframework:spring-core:jar:4.2.2.RELEASE:compile
+[INFO] |  |  \- commons-logging:commons-logging:jar:1.2:compile
+[INFO] |  +- org.springframework:spring-aop:jar:4.2.2.RELEASE:compile
+[INFO] |  |  \- aopalliance:aopalliance:jar:1.0:compile
+[INFO] |  +- org.springframework:spring-jdbc:jar:4.2.2.RELEASE:compile
+[INFO] |  +- org.springframework:spring-orm:jar:4.2.2.RELEASE:compile
+[INFO] |  +- org.springframework:spring-context-support:jar:4.2.2.RELEASE:compile
+[INFO] |  |  \- org.springframework:spring-context:jar:4.2.2.RELEASE:compile
+[INFO] |  +- org.springframework:spring-web:jar:4.2.2.RELEASE:compile
+[INFO] |  +- org.springframework:spring-webmvc:jar:4.2.2.RELEASE:compile
+[INFO] |  |  \- org.springframework:spring-expression:jar:4.2.2.RELEASE:compile
+[INFO] |  +- org.springframework:spring-test:jar:4.2.2.RELEASE:compile
+[INFO] |  +- org.springframework:spring-oxm:jar:4.2.2.RELEASE:compile
+[INFO] |  +- org.codehaus.jackson:jackson-mapper-asl:jar:1.9.11:compile
+[INFO] |  |  \- org.codehaus.jackson:jackson-core-asl:jar:1.9.11:compile
+[INFO] |  +- com.fasterxml.jackson.core:jackson-core:jar:2.4.3:compile
+[INFO] |  +- com.fasterxml.jackson.core:jackson-databind:jar:2.2.3:compile
+[INFO] |  |  \- com.fasterxml.jackson.core:jackson-annotations:jar:2.2.3:compile
+[INFO] |  +- org.exolab:castor:jar:1.3:compile
+[INFO] |  +- org.exolab:castor-core:jar:1.3:compile
+[INFO] |  +- org.exolab:castor-xml:jar:1.3:compile
+[INFO] |  \- com.alibaba:druid:jar:1.0.2:compile
+[INFO] +- com.golive.extension:GoLive-Extension-Datasource:jar:0.0.1-RELEASE:compile
+[INFO] |  \- com.golive.extension:GoLive-Extension-Zookeeper:jar:0.0.1-RELEASE:compile
+[INFO] |     +- org.apache.curator:curator-examples:jar:2.9.1:compile
+[INFO] |     |  +- org.apache.curator:curator-test:jar:2.9.1:compile
+[INFO] |     |  |  +- org.apache.zookeeper:zookeeper:jar:3.4.6:compile
+[INFO] |     |  |  |  +- jline:jline:jar:0.9.94:compile
+[INFO] |     |  |  |  \- io.netty:netty:jar:3.7.0.Final:compile
+[INFO] |     |  |  +- org.javassist:javassist:jar:3.18.1-GA:compile
+[INFO] |     |  |  +- org.apache.commons:commons-math:jar:2.2:compile
+[INFO] |     |  |  \- com.google.guava:guava:jar:16.0.1:compile
+[INFO] |     |  \- org.apache.curator:curator-x-discovery:jar:2.9.1:compile
+[INFO] |     +- org.apache.curator:curator-framework:jar:2.9.1:compile
+[INFO] |     |  \- org.apache.curator:curator-client:jar:2.9.1:compile
+[INFO] |     |     \- org.slf4j:slf4j-api:jar:1.7.6:compile
+[INFO] |     \- org.apache.curator:curator-recipes:jar:2.9.1:compile
+[INFO] +- com.oracle:ojdbc6:jar:1.0:compile
+[INFO] +- mysql:mysql-connector-java:jar:5.1.18:compile
+[INFO] +- org.mybatis:mybatis:jar:3.2.6:compile
+[INFO] +- org.mybatis:mybatis-spring:jar:1.2.2:compile
+[INFO] +- dom4j:dom4j:jar:1.6.1:compile
+[INFO] |  \- xml-apis:xml-apis:jar:1.0.b2:compile
+[INFO] +- log4j:log4j:jar:1.2.16:compile
+[INFO] \- junit:junit:jar:4.12:compile
+[INFO]    \- org.hamcrest:hamcrest-core:jar:1.3:compile
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GoLive-Extension-Cxf 0.0.1-RELEASE
+[INFO] ------------------------------------------------------------------------
+[WARNING] The POM for org.apache.maven.plugins:maven-antrun-plugin:jar:1.3 is missing, no dependency information available
+[WARNING] Failed to retrieve plugin descriptor for org.apache.maven.plugins:maven-antrun-plugin:1.3: Plugin org.apache.maven.plugins:maven-antrun-plugin:1.3 or one of its dependencies could not be resolved: Failure to find org.apache.maven.plugins:maven-antrun-plugin:jar:1.3 in http://repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ GoLive-Extension-Cxf ---
+[INFO] com.golive.extension:GoLive-Extension-Cxf:jar:0.0.1-RELEASE
+[INFO] +- org.springframework.boot:spring-boot-starter-test:jar:1.2.3.RELEASE:test
+[INFO] |  +- org.mockito:mockito-core:jar:1.10.19:test
+[INFO] |  |  \- org.objenesis:objenesis:jar:2.1:test
+[INFO] |  +- org.hamcrest:hamcrest-core:jar:1.3:compile
+[INFO] |  +- org.hamcrest:hamcrest-library:jar:1.3:test
+[INFO] |  +- org.springframework:spring-core:jar:4.1.6.RELEASE:compile
+[INFO] |  \- org.springframework:spring-test:jar:4.1.6.RELEASE:test
+[INFO] +- org.apache.cxf:cxf-rt-frontend-jaxws:jar:3.0.0:compile
+[INFO] |  +- xml-resolver:xml-resolver:jar:1.2:compile
+[INFO] |  +- asm:asm:jar:3.3.1:compile
+[INFO] |  +- org.apache.cxf:cxf-core:jar:3.0.0:compile
+[INFO] |  |  +- org.codehaus.woodstox:woodstox-core-asl:jar:4.3.0:compile
+[INFO] |  |  |  \- org.codehaus.woodstox:stax2-api:jar:3.1.4:compile
+[INFO] |  |  \- org.apache.ws.xmlschema:xmlschema-core:jar:2.1.0:compile
+[INFO] |  +- org.apache.cxf:cxf-rt-bindings-soap:jar:3.0.0:compile
+[INFO] |  |  +- org.apache.cxf:cxf-rt-wsdl:jar:3.0.0:compile
+[INFO] |  |  \- org.apache.cxf:cxf-rt-databinding-jaxb:jar:3.0.0:compile
+[INFO] |  |     \- com.sun.xml.bind:jaxb-impl:jar:2.2.7:compile
+[INFO] |  |        +- com.sun.xml.bind:jaxb-core:jar:2.2.7:compile
+[INFO] |  |        |  \- com.sun.istack:istack-commons-runtime:jar:2.16:compile
+[INFO] |  |        \- com.sun.xml.fastinfoset:FastInfoset:jar:1.2.12:compile
+[INFO] |  +- org.apache.cxf:cxf-rt-bindings-xml:jar:3.0.0:compile
+[INFO] |  +- org.apache.cxf:cxf-rt-frontend-simple:jar:3.0.0:compile
+[INFO] |  \- org.apache.cxf:cxf-rt-ws-addr:jar:3.0.0:compile
+[INFO] |     \- org.apache.cxf:cxf-rt-ws-policy:jar:3.0.0:compile
+[INFO] |        \- org.apache.neethi:neethi:jar:3.0.3:compile
+[INFO] +- org.apache.cxf:cxf-rt-transports-http:jar:3.0.0:compile
+[INFO] +- org.eclipse.jetty:jetty-webapp:jar:9.3.0.M2:compile
+[INFO] |  +- org.eclipse.jetty:jetty-xml:jar:9.3.0.M2:compile
+[INFO] |  |  \- org.eclipse.jetty:jetty-util:jar:9.3.0.M2:compile
+[INFO] |  \- org.eclipse.jetty:jetty-servlet:jar:9.3.0.M2:compile
+[INFO] |     \- org.eclipse.jetty:jetty-security:jar:9.3.0.M2:compile
+[INFO] |        \- org.eclipse.jetty:jetty-server:jar:9.3.0.M2:compile
+[INFO] |           +- javax.servlet:javax.servlet-api:jar:3.1.0:compile
+[INFO] |           +- org.eclipse.jetty:jetty-http:jar:9.3.0.M2:compile
+[INFO] |           \- org.eclipse.jetty:jetty-io:jar:9.3.0.M2:compile
+[INFO] +- org.springframework.boot:spring-boot-starter-ws:jar:1.2.3.RELEASE:compile
+[INFO] |  +- org.springframework.boot:spring-boot-starter:jar:1.2.3.RELEASE:compile
+[INFO] |  |  +- org.springframework.boot:spring-boot:jar:1.2.3.RELEASE:compile
+[INFO] |  |  +- org.springframework.boot:spring-boot-autoconfigure:jar:1.2.3.RELEASE:compile
+[INFO] |  |  +- org.springframework.boot:spring-boot-starter-logging:jar:1.2.3.RELEASE:compile
+[INFO] |  |  |  +- org.slf4j:jcl-over-slf4j:jar:1.7.11:compile
+[INFO] |  |  |  |  \- org.slf4j:slf4j-api:jar:1.7.11:compile
+[INFO] |  |  |  +- org.slf4j:jul-to-slf4j:jar:1.7.11:compile
+[INFO] |  |  |  +- org.slf4j:log4j-over-slf4j:jar:1.7.11:compile
+[INFO] |  |  |  \- ch.qos.logback:logback-classic:jar:1.1.3:compile
+[INFO] |  |  |     \- ch.qos.logback:logback-core:jar:1.1.3:compile
+[INFO] |  |  \- org.yaml:snakeyaml:jar:1.14:compile
+[INFO] |  +- org.springframework.boot:spring-boot-starter-web:jar:1.2.3.RELEASE:compile
+[INFO] |  |  +- org.springframework.boot:spring-boot-starter-tomcat:jar:1.2.3.RELEASE:compile
+[INFO] |  |  |  +- org.apache.tomcat.embed:tomcat-embed-core:jar:8.0.20:compile
+[INFO] |  |  |  +- org.apache.tomcat.embed:tomcat-embed-el:jar:8.0.20:compile
+[INFO] |  |  |  +- org.apache.tomcat.embed:tomcat-embed-logging-juli:jar:8.0.20:compile
+[INFO] |  |  |  \- org.apache.tomcat.embed:tomcat-embed-websocket:jar:8.0.20:compile
+[INFO] |  |  +- com.fasterxml.jackson.core:jackson-databind:jar:2.4.5:compile
+[INFO] |  |  |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.4.0:compile
+[INFO] |  |  |  \- com.fasterxml.jackson.core:jackson-core:jar:2.4.5:compile
+[INFO] |  |  +- org.hibernate:hibernate-validator:jar:5.1.3.Final:compile
+[INFO] |  |  |  +- javax.validation:validation-api:jar:1.1.0.Final:compile
+[INFO] |  |  |  +- org.jboss.logging:jboss-logging:jar:3.1.3.GA:compile
+[INFO] |  |  |  \- com.fasterxml:classmate:jar:1.0.0:compile
+[INFO] |  |  +- org.springframework:spring-web:jar:4.1.6.RELEASE:compile
+[INFO] |  |  \- org.springframework:spring-webmvc:jar:4.1.6.RELEASE:compile
+[INFO] |  |     \- org.springframework:spring-expression:jar:4.1.6.RELEASE:compile
+[INFO] |  +- org.springframework:spring-jms:jar:4.1.6.RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-aop:jar:4.1.6.RELEASE:compile
+[INFO] |  |  |  \- aopalliance:aopalliance:jar:1.0:compile
+[INFO] |  |  +- org.springframework:spring-beans:jar:4.1.6.RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-context:jar:4.1.6.RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-messaging:jar:4.1.6.RELEASE:compile
+[INFO] |  |  \- org.springframework:spring-tx:jar:4.1.6.RELEASE:compile
+[INFO] |  +- org.springframework:spring-oxm:jar:4.1.6.RELEASE:compile
+[INFO] |  +- org.springframework.ws:spring-ws-core:jar:2.2.1.RELEASE:compile
+[INFO] |  |  \- org.springframework.ws:spring-xml:jar:2.2.1.RELEASE:compile
+[INFO] |  \- org.springframework.ws:spring-ws-support:jar:2.2.1.RELEASE:compile
+[INFO] +- jaxen:jaxen:jar:1.1.6:compile
+[INFO] +- org.jdom:jdom2:jar:2.0.6:compile
+[INFO] +- wsdl4j:wsdl4j:jar:1.6.3:compile
+[INFO] +- log4j:log4j:jar:1.2.16:compile
+[INFO] \- junit:junit:jar:4.12:compile
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GoLive-Extension-Jasperreports 0.0.1-RELEASE
+[INFO] ------------------------------------------------------------------------
+[WARNING] The POM for org.apache.maven.plugins:maven-antrun-plugin:jar:1.3 is missing, no dependency information available
+[WARNING] Failed to retrieve plugin descriptor for org.apache.maven.plugins:maven-antrun-plugin:1.3: Plugin org.apache.maven.plugins:maven-antrun-plugin:1.3 or one of its dependencies could not be resolved: Failure to find org.apache.maven.plugins:maven-antrun-plugin:jar:1.3 in http://repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ GoLive-Extension-Jasperreports ---
+[INFO] com.golive.extension:GoLive-Extension-Jasperreports:jar:0.0.1-RELEASE
+[INFO] +- net.sf.jasperreports:jasperreports:jar:5.6.1:compile
+[INFO] |  +- commons-beanutils:commons-beanutils:jar:1.8.0:compile
+[INFO] |  +- commons-collections:commons-collections:jar:3.2.1:compile
+[INFO] |  +- commons-digester:commons-digester:jar:2.1:compile
+[INFO] |  +- commons-logging:commons-logging:jar:1.1.1:compile
+[INFO] |  +- com.lowagie:itext:jar:2.1.7.js2:compile
+[INFO] |  |  +- bouncycastle:bcmail-jdk14:jar:138:compile
+[INFO] |  |  +- bouncycastle:bcprov-jdk14:jar:138:compile
+[INFO] |  |  \- org.bouncycastle:bctsp-jdk14:jar:1.38:compile
+[INFO] |  |     +- org.bouncycastle:bcprov-jdk14:jar:1.38:compile
+[INFO] |  |     \- org.bouncycastle:bcmail-jdk14:jar:1.38:compile
+[INFO] |  +- jfree:jcommon:jar:1.0.15:compile
+[INFO] |  +- jfree:jfreechart:jar:1.0.12:compile
+[INFO] |  +- xml-apis:xml-apis:jar:1.3.02:compile
+[INFO] |  +- eclipse:jdtcore:jar:3.1.0:compile
+[INFO] |  +- org.codehaus.castor:castor:jar:1.2:compile
+[INFO] |  +- com.fasterxml.jackson.core:jackson-core:jar:2.1.4:compile
+[INFO] |  +- com.fasterxml.jackson.core:jackson-databind:jar:2.1.4:compile
+[INFO] |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.1.4:compile
+[INFO] |  +- org.apache.lucene:lucene-core:jar:4.5.1:compile
+[INFO] |  +- org.apache.lucene:lucene-analyzers-common:jar:4.5.1:compile
+[INFO] |  +- org.apache.lucene:lucene-queryparser:jar:4.5.1:compile
+[INFO] |  |  +- org.apache.lucene:lucene-queries:jar:4.5.1:compile
+[INFO] |  |  \- org.apache.lucene:lucene-sandbox:jar:4.5.1:compile
+[INFO] |  |     \- jakarta-regexp:jakarta-regexp:jar:1.4:compile
+[INFO] |  \- org.olap4j:olap4j:jar:0.9.7.309-JS-3:compile
+[INFO] +- net.sf.jasperreports:jasperreports-fonts:jar:5.6.1:compile
+[INFO] +- org.apache.poi:poi:jar:3.12:compile
+[INFO] |  \- commons-codec:commons-codec:jar:1.9:compile
+[INFO] +- org.apache.poi:poi-examples:jar:3.12:compile
+[INFO] |  +- org.apache.poi:poi-scratchpad:jar:3.12:compile
+[INFO] |  \- org.apache.poi:poi-ooxml:jar:3.12:compile
+[INFO] |     \- org.apache.poi:poi-ooxml-schemas:jar:3.12:compile
+[INFO] |        \- org.apache.xmlbeans:xmlbeans:jar:2.6.0:compile
+[INFO] |           \- stax:stax-api:jar:1.0.1:compile
+[INFO] +- com.golive.utils:GoLive-Utils:jar:0.0.1-RELEASE:compile
+[INFO] |  +- taglibs:standard:jar:1.1.2:runtime
+[INFO] |  +- cglib:cglib-nodep:jar:2.2:compile
+[INFO] |  +- org.aspectj:aspectjrt:jar:1.5.4:compile
+[INFO] |  +- org.aspectj:aspectjweaver:jar:1.5.4:compile
+[INFO] |  +- org.codehaus.jackson:jackson-mapper-asl:jar:1.9.11:compile
+[INFO] |  |  \- org.codehaus.jackson:jackson-core-asl:jar:1.9.11:compile
+[INFO] |  +- com.jgoodies:forms:jar:1.2.1:compile
+[INFO] |  +- commons-lang:commons-lang:jar:2.6:compile
+[INFO] |  +- org.apache.commons:commons-lang3:jar:3.3.2:compile
+[INFO] |  +- com.github.xsonorg:xson-core:jar:1.0.1:compile
+[INFO] |  \- mysql:mysql-connector-java:jar:5.1.18:compile
+[INFO] +- log4j:log4j:jar:1.2.16:compile
+[INFO] \- junit:junit:jar:4.12:compile
+[INFO]    \- org.hamcrest:hamcrest-core:jar:1.3:compile
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GoLive-Message-Websocket 0.0.1-RELEASE
+[INFO] ------------------------------------------------------------------------
+[WARNING] The POM for org.apache.maven.plugins:maven-antrun-plugin:jar:1.3 is missing, no dependency information available
+[WARNING] Failed to retrieve plugin descriptor for org.apache.maven.plugins:maven-antrun-plugin:1.3: Plugin org.apache.maven.plugins:maven-antrun-plugin:1.3 or one of its dependencies could not be resolved: Failure to find org.apache.maven.plugins:maven-antrun-plugin:jar:1.3 in http://repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ GoLive-Message-Websocket ---
+[INFO] com.golive.extension:GoLive-Message-Websocket:jar:0.0.1-RELEASE
+[INFO] +- log4j:log4j:jar:1.2.16:compile
+[INFO] \- junit:junit:jar:4.12:compile
+[INFO]    \- org.hamcrest:hamcrest-core:jar:1.3:compile
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GoLive-Message-Memcached 0.0.1-RELEASE
+[INFO] ------------------------------------------------------------------------
+[WARNING] The POM for org.apache.maven.plugins:maven-antrun-plugin:jar:1.3 is missing, no dependency information available
+[WARNING] Failed to retrieve plugin descriptor for org.apache.maven.plugins:maven-antrun-plugin:1.3: Plugin org.apache.maven.plugins:maven-antrun-plugin:1.3 or one of its dependencies could not be resolved: Failure to find org.apache.maven.plugins:maven-antrun-plugin:jar:1.3 in http://repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ GoLive-Message-Memcached ---
+[INFO] com.golive.extension:GoLive-Message-Memcached:jar:0.0.1-RELEASE
+[INFO] +- com.golive.extension:GoLive-Extension-Mybatis:jar:0.0.1-RELEASE:compile
+[INFO] |  +- com.golive.extension:GoLive-Extension-Spring4:jar:0.0.1-RELEASE:compile
+[INFO] |  |  +- com.golive.core:GoLive-Core:jar:0.0.1-RELEASE:compile
+[INFO] |  |  |  \- org.springframework:spring-tx:jar:4.2.1.RELEASE:compile
+[INFO] |  |  +- com.golive.extension:GoLive-Extension-Logger:jar:0.0.1-RELEASE:compile
+[INFO] |  |  |  +- javax.mail:mail:jar:1.4.1:compile
+[INFO] |  |  |  |  \- javax.activation:activation:jar:1.1:compile
+[INFO] |  |  |  +- org.apache.logging.log4j:log4j-core:jar:2.5:compile
+[INFO] |  |  |  \- org.apache.logging.log4j:log4j-api:jar:2.5:compile
+[INFO] |  |  +- com.atomikos:transactions-jdbc:jar:3.7.1:compile
+[INFO] |  |  |  \- com.atomikos:transactions-jta:jar:3.7.1:compile
+[INFO] |  |  |     \- com.atomikos:transactions:jar:3.7.1:compile
+[INFO] |  |  |        \- com.atomikos:transactions-api:jar:3.7.1:compile
+[INFO] |  |  |           \- com.atomikos:atomikos-util:jar:3.7.1:compile
+[INFO] |  |  +- javax.transaction:jta:jar:1.1:compile
+[INFO] |  |  +- com.golive.utils:GoLive-Utils:jar:0.0.1-RELEASE:compile
+[INFO] |  |  |  +- taglibs:standard:jar:1.1.2:runtime
+[INFO] |  |  |  +- cglib:cglib-nodep:jar:2.2:compile
+[INFO] |  |  |  +- org.aspectj:aspectjrt:jar:1.5.4:compile
+[INFO] |  |  |  +- org.aspectj:aspectjweaver:jar:1.5.4:compile
+[INFO] |  |  |  +- com.jgoodies:forms:jar:1.2.1:compile
+[INFO] |  |  |  +- commons-beanutils:commons-beanutils:jar:1.8.3:compile
+[INFO] |  |  |  +- commons-lang:commons-lang:jar:2.6:compile
+[INFO] |  |  |  +- org.apache.commons:commons-lang3:jar:3.3.2:compile
+[INFO] |  |  |  +- commons-collections:commons-collections:jar:3.2.1:compile
+[INFO] |  |  |  \- com.github.xsonorg:xson-core:jar:1.0.1:compile
+[INFO] |  |  +- org.springframework:spring-beans:jar:4.2.2.RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-core:jar:4.2.2.RELEASE:compile
+[INFO] |  |  |  \- commons-logging:commons-logging:jar:1.2:compile
+[INFO] |  |  +- org.springframework:spring-aop:jar:4.2.2.RELEASE:compile
+[INFO] |  |  |  \- aopalliance:aopalliance:jar:1.0:compile
+[INFO] |  |  +- org.springframework:spring-jdbc:jar:4.2.2.RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-orm:jar:4.2.2.RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-context-support:jar:4.2.2.RELEASE:compile
+[INFO] |  |  |  \- org.springframework:spring-context:jar:4.2.2.RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-web:jar:4.2.2.RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-webmvc:jar:4.2.2.RELEASE:compile
+[INFO] |  |  |  \- org.springframework:spring-expression:jar:4.2.2.RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-test:jar:4.2.2.RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-oxm:jar:4.2.2.RELEASE:compile
+[INFO] |  |  +- org.codehaus.jackson:jackson-mapper-asl:jar:1.9.11:compile
+[INFO] |  |  |  \- org.codehaus.jackson:jackson-core-asl:jar:1.9.11:compile
+[INFO] |  |  +- com.fasterxml.jackson.core:jackson-core:jar:2.4.3:compile
+[INFO] |  |  +- com.fasterxml.jackson.core:jackson-databind:jar:2.2.3:compile
+[INFO] |  |  |  \- com.fasterxml.jackson.core:jackson-annotations:jar:2.2.3:compile
+[INFO] |  |  +- org.exolab:castor:jar:1.3:compile
+[INFO] |  |  +- org.exolab:castor-core:jar:1.3:compile
+[INFO] |  |  +- org.exolab:castor-xml:jar:1.3:compile
+[INFO] |  |  \- com.alibaba:druid:jar:1.0.2:compile
+[INFO] |  +- com.golive.extension:GoLive-Extension-Datasource:jar:0.0.1-RELEASE:compile
+[INFO] |  |  \- com.golive.extension:GoLive-Extension-Zookeeper:jar:0.0.1-RELEASE:compile
+[INFO] |  |     +- org.apache.curator:curator-examples:jar:2.9.1:compile
+[INFO] |  |     |  +- org.apache.curator:curator-test:jar:2.9.1:compile
+[INFO] |  |     |  |  +- org.apache.zookeeper:zookeeper:jar:3.4.6:compile
+[INFO] |  |     |  |  |  +- jline:jline:jar:0.9.94:compile
+[INFO] |  |     |  |  |  \- io.netty:netty:jar:3.7.0.Final:compile
+[INFO] |  |     |  |  +- org.javassist:javassist:jar:3.18.1-GA:compile
+[INFO] |  |     |  |  +- org.apache.commons:commons-math:jar:2.2:compile
+[INFO] |  |     |  |  \- com.google.guava:guava:jar:16.0.1:compile
+[INFO] |  |     |  \- org.apache.curator:curator-x-discovery:jar:2.9.1:compile
+[INFO] |  |     +- org.apache.curator:curator-framework:jar:2.9.1:compile
+[INFO] |  |     |  \- org.apache.curator:curator-client:jar:2.9.1:compile
+[INFO] |  |     \- org.apache.curator:curator-recipes:jar:2.9.1:compile
+[INFO] |  +- com.oracle:ojdbc6:jar:1.0:compile
+[INFO] |  +- mysql:mysql-connector-java:jar:5.1.18:compile
+[INFO] |  +- org.mybatis:mybatis:jar:3.2.6:compile
+[INFO] |  +- org.mybatis:mybatis-spring:jar:1.2.2:compile
+[INFO] |  \- dom4j:dom4j:jar:1.6.1:compile
+[INFO] |     \- xml-apis:xml-apis:jar:1.0.b2:compile
+[INFO] +- com.googlecode.xmemcached:xmemcached:jar:2.0.0:compile
+[INFO] |  \- org.slf4j:slf4j-api:jar:1.7.5:compile
+[INFO] +- log4j:log4j:jar:1.2.16:compile
+[INFO] \- junit:junit:jar:4.12:compile
+[INFO]    \- org.hamcrest:hamcrest-core:jar:1.3:compile
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GoLive-Extension-Amqp 0.0.1-RELEASE
+[INFO] ------------------------------------------------------------------------
+[WARNING] The POM for org.apache.maven.plugins:maven-antrun-plugin:jar:1.3 is missing, no dependency information available
+[WARNING] Failed to retrieve plugin descriptor for org.apache.maven.plugins:maven-antrun-plugin:1.3: Plugin org.apache.maven.plugins:maven-antrun-plugin:1.3 or one of its dependencies could not be resolved: Failure to find org.apache.maven.plugins:maven-antrun-plugin:jar:1.3 in http://repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ GoLive-Extension-Amqp ---
+[INFO] com.golive.extension:GoLive-Extension-Amqp:jar:0.0.1-RELEASE
+[INFO] +- com.golive.extension:GoLive-Extension-Logger:jar:0.0.1-RELEASE:compile
+[INFO] |  +- com.golive.core:GoLive-Core:jar:0.0.1-RELEASE:compile
+[INFO] |  |  \- com.golive.utils:GoLive-Utils:jar:0.0.1-RELEASE:compile
+[INFO] |  |     +- taglibs:standard:jar:1.1.2:runtime
+[INFO] |  |     +- cglib:cglib-nodep:jar:2.2:compile
+[INFO] |  |     +- org.aspectj:aspectjrt:jar:1.5.4:compile
+[INFO] |  |     +- org.aspectj:aspectjweaver:jar:1.5.4:compile
+[INFO] |  |     +- org.codehaus.jackson:jackson-mapper-asl:jar:1.9.11:compile
+[INFO] |  |     |  \- org.codehaus.jackson:jackson-core-asl:jar:1.9.11:compile
+[INFO] |  |     +- com.fasterxml.jackson.core:jackson-core:jar:2.4.3:compile
+[INFO] |  |     +- com.jgoodies:forms:jar:1.2.1:compile
+[INFO] |  |     +- commons-beanutils:commons-beanutils:jar:1.8.3:compile
+[INFO] |  |     +- commons-lang:commons-lang:jar:2.6:compile
+[INFO] |  |     +- org.apache.commons:commons-lang3:jar:3.3.2:compile
+[INFO] |  |     +- commons-collections:commons-collections:jar:3.2.1:compile
+[INFO] |  |     +- com.github.xsonorg:xson-core:jar:1.0.1:compile
+[INFO] |  |     \- mysql:mysql-connector-java:jar:5.1.18:compile
+[INFO] |  +- javax.mail:mail:jar:1.4.1:compile
+[INFO] |  |  \- javax.activation:activation:jar:1.1:compile
+[INFO] |  +- org.apache.logging.log4j:log4j-core:jar:2.5:compile
+[INFO] |  \- org.apache.logging.log4j:log4j-api:jar:2.5:compile
+[INFO] +- org.springframework.amqp:spring-rabbit:jar:1.5.3.RELEASE:compile
+[INFO] |  +- org.springframework:spring-messaging:jar:4.2.2.RELEASE:compile
+[INFO] |  +- org.springframework.retry:spring-retry:jar:1.1.2.RELEASE:compile
+[INFO] |  +- org.springframework.amqp:spring-amqp:jar:1.5.3.RELEASE:compile
+[INFO] |  +- com.rabbitmq:http-client:jar:1.0.0.RELEASE:compile
+[INFO] |  |  +- org.apache.httpcomponents:httpclient:jar:4.3.6:compile
+[INFO] |  |  |  +- org.apache.httpcomponents:httpcore:jar:4.3.3:compile
+[INFO] |  |  |  \- commons-codec:commons-codec:jar:1.6:compile
+[INFO] |  |  \- com.fasterxml.jackson.core:jackson-databind:jar:2.5.1:compile
+[INFO] |  |     \- com.fasterxml.jackson.core:jackson-annotations:jar:2.5.0:compile
+[INFO] |  +- org.springframework:spring-web:jar:4.2.2.RELEASE:compile
+[INFO] |  |  \- org.springframework:spring-aop:jar:4.2.2.RELEASE:compile
+[INFO] |  |     \- aopalliance:aopalliance:jar:1.0:compile
+[INFO] |  +- com.rabbitmq:amqp-client:jar:3.5.7:compile
+[INFO] |  \- org.springframework:spring-context:jar:4.2.2.RELEASE:compile
+[INFO] |     \- org.springframework:spring-expression:jar:4.2.2.RELEASE:compile
+[INFO] +- org.springframework:spring-tx:jar:4.2.1.RELEASE:compile
+[INFO] |  +- org.springframework:spring-beans:jar:4.2.1.RELEASE:compile
+[INFO] |  \- org.springframework:spring-core:jar:4.2.1.RELEASE:compile
+[INFO] |     \- commons-logging:commons-logging:jar:1.2:compile
+[INFO] +- log4j:log4j:jar:1.2.16:compile
+[INFO] \- junit:junit:jar:4.12:compile
+[INFO]    \- org.hamcrest:hamcrest-core:jar:1.3:compile
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GoLive-Extension-Test 0.0.1-RELEASE
+[INFO] ------------------------------------------------------------------------
+[WARNING] The POM for org.apache.maven.plugins:maven-antrun-plugin:jar:1.3 is missing, no dependency information available
+[WARNING] Failed to retrieve plugin descriptor for org.apache.maven.plugins:maven-antrun-plugin:1.3: Plugin org.apache.maven.plugins:maven-antrun-plugin:1.3 or one of its dependencies could not be resolved: Failure to find org.apache.maven.plugins:maven-antrun-plugin:jar:1.3 in http://repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ GoLive-Extension-Test ---
+[INFO] com.golive.test:GoLive-Extension-Test:jar:0.0.1-RELEASE
+[INFO] +- com.golive.extension:GoLive-Extension-Spring4:jar:0.0.1-RELEASE:compile
+[INFO] |  +- com.golive.core:GoLive-Core:jar:0.0.1-RELEASE:compile
+[INFO] |  +- com.golive.extension:GoLive-Extension-Logger:jar:0.0.1-RELEASE:compile
+[INFO] |  |  +- javax.mail:mail:jar:1.4.1:compile
+[INFO] |  |  |  \- javax.activation:activation:jar:1.1:compile
+[INFO] |  |  +- org.apache.logging.log4j:log4j-core:jar:2.5:compile
+[INFO] |  |  \- org.apache.logging.log4j:log4j-api:jar:2.5:compile
+[INFO] |  +- com.atomikos:transactions-jdbc:jar:3.7.1:compile
+[INFO] |  |  \- com.atomikos:transactions-jta:jar:3.7.1:compile
+[INFO] |  |     \- com.atomikos:transactions:jar:3.7.1:compile
+[INFO] |  |        \- com.atomikos:transactions-api:jar:3.7.1:compile
+[INFO] |  |           \- com.atomikos:atomikos-util:jar:3.7.1:compile
+[INFO] |  +- javax.transaction:jta:jar:1.1:compile
+[INFO] |  +- com.golive.utils:GoLive-Utils:jar:0.0.1-RELEASE:compile
+[INFO] |  |  +- taglibs:standard:jar:1.1.2:runtime
+[INFO] |  |  +- cglib:cglib-nodep:jar:2.2:compile
+[INFO] |  |  +- org.aspectj:aspectjrt:jar:1.5.4:compile
+[INFO] |  |  +- org.aspectj:aspectjweaver:jar:1.5.4:compile
+[INFO] |  |  +- com.jgoodies:forms:jar:1.2.1:compile
+[INFO] |  |  +- commons-beanutils:commons-beanutils:jar:1.8.3:compile
+[INFO] |  |  +- commons-lang:commons-lang:jar:2.6:compile
+[INFO] |  |  +- org.apache.commons:commons-lang3:jar:3.3.2:compile
+[INFO] |  |  +- commons-collections:commons-collections:jar:3.2.1:compile
+[INFO] |  |  +- com.github.xsonorg:xson-core:jar:1.0.1:compile
+[INFO] |  |  \- mysql:mysql-connector-java:jar:5.1.18:compile
+[INFO] |  +- org.springframework:spring-beans:jar:4.2.2.RELEASE:compile
+[INFO] |  +- org.springframework:spring-core:jar:4.2.2.RELEASE:compile
+[INFO] |  |  \- commons-logging:commons-logging:jar:1.2:compile
+[INFO] |  +- org.springframework:spring-aop:jar:4.2.2.RELEASE:compile
+[INFO] |  |  \- aopalliance:aopalliance:jar:1.0:compile
+[INFO] |  +- org.springframework:spring-jdbc:jar:4.2.2.RELEASE:compile
+[INFO] |  +- org.springframework:spring-orm:jar:4.2.2.RELEASE:compile
+[INFO] |  +- org.springframework:spring-context-support:jar:4.2.2.RELEASE:compile
+[INFO] |  |  \- org.springframework:spring-context:jar:4.2.2.RELEASE:compile
+[INFO] |  +- org.springframework:spring-web:jar:4.2.2.RELEASE:compile
+[INFO] |  +- org.springframework:spring-webmvc:jar:4.2.2.RELEASE:compile
+[INFO] |  |  \- org.springframework:spring-expression:jar:4.2.2.RELEASE:compile
+[INFO] |  +- org.springframework:spring-test:jar:4.2.2.RELEASE:compile
+[INFO] |  +- org.springframework:spring-oxm:jar:4.2.2.RELEASE:compile
+[INFO] |  +- org.codehaus.jackson:jackson-mapper-asl:jar:1.9.11:compile
+[INFO] |  |  \- org.codehaus.jackson:jackson-core-asl:jar:1.9.11:compile
+[INFO] |  +- com.fasterxml.jackson.core:jackson-core:jar:2.4.3:compile
+[INFO] |  +- com.fasterxml.jackson.core:jackson-databind:jar:2.2.3:compile
+[INFO] |  |  \- com.fasterxml.jackson.core:jackson-annotations:jar:2.2.3:compile
+[INFO] |  +- org.exolab:castor:jar:1.3:compile
+[INFO] |  +- org.exolab:castor-core:jar:1.3:compile
+[INFO] |  +- org.exolab:castor-xml:jar:1.3:compile
+[INFO] |  \- com.alibaba:druid:jar:1.0.2:compile
+[INFO] +- com.golive.extension:GoLive-Message-Memcached:jar:0.0.1-RELEASE:compile
+[INFO] |  +- com.golive.extension:GoLive-Extension-Mybatis:jar:0.0.1-RELEASE:compile
+[INFO] |  |  +- com.golive.extension:GoLive-Extension-Datasource:jar:0.0.1-RELEASE:compile
+[INFO] |  |  |  \- com.golive.extension:GoLive-Extension-Zookeeper:jar:0.0.1-RELEASE:compile
+[INFO] |  |  |     +- org.apache.curator:curator-examples:jar:2.9.1:compile
+[INFO] |  |  |     |  +- org.apache.curator:curator-test:jar:2.9.1:compile
+[INFO] |  |  |     |  |  +- org.apache.zookeeper:zookeeper:jar:3.4.6:compile
+[INFO] |  |  |     |  |  |  +- jline:jline:jar:0.9.94:compile
+[INFO] |  |  |     |  |  |  \- io.netty:netty:jar:3.7.0.Final:compile
+[INFO] |  |  |     |  |  +- org.javassist:javassist:jar:3.18.1-GA:compile
+[INFO] |  |  |     |  |  +- org.apache.commons:commons-math:jar:2.2:compile
+[INFO] |  |  |     |  |  \- com.google.guava:guava:jar:16.0.1:compile
+[INFO] |  |  |     |  \- org.apache.curator:curator-x-discovery:jar:2.9.1:compile
+[INFO] |  |  |     +- org.apache.curator:curator-framework:jar:2.9.1:compile
+[INFO] |  |  |     |  \- org.apache.curator:curator-client:jar:2.9.1:compile
+[INFO] |  |  |     \- org.apache.curator:curator-recipes:jar:2.9.1:compile
+[INFO] |  |  +- com.oracle:ojdbc6:jar:1.0:compile
+[INFO] |  |  +- org.mybatis:mybatis:jar:3.2.6:compile
+[INFO] |  |  +- org.mybatis:mybatis-spring:jar:1.2.2:compile
+[INFO] |  |  \- dom4j:dom4j:jar:1.6.1:compile
+[INFO] |  |     \- xml-apis:xml-apis:jar:1.0.b2:compile
+[INFO] |  \- com.googlecode.xmemcached:xmemcached:jar:2.0.0:compile
+[INFO] |     \- org.slf4j:slf4j-api:jar:1.7.5:compile
+[INFO] +- com.golive.extension:GoLive-Extension-Amqp:jar:0.0.1-RELEASE:compile
+[INFO] |  +- org.springframework.amqp:spring-rabbit:jar:1.5.3.RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-messaging:jar:4.2.2.RELEASE:compile
+[INFO] |  |  +- org.springframework.retry:spring-retry:jar:1.1.2.RELEASE:compile
+[INFO] |  |  +- org.springframework.amqp:spring-amqp:jar:1.5.3.RELEASE:compile
+[INFO] |  |  +- com.rabbitmq:http-client:jar:1.0.0.RELEASE:compile
+[INFO] |  |  |  \- org.apache.httpcomponents:httpclient:jar:4.3.6:compile
+[INFO] |  |  |     +- org.apache.httpcomponents:httpcore:jar:4.3.3:compile
+[INFO] |  |  |     \- commons-codec:commons-codec:jar:1.6:compile
+[INFO] |  |  \- com.rabbitmq:amqp-client:jar:3.5.7:compile
+[INFO] |  \- org.springframework:spring-tx:jar:4.2.1.RELEASE:compile
+[INFO] +- log4j:log4j:jar:1.2.16:compile
+[INFO] \- junit:junit:jar:4.12:compile
+[INFO]    \- org.hamcrest:hamcrest-core:jar:1.3:compile
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] GoLive-Aggregation ................................ SUCCESS [4.525s]
+[INFO] GoLive-Utils ...................................... SUCCESS [0.060s]
+[INFO] GoLive-Core ....................................... SUCCESS [0.034s]
+[INFO] GoLive-Extension-Logger ........................... SUCCESS [0.042s]
+[INFO] GoLive-Extension-Spring4 .......................... SUCCESS [0.087s]
+[INFO] GoLive-Extension-Zookeeper ........................ SUCCESS [0.074s]
+[INFO] GoLive-Extension-Datasource ....................... SUCCESS [0.049s]
+[INFO] GoLive-Extension-Mybatis .......................... SUCCESS [0.063s]
+[INFO] GoLive-Extension-Cxf .............................. SUCCESS [0.337s]
+[INFO] GoLive-Extension-Jasperreports .................... SUCCESS [0.106s]
+[INFO] GoLive-Message-Websocket .......................... SUCCESS [0.005s]
+[INFO] GoLive-Message-Memcached .......................... SUCCESS [0.063s]
+[INFO] GoLive-Extension-Amqp ............................. SUCCESS [0.073s]
+[INFO] GoLive-Extension-Test ............................. SUCCESS [0.057s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 6.494s
+[INFO] Finished at: Thu Apr 21 13:29:10 CST 2016
+[INFO] Final Memory: 19M/224M
+[INFO] ------------------------------------------------------------------------

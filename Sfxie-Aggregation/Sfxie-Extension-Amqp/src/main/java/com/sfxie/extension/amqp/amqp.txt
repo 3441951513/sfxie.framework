@@ -1,0 +1,9 @@
+http://hwcrazy.com/34195c9068c811e38a44000d601c5586/be62fc2668c811e3adba000d601c5586/
+
+RabbitMQ不同Confirm模式下的性能对比 : http://ju.outofmemory.cn/entry/177937
+
+高可用 RabbitMQ 集群自动化部署解决方案 : http://www.ibm.com/developerworks/cn/opensource/os-cn-RabbitMQ/
+CentOS下rabbitMQ集群配置 : http://www.centoscn.com/CentosServer/cluster/2014/1216/4324.html
+RabbitMQ概念及环境搭建（三）RabbitMQ cluster: http://blog.csdn.net/zyz511919766/article/details/41896747
+
+http://www.cnblogs.com/flat_peach/archive/2013/04/07/3004008.html

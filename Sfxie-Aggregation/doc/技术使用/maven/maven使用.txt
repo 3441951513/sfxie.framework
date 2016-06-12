@@ -1,0 +1,2 @@
+1.使用maven发布jar到nexus服务器命令: mvn deploy -Dmaven.test.skip=true
+2.使用maven查询项目的依赖关系树命令          : mvn dependency:tree -->

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sfxie.statics.modules.storm.dao.StaticsStormMapper">
+	<select id="getEvsByOrderID" parameterType="java.lang.Integer" resultType="java.util.Map">
+        SELECT
+            ev.EvName evName,
+            ev.EvPwd evPwd,
+            ev.ExpireDate expireDate,
+            ev.`DESC` note
+        FROM
+            g_ad_electronic_voucher ev,
+            g_ad3_goods g
+        WHERE
+            g.id=ev.GoodsID
+        AND ev.OrderID = #{orderID}
+        AND ev.State = 1
+    </select>
+	<select id="getGAdGoodsById"   resultType="com.sfxie.website.modules.api3.mall.model.alipayinfo4qrcode4ad.response.AlipayInfo4Qrcode4AdGoods"  
+	parameterType="java.lang.Integer" >
+		select  g.current_price price,
+				g.description note,
+				g.name goodsName,
+				g.stock,
+				g.limit_num macAmount
+		from g_ad3_goods g where g.id = #{goodsId}
+	</select> 
+	<!-- 更新订单状态 	-->  
+    <update id="updatePurchaseOrderState" parameterType="java.util.Map" >  
+        update g_ad_order set PayState = #{PayState}, PayNote = #{PayNote}, UpdateTime = #{UpdateTime} where OrderCode = #{OrderCode}  
+    </update>  
+    <!-- 锁定订单记录	 -->  
+    <select id="lockUserStatics" parameterType="java.util.Map" resultType="com.sfxie.statics.modules.storm.model.UserStatics">  
+       select * from test_storm_user_statics u  where  u.user_id = ? and u.channel_id  and u.china_time = ? for update
+    </select>  
+</mapper>
+

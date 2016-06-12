@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.sfxie.soa</groupId>
+		<artifactId>Sfxie-Soa</artifactId>
+		<version>0.0.1-RELEASE</version>
+<!-- 		<relativePath>../pom.xml</relativePath> -->
+	</parent>
+	<groupId>com.sfxie.soa.provider</groupId>
+	<artifactId>Sfxie-Soa-Povider</artifactId>
+	<name>Sfxie-Soa-Povider</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>com.sfxie.soa.interface</groupId>
+			<artifactId>Sfxie-Soa-Interface</artifactId>
+			<version>0.0.1-RELEASE</version>
+	  		<scope>compile</scope> 
+		</dependency>
+		<!-- 如果要使用json序列化 -->
+		<dependency>
+		    <groupId>org.jboss.resteasy</groupId>
+		    <artifactId>resteasy-jackson-provider</artifactId>
+		    <version>3.0.7.Final</version>
+		</dependency>
+		
+		<!-- 如果要使用xml序列化 -->
+		<dependency>
+		    <groupId>org.jboss.resteasy</groupId>
+		    <artifactId>resteasy-jaxb-provider</artifactId>
+		    <version>3.0.7.Final</version>
+		</dependency>
+		<!-- 如果要使用netty server -->
+		<!-- <dependency>
+		    <groupId>org.jboss.resteasy</groupId>
+		    <artifactId>resteasy-netty</artifactId>
+		    <version>3.0.7.Final</version>
+		</dependency> -->
+		<!-- 如果要使用tomcat server -->
+		<dependency>
+		    <groupId>org.apache.tomcat.embed</groupId>
+		    <artifactId>tomcat-embed-core</artifactId>
+		    <version>8.0.11</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.tomcat.embed</groupId>
+		    <artifactId>tomcat-embed-logging-juli</artifactId>
+		    <version>8.0.11</version>
+		</dependency>
+		<!-- 	    restful supports -->
+	</dependencies> 
+</project>
+ 

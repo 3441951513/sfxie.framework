@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cobar xmlns:cobar="http://cobar.alibaba.com/">
+	<!-- schema定义 -->
+	<schema name="mybatis">
+<!-- 		<table dataNode="dn_sfxie_collection" name="sfxie_collection_bug" /> -->
+		
+		
+		<!-- 		dn_sfxie_os 			-->
+		<!-- <table dataNode="dn_sfxie_os" name="sfxie_cache_db_partition" />
+		<table dataNode="dn_sfxie_os" name="sfxie_location_geographic" />
+		<table dataNode="dn_sfxie_os" name="sfxie_shopping_bar_ad" />
+		<table dataNode="dn_sfxie_os" name="sfxie_shopping_ad" />
+		<table dataNode="dn_sfxie_os" name="sfxie_shopping_bar" />
+		<table dataNode="dn_sfxie_os" name="sfxie_shopping_discount" />
+		<table dataNode="dn_sfxie_os" name="sfxie_shopping_goods" />
+		<table dataNode="dn_sfxie_os" name="sfxie_shopping_material_at" />
+		<table dataNode="dn_sfxie_os" name="sfxie_shopping_material" />
+		<table dataNode="dn_sfxie_os" name="sfxie_shopping_inventory" />
+		<table dataNode="dn_sfxie_os" name="sfxie_shopping_inventory_type" />
+		<table dataNode="dn_sfxie_os" name="sfxie_shopping_shopkeeper" />
+		
+		<table dataNode="dn_sfxie_os" name="j_position_provice" />
+		<table dataNode="dn_sfxie_os" name="j_position_city" />
+		<table dataNode="dn_sfxie_os" name="j_position_county" />
+		<table dataNode="dn_sfxie_os" name="j_position_town" />
+		<table dataNode="dn_sfxie_os" name="j_position_village" /> -->
+		
+		
+		<!-- <table dataNode="dn_sfxie_sys" name="sfxie_sys_role_action" />
+		<table dataNode="dn_sfxie_sys" name="sfxie_sys_action" />
+		<table dataNode="dn_sfxie_sys" name="sfxie_sys_authorization" />
+		<table dataNode="dn_sfxie_sys" name="sfxie_sys_auth_role_menu" />
+		<table dataNode="dn_sfxie_sys" name="sfxie_sys_auth_data" />
+		<table dataNode="dn_sfxie_sys" name="sfxie_sys_post_role" />
+		<table dataNode="dn_sfxie_sys" name="sfxie_sys_user_relation" />
+		<table dataNode="dn_sfxie_sys" name="sfxie_sys_post" />
+		<table dataNode="dn_sfxie_sys" name="sfxie_sys_department" />
+		<table dataNode="dn_sfxie_sys" name="sfxie_sys_organizition" />
+		<table dataNode="dn_sfxie_sys" name="sfxie_sys_company" />
+		<table dataNode="dn_sfxie_sys" name="sfxie_sys_role_menu" />
+		<table dataNode="dn_sfxie_sys" name="sfxie_sys_menu" />
+		<table dataNode="dn_sfxie_sys" name="sfxie_sys_user_role" />
+		<table dataNode="dn_sfxie_sys" name="sfxie_sys_role" />
+		<table dataNode="dn_sfxie_sys" name="sfxie_sys_system" />
+		<table dataNode="dn_sfxie_sys" name="sfxie_sys_userinfo" /> -->
+		
+		<!-- <table dataNode="dn_sfxie_sys" name="sfxie_shopping_ad"  /> -->
+		
+		<table dataNode="dn_sfxie_oa" name="sfxie_sys_company"  />
+		<table dataNode="dn_sfxie_oa" name="sfxie_sys_organizition"  />
+		<table dataNode="dn_sfxie_oa" name="sfxie_sys_department"  />
+		<table dataNode="dn_sfxie_oa" name="sfxie_sys_post"  />
+		<table dataNode="dn_sfxie_oa" name="sfxie_sys_userinfo"  />
+		<table dataNode="dn_sfxie_oa" name="sfxie_sys_user_relation"  />
+	</schema>
+	
+</cobar>

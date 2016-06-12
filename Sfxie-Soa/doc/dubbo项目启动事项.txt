@@ -1,0 +1,6 @@
+1. dubbo-admin监控系统的tomcat目录: C:\Users\xsf\Desktop\tomcat\apache-tomcat-6.0.29\bin
+2. GoLive-Soa-Provider项目可以启动多次,但是记住在同一机器要配置"config/website/modules/soa/properties/soa.develop.properties"文件的dubbo.port属性为不同的端口号
+
+
+http://192.168.10.112:9080/dubbo/
+http://my.oschina.net/ydsakyclguozi/blog/408048?p={{totalPage}}

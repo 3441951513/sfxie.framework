@@ -1,0 +1,22 @@
+1.	进入/GoLive-Soa/dubbo/dubbox-master目录
+2.  使用maven命令打包: mvn clean deploy -Dmaven.test.skip=true
+
+
+源码dubbox的sfxie修改内容:
+1.	修改了com.alibaba.dubbo.rpc.filter.ExceptionFilter源码的第108行  ->修改成下面代码: 
+	//dubbo的返回异常
+    //return new RpcResult(new RuntimeException(StringUtils.toString(exception)));
+    //修改成适应sfxie框架的返回异常
+    return new RpcResult(exception);
+    
+2.	修改了/GoLive-Soa/dubbo/dubbox-master/dubbo-rpc/dubbo-rpc-api/src/main/resources/META-INF/dubbo/internal/com.alibaba.dubbo.rpc.Filter,添加下面一行代码
+	oaAuthorityFilter=com.golive.soa.modules.dubbo.filter.security.OaAuthorityFilter
+
+3.	修改了/GoLive-Soa/dubbo/dubbox-master/dubbo-rpc/dubbo-rpc-rest/src/main/java/com/alibaba/dubbo/rpc/protocol/rest/RestProtocol.java第187行return target.proxy(serviceType);,修改成下面一些代码
+	T t = null;
+    try{
+    	t = target.proxy(serviceType);
+    }catch(Exception e){
+    	e.printStackTrace();
+    }
+    return t;

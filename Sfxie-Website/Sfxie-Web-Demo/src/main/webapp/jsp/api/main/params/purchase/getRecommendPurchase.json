@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<request	website="http://183.60.142.159:8117/mallapi/springmvc/RecommendPurchaseController"	pro_version="0.0.0.22" app_version="2.2.3.9_advert_release"	packagename="com.golive.advert" versioncode="50" apktype="4">
+	<parameter iname="getRecommendPurchase" apktype="4" language="zh"		region="CN">
+		<device dnum="" didtoken="" devmodel="TianTian" dver="x"			devtype="1" clienttype="OTHER" mac="0800270D1988" deviceid="" />
+		<user userid="10114" token="dfb56d01f4e4fe5ea05f6a35599022a6" />
+		<data startseq="0" limit="0" />
+	</parameter>
+</request>

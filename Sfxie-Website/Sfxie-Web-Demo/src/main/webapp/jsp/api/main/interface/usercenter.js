@@ -1,0 +1,99 @@
+//用户中心接口
+apiRootArray.push(
+		{
+		    name:'用户中心',
+		    id:'usercenter'
+		}
+);
+
+apiArray.push({
+    parentId:'usercenter',
+    name:'查询登录注册信息',
+    id:'getUserMsg',
+    url:'/usercenter/userMsg',
+    type:'POST',
+    xmlParam:'',
+	developer:"喻龙斌"
+},{
+    parentId:'usercenter',
+    name:'查询收货地址',
+    id:'getAddress',
+    url:'/usercenter/getAddress',
+    type:'POST',
+    xmlParam:'',
+	developer:"喻龙斌"
+},{
+    parentId:'usercenter',
+    name:'新增收货地址',
+    id:'addAddress',
+    url:'/usercenter/addAddress',
+    type:'POST',
+    xmlParam:'',
+	developer:"喻龙斌"
+},{
+    parentId:'usercenter',
+    name:'删除收货地址',
+    id:'delAddress',
+    url:'/usercenter/delAddress',
+    type:'POST',
+    xmlParam:'',
+	developer:"喻龙斌"
+},{
+    parentId:'usercenter',
+    name:'设置默认收货地址',
+    id:'setDefaultAddress',
+    url:'/usercenter/setDefaultAddress',
+    type:'POST',
+    xmlParam:'',
+	developer:"喻龙斌"
+},{
+    parentId:'usercenter',
+    name:'获取主配置',
+    id:'getMainConfig',
+    url:'/usercenter/getMainConfig',
+    type:'POST',
+    xmlParam:'',
+	developer:"喻龙斌"
+},{
+    parentId:'usercenter',
+    name:'商城订单查询',
+    id:'getOrderRecord',
+    url:'/usercenter/getOrderRecord',
+    type:'POST',
+    xmlParam:'',
+	developer:"喻龙斌"
+},{
+    parentId:'usercenter',
+    name:'商城订单详情查询',
+    id:'getOrderDetailsMsg',
+    url:'/usercenter/getOrderDetailsMsg',
+    type:'POST',
+    xmlParam:'',
+	developer:"喻龙斌"
+},{
+    parentId:'usercenter',
+    name:'钱包记录查询',
+    id:'getWalletRecord',
+    url:'/usercenter/getWalletRecord',
+    type:'POST',
+    xmlParam:'',
+	developer:"喻龙斌"
+},{
+    parentId:'usercenter',
+    name:'撞大运奖励查询',
+    id:'getLuckyRecord',
+    url:'/usercenter/getLuckyRecord',
+    type:'POST',
+    xmlParam:'',
+	developer:"喻龙斌"
+},{
+    parentId:'usercenter',
+    name:'获取提示资源信息',
+    id:'getTipsResourcesInfo',
+    url:'/usercenter/getTipsResourcesInfo',
+    type:'POST',
+    xmlParam:'',
+	developer:"喻龙斌"
+});
+
+

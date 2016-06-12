@@ -1,0 +1,14 @@
+##########################################################################启动项目##########################################################################
+1. /GoLive-Extension-Datasource/db/myca项目目录,解压mycat-win-8266.zip,找到mycat-win-8266\conf目录下的cluster.properties文件,修改文件中的
+	url=jdbc:mysql://192.168.10.112:8266/TESTDB?useUnicode=true&amp;characterEncoding=utf8
+	userName = test
+	password = test
+	为自己的数据库连接信息或者公用的数据库连接信息
+2.	进入mycat-win-8266\bin目录双击startup_nowrap.bat启动mycat数据库中间件
+3.	打开/GoLive-Soa-Povider/src/main/resources/config/soa/modules/soa/properties目录下的jdbc.develop.properties文件,修改文件中的
+	jdbc.url=jdbc:mysql://localhost:3306/sfxie_oa?Unicode=true&characterEncoding=utf-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull
+	jdbc.username=root
+	jdbc.password=root
+	为自己的数据库连接信息或者公用的数据库连接信息
+4.	进入com.golive.soa.modules.dubbo.SoaStartup类右击按"Run As Java Application"启动服务
+##########################################################################启动项目##########################################################################

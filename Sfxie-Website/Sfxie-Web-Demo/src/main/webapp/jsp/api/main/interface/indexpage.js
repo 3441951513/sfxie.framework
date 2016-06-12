@@ -1,0 +1,57 @@
+//首页接口
+apiRootArray.push(
+		{name:'首页',
+		 id:'indexpage'
+		}
+);
+
+apiArray.push({
+    parentId:'indexpage',
+    name:'签到',
+    id:'userSign',
+    url:'/indexpage/userSign',
+    type:'POST',
+    xmlParam:'',
+	developer:"喻龙斌"
+},{
+    parentId:'indexpage',
+    name:'获取日历数据',
+    id:'getCalendarData',
+    url:'/indexpage/getCalendarData',
+    type:'POST',
+    xmlParam:'',
+	developer:"喻龙斌"
+},{
+    parentId:'indexpage',
+    name:'获取新增界面信息',
+    id:'getAddMsg',
+    url:'/indexpage/getAddMsg',
+    type:'POST',
+    xmlParam:'',
+	developer:"喻龙斌"
+},{
+    parentId:'indexpage',
+    name:'获取是否提交异常标志',
+    id:'getExceptionFlag',
+    url:'/indexpage/getExceptionFlag',
+    type:'POST',
+    xmlParam:'',
+	developer:"喻龙斌"
+},{
+    parentId:'indexpage',
+    name:'汇报异常',
+    id:'reportException',
+    url:'/indexpage/reportException',
+    type:'POST',
+    xmlParam:'',
+	developer:"喻龙斌"
+},{
+    parentId:'indexpage',
+    name:'获取首页推荐资源',
+    id:'getRecomendResources',
+    url:'/indexpage/getRecomendResources',
+    type:'POST',
+    xmlParam:'',
+	developer:"喻龙斌"
+});
+

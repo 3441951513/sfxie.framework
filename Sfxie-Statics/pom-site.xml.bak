@@ -1,0 +1,137 @@
+﻿<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.sfxie.statics</groupId>
+	<artifactId>GoLive-Statics</artifactId>
+	<version>0.0.1-RELEASE</version>
+	<packaging>pom</packaging>
+	<name>GoLive-Statics</name>
+	<modules>
+		
+	</modules>
+
+	<!-- 项目的构建信息 -->
+	<build>
+		<plugins>
+			<plugin>
+				<!-- 站点生成插件 -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.2</version>
+				<configuration>
+					<!-- 支持国际化 -->
+					<locales>zh_CN</locales>
+					<outputEncoding>UTF-8</outputEncoding>
+					<siteDirectory></siteDirectory>
+					<outputDirectory>/maven-site/ecos-service</outputDirectory>
+					<reportPlugins>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-surefire-plugin</artifactId>
+							<version>2.8.1</version>
+							<configuration>
+								<source>1.6</source>
+								<target>1.6</target>
+								<encoding>UTF-8</encoding>
+								<failOnMissingWebXml>false</failOnMissingWebXml>
+							</configuration>
+						</plugin>
+						<plugin>
+							<!-- 生成javadoc文件 -->
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-javadoc-plugin</artifactId>
+							<version>2.9</version>
+						</plugin>
+						<plugin>
+							<!-- 项目信息过滤 -->
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-project-info-reports-plugin</artifactId>
+							<version>2.7</version>
+							<configuration>
+								<webAccessUrl>http://svn.example.org/viewvc/project/trunk</webAccessUrl>
+								<anonymousConnection>scm:svn:http://svn.example.org/repo/project/trunk</anonymousConnection>
+								<developerConnection>scm:svn:https://svn.example.org/repo/project/trunk</developerConnection>
+							</configuration>
+							<reportSets>
+								<reportSet>
+									<reports>
+										<!-- index一定要生成,否则链接问题 -->
+										<report>index</report>
+										<report>dependencies</report>
+										<report>project-team</report>
+										<report>issue-tracking</report>
+										<report>license</report>
+										<report>scm</report>
+										<report>cim</report>
+										<report>modules</report>
+										<report>plugins</report>
+										<report>help</report>
+										<report>summary</report>
+									</reports>
+								</reportSet>
+							</reportSets>
+						</plugin>
+						<plugin>
+							<!-- 源码查看生成 -->
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-jxr-plugin</artifactId>
+							<version>2.3</version>
+							<configuration>
+								<!-- 多模块聚合 -->
+								<aggregate>true</aggregate>
+							</configuration>
+						</plugin>
+						<plugin>
+							<!-- 代码风格检查 -->
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-checkstyle-plugin</artifactId>
+							<version>2.10</version>
+							<configuration>
+								<!-- 使用maven社区代码风格 -->
+								<configLocation>config/maven_checks.xml</configLocation>
+							</configuration>
+						</plugin>
+						<plugin>
+							<!-- 代码更改日志 -->
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-changelog-plugin</artifactId>
+							<version>2.2</version>
+						</plugin>
+						<plugin>
+							<!-- 代码隐藏bug检查 -->
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-pmd-plugin</artifactId>
+							<version>2.5</version>
+							<configuration>
+								<!-- 多模块聚合 -->
+								<aggregate>true</aggregate>
+							</configuration>
+						</plugin>
+						<plugin>
+							<!-- 测试覆盖率 -->
+							<groupId>org.codehaus.mojo</groupId>
+							<artifactId>cobertura-maven-plugin</artifactId>
+							<version>2.5.2</version>
+						</plugin>
+					</reportPlugins>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<!-- <scm>
+		<connection>scm:svn:https://svn.apache.org/repos/asf/maven/plugins/tags/</connection>
+		<developerConnection>https://svn.apache.org/repos/asf/maven/plugins/tags/</developerConnection>
+		<url>https://svn.apache.org/repos/asf/maven/plugins/tags/</url>
+	</scm> -->
+	<scm>
+	    <connection>scm:svn:http://svn.apache.org/repos/asf/maven/site/trunk/</connection>
+	    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/site/trunk/</developerConnection>
+	    <url>http://svn.apache.org/viewcvs.cgi/maven/site/trunk/</url>
+	</scm>
+	<properties>
+		<!-- 项目编码设置，仅对maven有效，方便CI -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- nexus Servers -->
+		<nexus.url>192.168.5.67:8081</nexus.url>
+	</properties>
+</project>

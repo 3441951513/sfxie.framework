@@ -1,0 +1,4 @@
+var apiRootArray = [];
+
+var apiArray = [];
+

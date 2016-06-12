@@ -1,0 +1,24 @@
+<div id="s#######scontentDivId" class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',footer:'#s#######stab-tools'" style="height:400px">
+    	<div class="easyui-panel" title="URL" style="height:50px">
+    		<span style="color:blue;" id="s#######sURLId" ></span>
+    	</div>
+    	<div  class="easyui-panel" title="参数" style="height:300px">
+        	<pre id="s#######sXMLId" class="prettyprint" style="min-height:200px;height:82%;width:98%;" >
+			</pre>
+			<div id="s#######sInputDivId" style="height:100%;width:100%">
+				<textarea  id="s#######s" type="" data-options="multiline:true" style="height:100%;width:100%;display:none;"></textarea >
+			</div>
+    	</div>
+    </div>
+    <div data-options="region:'center'"> 
+    	<pre id="s#######sOutXMLId" class="prettyprint" style="min-height:200px;height:82%;width:98%;" >
+    		
+		</pre>
+    </div>
+    <div id="s#######stab-tools" style="text-align: center;">
+        <a id="s#######s" href="javascript:void(0)" class="easyui-linkbutton"  onclick="submitForm('s#######s')" style="color:red;">发送请求</a>
+    </div>
+    <input id="s#######sInputUrl"  type="hidden"  >	
+    <input id="s#######sContentType"  type="hidden"  >	
+</div>

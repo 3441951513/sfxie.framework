@@ -1,0 +1,76 @@
+//送礼接口
+//用户中心接口
+apiRootArray.push(
+		{
+		    name:'送礼',
+		    id:'gift'
+		}
+);
+
+apiArray.push({
+    parentId:'gift',
+    name:'获取成就记录',
+    id:'getAchievementRecord',
+    url:'/gift/getAchievementRecord',
+    type:'POST',
+    xmlParam:'',
+	developer:"喻龙斌"
+},{
+    parentId:'gift',
+    name:'领取成就奖励',
+    id:'getAchievementReward',
+    url:'/gift/getAchievementReward',
+    type:'POST',
+    xmlParam:'',
+	developer:"喻龙斌"
+},{
+    parentId:'gift',
+    name:'获取福利发码海报',
+    id:'getWelfarePoster',
+    url:'/api3/gift/getWelfarePoster',
+    type:'POST',
+    xmlParam:'',
+	developer:"喻龙斌"
+},{
+	parentId:'gift',
+    name:'领取福利',
+    id:'getWelfare',
+    url:'/api3/gift/getWelfare',
+    type:'POST',
+    xmlParam:'',
+	developer:"黄兴"
+    }
+,{
+	parentId:'gift',
+    name:'送福利查询',
+    id:'getWelfareRecord',
+    url:'/api3/gift/getWelfareRecord',
+    type:'POST',
+    xmlParam:'',
+	developer:"黄兴"
+},{
+	parentId:'gift',
+    name:'获取撞大运配置信息',
+    id:'getLuckyConfig',
+    url:'/gift/getLuckyConfig',
+    type:'POST',
+    xmlParam:'',
+	developer:"黄兴"
+},{
+	parentId:'gift',
+    name:'撞大运抽奖',
+    id:'luckyDraw',
+    url:'/gift/luckyDraw',
+    type:'POST',
+    xmlParam:'',
+	developer:"喻龙斌"
+},{
+	parentId:'gift',
+    name:'获取幸运儿名单',
+    id:'getluckerRecord',
+    url:'/gift/getLuckerRecord',
+    type:'POST',
+    xmlParam:'',
+	developer:"喻龙斌"
+});
+

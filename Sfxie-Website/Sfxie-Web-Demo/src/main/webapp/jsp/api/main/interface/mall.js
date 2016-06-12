@@ -1,0 +1,80 @@
+//商城接口
+apiRootArray.push({
+	name:'商城模块',
+	id:'mall',
+	developer:"谢声锋"
+});
+
+apiArray.push({
+	parentId:'mall',
+	name:'获取商城首页分类',
+	id:'getMallClassifyList',
+	url:'/api3/mall/getMallClassifyList',
+	type:'POST',
+	fileType:'xml',
+	developer:"谢声锋"
+});
+apiArray.push({
+	parentId:'mall',
+	name:'获取商城分类商品',
+	id:'getMallClassifyProductList',
+	url:'/api3/mall/ getMallClassifyProductList',
+	type:'POST',
+	fileType:'xml',
+	developer:"谢声锋"
+});
+apiArray.push({
+	parentId:'mall',
+	name:'获取购买商品详情',
+	id:'getGoodsDetail',
+	url:'/api3/mall/getGoodsDetail',
+	type:'POST',
+	fileType:'xml',
+	developer:"谢声锋"
+});
+apiArray.push({
+	parentId:'mall',
+	name:'创建购买订单',
+	id:'createPurchaseOrder',
+	url:'/api3/mall/createPurchaseOrder',
+	type:'POST',
+	fileType:'xml',
+	developer:"谢声锋"
+});
+apiArray.push({
+	parentId:'mall',
+	name:'查询订单支付状态',
+	id:'queryOrderState',
+	url:'/api3/mall/getPayState',
+	type:'POST',
+	fileType:'xml',
+	developer:"谢声锋"
+	
+});
+apiArray.push({
+	parentId:'mall',
+	name:'提交订单成功回调(支付宝)',
+	id:'paySucceededCallbackForZfb',
+	url:'/api3/mall/paySucceededCallbackForZfb',
+	type:'POST',
+	fileType:'xml',
+	developer:"谢声锋"
+});
+apiArray.push({
+	parentId:'mall',
+	name:'提交订单成功回调(微信)',
+	id:'paySucceededCallbackForWX',
+	url:'/api3/mall/paySucceededCallbackForWX',
+	type:'POST',
+	fileType:'xml',
+	developer:"谢声锋"
+});
+apiArray.push({
+	parentId:'mall',
+	name:'确认订单(微信)',
+	id:'wxConfirmOrder',
+	url:'/api3/mall/wxConfirmOrder',
+	type:'POST',
+	fileType:'xml',
+	developer:"谢声锋"
+});

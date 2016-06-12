@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  	   xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+      http://www.springframework.org/schema/aop
+      http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+      http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context-4.0.xsd" default-lazy-init="false" default-autowire="byName">
+
+	<!--     mecached全局aop 	-->
+	<aop:aspectj-autoproxy proxy-target-class="true"/>
+    <bean class="com.sfxie.extension.memcached.aop.MemcachedAspect"/>
+    
+	<context:component-scan base-package="com.sfxie.extension.memcached.service" />
+    <bean name="memcachedClientBuilder" class="net.rubyeye.xmemcached.XMemcachedClientBuilder">
+        <!-- XMemcachedClientBuilder have two arguments.First is server list,and second is weights array. -->
+        <constructor-arg>
+            <list>
+                <bean class="java.net.InetSocketAddress">
+                    <constructor-arg>
+                        <value>${memcached.host}</value>
+                    </constructor-arg>
+                    <constructor-arg>
+                        <value>${memcached.port}</value>
+                    </constructor-arg>
+                </bean>
+            </list>
+        </constructor-arg>
+        <constructor-arg>
+            <list>
+                <!--<value>1</value>-->
+                <value>1</value>
+            </list>
+        </constructor-arg>
+
+        <!-- nio connection pool size -->
+        <property name="connectionPoolSize" value="2"></property>
+
+        <!-- Use binary protocol,default is TextCommandFactory -->
+        <property name="commandFactory">
+            <bean class="net.rubyeye.xmemcached.command.TextCommandFactory"></bean>
+        </property>
+
+        <!-- Distributed strategy -->
+        <property name="sessionLocator">
+            <bean class="net.rubyeye.xmemcached.impl.KetamaMemcachedSessionLocator"></bean>
+        </property>
+
+        <!-- Serializing transcoder -->
+        <property name="transcoder">
+            <bean class="net.rubyeye.xmemcached.transcoders.SerializingTranscoder"/>
+        </property>
+    </bean>
+    <!-- Use factory bean to build memcached client -->
+    <bean name="memcachedClient" factory-bean="memcachedClientBuilder" factory-method="build" destroy-method="shutdown">
+        <property name="connectTimeout" value="100000"/>
+        <property name="opTimeout" value="100000"/>
+    </bean>
+
+    <bean id="cacheApi" class="com.sfxie.extension.memcached.CacheApiImpl"/>
+</beans>

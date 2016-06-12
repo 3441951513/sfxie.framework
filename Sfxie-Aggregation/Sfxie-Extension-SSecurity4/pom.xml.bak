@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.golive</groupId>
+		<artifactId>GoLive-Aggregation</artifactId>
+		<version>0.0.1-RELEASE</version>
+	</parent>
+	<groupId>com.sfxie.extension</groupId>
+	<artifactId>GoLive-Extension-SSecurity4</artifactId>
+	<name>GoLive-Extension-SSecurity4</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>com.sfxie.extension</groupId>
+			<artifactId>GoLive-Extension-Spring4</artifactId>
+	  		<version>${golive.version}</version>
+	  		<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.sfxie.utils</groupId> 
+		    <artifactId>GoLive-Utils</artifactId>
+	  		<version>${golive.version}</version>
+	  		<scope>compile</scope>
+		</dependency>
+		<dependency>
+	        <groupId>org.springframework.security</groupId>
+	        <artifactId>spring-security-web</artifactId>
+	        <version>4.0.2.RELEASE</version>
+	    </dependency>
+	    <dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-config</artifactId>
+		    <version>4.0.2.RELEASE</version>
+		</dependency>
+	</dependencies> 
+</project>

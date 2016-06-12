@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- - - Licensed under the Apache License, Version 2.0 (the "License"); 
+	- you may not use this file except in compliance with the License. - You 
+	may obtain a copy of the License at - - http://www.apache.org/licenses/LICENSE-2.0 
+	- - Unless required by applicable law or agreed to in writing, software - 
+	distributed under the License is distributed on an "AS IS" BASIS, - WITHOUT 
+	WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. - See the 
+	License for the specific language governing permissions and - limitations 
+	under the License. -->
+<!DOCTYPE mycat:rule SYSTEM "rule.dtd">
+<mycat:rule xmlns:mycat="http://org.opencloudb/">
+	<!-- 编程指定方式分区 -->
+	<tableRule name="sharding-by-companyCode">
+		<rule>
+			<columns>partition_company</columns>
+			<algorithm>sharding-by-companyCode</algorithm>
+		</rule>
+	</tableRule>
+	<function name="sharding-by-companyCode" class="org.opencloudb.route.function.PartitionDirectBySubString">
+		<property name="startIndex">0</property>
+		<property name="size">8</property>
+		<property name="partitionCount">3</property>
+		<property name="defaultPartition">0</property>
+	</function>
+</mycat:rule>
+ 

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE mycat:schema SYSTEM "schema.dtd">
+<mycat:schema xmlns:mycat="http://org.opencloudb/">
+
+	<schema name="TESTDB" checkSQLschema="false" sqlMaxLimit="100">
+		<table name="sfxie_sys_organizition" primaryKey="ID" type="global"  dataNode="dn1$0-2"></table>
+		<table name="sfxie_sys_company" primaryKey="ID" type="global"  dataNode="dn1$0-2"></table>
+		<table name="sfxie_sys_department" dataNode="dn1$0-2" rule="sharding-by-companyCode"></table>
+		<table name="sfxie_sys_post" dataNode="dn1$0-2" rule="sharding-by-companyCode"></table>
+		<table name="sfxie_sys_userinfo" dataNode="dn1$0-2" rule="sharding-by-companyCode"></table>
+		<table name="sfxie_sys_user_relation" dataNode="dn1$0-2" rule="sharding-by-companyCode"></table>
+	</schema>
+	<dataNode name="dn1$0-2" dataHost="localhost1" database="sfxie_oa_$0-2" />
+	<dataHost name="localhost1" maxCon="1000" minCon="10" balance="0" writeType="0" dbType="mysql" dbDriver="native" switchType="1"  slaveThreshold="100">
+		<heartbeat>select user()</heartbeat>
+		<!-- can have multi write hosts -->
+		<writeHost host="hostM1" url="localhost:3306" user="root"
+			password="root">
+			<!-- can have multi read hosts -->
+		</writeHost>
+	</dataHost>
+
+</mycat:schema>

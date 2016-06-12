@@ -1,0 +1,87 @@
+﻿<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>Sfxie-Aggregation</artifactId>
+    <groupId>com.sfxie</groupId>
+    <version>${sfxie.version}</version>
+  </parent>
+  <groupId>com.sfxie.extension</groupId>
+  <artifactId>Sfxie-Extension-Cxf</artifactId>
+  <name>Sfxie-Extension-Cxf</name>
+  <properties>
+        <!-- mybatis版本号 -->
+        <cxf.version>3.0.0</cxf.version>
+  </properties>
+  <dependencies>
+  		<!-- <dependency>
+			<groupId>com.sfxie.extension</groupId>
+			<artifactId>Sfxie-Extension-Spring4</artifactId>
+	  		<version>${sfxie.version}</version> 
+		</dependency>
+		<dependency>
+	        <groupId>org.springframework.ws</groupId>
+	        <artifactId>spring-ws-core</artifactId>
+	        <version>2.2.1.RELEASE</version>
+	    </dependency>
+	    <dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>${cxf.version}</version>
+		</dependency> -->
+		
+		
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<version>1.2.3.RELEASE</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+                <dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-webapp</artifactId>
+			<version>9.3.0.M2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-ws</artifactId>
+			<version>1.2.3.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>jaxen</groupId>
+			<artifactId>jaxen</artifactId>
+			<version>1.1.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jdom</groupId>
+			<artifactId>jdom2</artifactId>
+			<version>2.0.6</version>
+		</dependency>
+		<dependency>
+			<groupId>wsdl4j</groupId>
+			<artifactId>wsdl4j</artifactId>
+			<version>1.6.3</version>
+		</dependency>
+  </dependencies>
+</project>

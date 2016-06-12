@@ -1,0 +1,4 @@
+create /logger d
+create /logger/level d
+create /logger/level/change dubug
+set /logger/level/change dubug

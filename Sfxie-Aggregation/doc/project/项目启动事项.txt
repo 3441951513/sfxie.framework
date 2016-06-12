@@ -1,0 +1,6 @@
+1.	解压GoLive-Extension-Datasource\db\mycat\mycat-win-8266.zip到K:\xsf\soft\java\mycat\server\mycat下
+2. 	启动mycat:
+		cd K:\xsf\soft\java\mycat\server\mycat\mycat-win-8266\bin
+		K:
+		startup_nowrap.bat
+

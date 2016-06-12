@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE mycat:schema SYSTEM "schema.dtd">
+<mycat:schema xmlns:mycat="http://org.opencloudb/">
+
+	<!-- <schema name="TESTDB" checkSQLschema="false">
+			mysql
+			<table name="g_place_type" dataNode="datanodeGolive" ></table>
+	</schema> -->
+	<schema name="statics" checkSQLschema="false" sqlMaxLimit="100">
+			<table name="test_storm_statics_channel" dataNode="statics$0-31" ></table>
+	</schema>
+	
+	<dataNode name="statics$0-7"   dataHost="xsfcjy-106-3307" database="sfxie_mycat_$0-7" />
+	<dataNode name="statics$8-15"  dataHost="xsfcjy-106-3308" database="sfxie_mycat_$8-15" />
+	<dataNode name="statics$16-23" dataHost="xsfcjy-105-3307" database="sfxie_mycat_$16-23" />
+	<dataNode name="statics$24-31" dataHost="xsfcjy-105-3308" database="sfxie_mycat_$24-31" />
+	
+	
+	<dataHost name="xsfcjy-106-3307" maxCon="50" minCon="10" balance="0" writeType="0" dbType="mysql" dbDriver="native" switchType="1"  slaveThreshold="100">
+		<heartbeat>select user()</heartbeat>
+		<!-- can have multi write hosts -->
+		<writeHost host="hostM1" url="xsfcjy.oicp.net:8607" user="root" password="root">
+		<!-- <writeHost host="hostM1" url="xsfcjy.oicp.net:3306" user="root" password="root"> -->
+			<!-- can have multi read hosts -->
+		</writeHost>
+	</dataHost>
+	
+	<dataHost name="xsfcjy-106-3308" maxCon="50" minCon="10" balance="0" writeType="0" dbType="mysql" dbDriver="native" switchType="1"  slaveThreshold="100">
+		<heartbeat>select user()</heartbeat>
+		<!-- can have multi write hosts -->
+		<writeHost host="hostM1" url="xsfcjy.oicp.net:8608" user="root" password="root">
+		<!-- <writeHost host="hostM1" url="xsfcjy.oicp.net:3306" user="root" password="root"> -->
+			<!-- can have multi read hosts -->
+		</writeHost>
+	</dataHost>
+	
+	<dataHost name="xsfcjy-105-3307" maxCon="50" minCon="10" balance="0" writeType="0" dbType="mysql" dbDriver="native" switchType="1"  slaveThreshold="100">
+		<heartbeat>select user()</heartbeat>
+		<!-- can have multi write hosts -->
+		<writeHost host="hostM1" url="xsfcjy.oicp.net:8507" user="root" password="root">
+		<!-- <writeHost host="hostM1" url="xsfcjy.oicp.net:3306" user="root" password="root"> -->
+			<!-- can have multi read hosts -->
+		</writeHost>
+	</dataHost>
+	
+	<dataHost name="xsfcjy-105-3308" maxCon="50" minCon="10" balance="0" writeType="0" dbType="mysql" dbDriver="native" switchType="1"  slaveThreshold="100">
+		<heartbeat>select user()</heartbeat>
+		<!-- can have multi write hosts -->
+		<writeHost host="hostM1" url="xsfcjy.oicp.net:8508" user="root" password="root">
+		<!-- <writeHost host="hostM1" url="xsfcjy.oicp.net:3306" user="root" password="root"> -->
+			<!-- can have multi read hosts -->
+		</writeHost>
+	</dataHost>
+</mycat:schema>

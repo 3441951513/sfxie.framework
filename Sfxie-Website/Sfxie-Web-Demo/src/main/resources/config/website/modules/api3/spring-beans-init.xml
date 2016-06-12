@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+      http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+      
+	<import resource="classpath*:config/extension/zookeeper/spring/xml/extension-zookeeper-init.xml" />
+	<import resource="classpath*:config/extension/zookeeper/spring/xml/extension-zookeeper-listener.xml" />
+<!-- 	<import resource="classpath*:config/extension/mybatis/extension-mybatis-config-zk.xml" /> -->
+
+<!--     引入全局异常处理 		-->
+	<bean class="com.sfxie.website.common.exception.DefaultExceptionResponseHandler" />
+    <bean class="com.sfxie.extension.spring4.mvc.controller.ExceptionInterceptorController"/>
+</beans>

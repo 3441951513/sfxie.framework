@@ -1,0 +1,1 @@
+双master+heartbeat实现自动切换 : 	http://blog.csdn.net/wyzxg/article/details/7741116

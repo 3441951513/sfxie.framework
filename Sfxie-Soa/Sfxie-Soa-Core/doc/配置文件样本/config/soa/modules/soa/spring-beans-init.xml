@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+      http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+      
+	<bean id="ipWhiteList" class="com.sfxie.soa.modules.dubbo.filter.security.IpWhiteList">
+		<property name="isEnabled" value="${dubbo.filter.isEnabledOaAuthority}"></property>
+		<property name="ipList">
+            <list>
+                <value>192.168.10.112</value>
+            </list>
+        </property>
+	</bean>
+	
+	<import resource="classpath*:config/soa/modules/soa/dubbo/**.xml" />
+</beans>

@@ -1,0 +1,15 @@
+服务提供方和服务消费方调用过程拦截，Dubbo本身的大多功能均基于此扩展点实现，每次远程方法执行，该拦截都会被执行，请注意对性能的影响。
+约定：
+
+    用户自定义filter默认在内置filter之后。
+    特殊值default，表示缺省扩展点插入的位置。
+        比如：filter="xxx,default,yyy"，表示xxx在缺省filter之前，yyy在缺省filter之后。
+    特殊符号-，表示剔除。
+        比如：filter="-foo1"，剔除添加缺省扩展点foo1。
+        比如：filter="-default"，剔除添加所有缺省扩展点。
+    provider和service同时配置的filter时，累加所有filter，而不是覆盖。
+        比如：<dubbo:provider filter="xxx,yyy"/>和<dubbo:service filter="aaa,bbb" />，则xxx,yyy,aaa,bbb均会生效。
+        如果要覆盖，需配置：<dubbo:service filter="-xxx,-yyy,aaa,bbb" />
+        
+        
+自定义的filter需要添加到dubbo.jar包中的META-INF\dubbo\internal目录下的com.alibaba.dubbo.rpc.Filter文件中.

@@ -1,0 +1,1 @@
+config文件夹放在src/main/resources目录下

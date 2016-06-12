@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <request>
+        <parameter language="zh" region="CN">
+            <user name="GolivePay" type="system" token="" />
+            <order serial="lhq202451458527551346" />
+        </parameter>
+   </request>

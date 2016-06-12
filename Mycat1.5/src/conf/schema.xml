@@ -1,0 +1,221 @@
+<?xml version="1.0"?>
+<!DOCTYPE mycat:schema SYSTEM "schema.dtd">
+<mycat:schema xmlns:mycat="http://org.opencloudb/">
+
+	<schema name="TESTDB" checkSQLschema="false" sqlMaxLimit="1000000000">
+			<!-- mysql -->
+			<table name="g_ad" dataNode="datanodeGolive" ></table>
+			<table name="g_ad3_exception_userid" dataNode="datanodeGolive" ></table>
+			<table name="g_ad3_fore_notice" dataNode="datanodeGolive" ></table>
+			<table name="g_ad3_good_poster" dataNode="datanodeGolive" ></table>
+			<table name="g_ad3_goods" dataNode="datanodeGolive" ></table>
+			<table name="g_ad3_goods_attr" dataNode="datanodeGolive" ></table>
+			<table name="g_ad3_goods_relation" dataNode="datanodeGolive" ></table>
+			<table name="g_ad3_goods_to_attr" dataNode="datanodeGolive" ></table>
+			<table name="g_ad3_goods_type" dataNode="datanodeGolive" ></table>
+			<table name="g_ad3_order_pay" dataNode="datanodeGolive" ></table>
+			<table name="g_ad3_prize" dataNode="datanodeGolive" ></table>
+			<table name="g_ad3_prize_code" dataNode="datanodeGolive" ></table>
+			<table name="g_ad3_recomend_resources" dataNode="datanodeGolive" ></table>
+			<table name="g_ad3_sweepstake" dataNode="datanodeGolive" ></table>
+			<table name="g_ad3_sweepstake_record" dataNode="datanodeGolive" ></table>
+			<table name="g_ad3_user_address" dataNode="datanodeGolive" ></table>
+			<table name="g_ad3_week_achievement" dataNode="datanodeGolive" ></table>
+			<table name="g_ad3_week_achievement_receive" dataNode="datanodeGolive" ></table>
+			<table name="g_ad3_week_free_times" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_advertiser" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_advertiser_ad" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_agreement" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_analysis_user_201509" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_analysis_user_201510" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_analysis_user_201511" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_answer_log" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_answer_log_201507" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_answer_log_201508" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_answer_log_201509" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_answer_log_201510" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_answer_log_201511" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_answer_log_201512" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_answer_log_201601" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_answer_log_201602" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_answer_log_201603" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_answer_log_201604" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_app_type" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_bussiness_type" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_channel" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_city" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_classify" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_clienttype" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_code" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_copyolddata" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_cs_info" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_device" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_district" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_electronic_voucher" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_events_material" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_events_reward_record" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_feedback" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_getgold_log" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_getgold_log_201507" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_getgold_log_201508" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_getgold_log_201509" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_getgold_log_201510" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_getgold_log_201511" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_getgold_log_201512" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_getgold_log_201601" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_getgold_log_201602" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_getgold_log_201603" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_getgold_log_201604" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_getgold_log_201605" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_goods" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_goods_posters" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_goods_relation" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_goods_type" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_hit_treasure_count" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_hot_goods" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_invoke_sw" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_job" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_launcher" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_log_access_goods" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_log_access_hotgoods" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_lottery_info" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_lottery_static_info" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_material" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_material_record" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_material_type" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_message" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_movie" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_order" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_order_address" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_order_goods" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_order_lock" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_order_type" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_place" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_place_classify" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_plan" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_province" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_puton" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_puton_info" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_puton_old" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_pv_log" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_pv_log_201507" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_pv_log_201508" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_pv_log_201509" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_pv_log_201510" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_pv_log_201511" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_pv_log_201512" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_pv_log_201601" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_pv_log_201602" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_pv_log_201603" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_pv_log_201604" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_pv_log_201605" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_question" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_recharge_hist" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_recomend_resources" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_resource_url" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_resource_url_test" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_standard" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_staytime" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_sys_action" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_sys_action_rm" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_sys_auth_data" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_sys_auth_data_rm" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_sys_dropdown" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_sys_log" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_sys_menu" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_sys_role" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_sys_rolemenu" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_sys_user" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_sys_userrole" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_sysconfig" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_temp" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_ticket_mutex" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_ticket_mutex_answerlog" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_ticket_mutex_goldlog" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_ticket_mutex_goods" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_ticket_mutex_pvlog" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_tips_resource" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_tocinema_log" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_upgrade_version" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_upgrade_version_record" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_upgrade_version_type" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_user" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_user_data" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_user_device" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_user_feedback" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_user_guide" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_user_loginout_log" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_usercenter_loginout_log" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_usually_address" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_wx_activity" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_wx_discount_code" dataNode="datanodeGolive" ></table>
+			<table name="g_ad_wx_receive_record" dataNode="datanodeGolive" ></table>
+			<table name="g_base_exception" dataNode="datanodeGolive" ></table>
+			<table name="g_base_type" dataNode="datanodeGolive" ></table>
+			<table name="g_directional" dataNode="datanodeGolive" ></table>
+			<table name="g_member_account" dataNode="datanodeGolive" ></table>
+			<table name="g_member_membertoaccount" dataNode="datanodeGolive" ></table>
+			<table name="g_movie_activity" dataNode="datanodeGolive" ></table>
+			<table name="g_movie_activity_release" dataNode="datanodeGolive" ></table>
+			<table name="g_movie_activitycontent_cinema" dataNode="datanodeGolive" ></table>
+			<table name="g_movie_activitycontent_layer" dataNode="datanodeGolive" ></table>
+			<table name="g_movie_activityposter" dataNode="datanodeGolive" ></table>
+			<table name="g_movie_activityvideo" dataNode="datanodeGolive" ></table>
+			<table name="g_movie_backgroundimage" dataNode="datanodeGolive" ></table>
+			<table name="g_movie_backgroundimage_release" dataNode="datanodeGolive" ></table>
+			<table name="g_movie_cinemaactivity" dataNode="datanodeGolive" ></table>
+			<table name="g_movie_content_release" dataNode="datanodeGolive" ></table>
+			<table name="g_movie_emergecategory" dataNode="datanodeGolive" ></table>
+			<table name="g_movie_jmp" dataNode="datanodeGolive" ></table>
+			<table name="g_movie_layeractivity" dataNode="datanodeGolive" ></table>
+			<table name="g_movie_offline" dataNode="datanodeGolive" ></table>
+			<table name="g_place_type" dataNode="datanodeGolive" ></table>
+
+
+			<!-- static count -->
+			
+	</schema>
+	<schema name="USERBEHAVIOR" checkSQLschema="false" sqlMaxLimit="100">
+			<!-- static count -->
+			<table name="g_ad_analysis_ad_place" dataNode="datanodeUserBehavior" ></table>
+			<table name="g_ad_analysis_ads" dataNode="datanodeUserBehavior" ></table>
+			<table name="g_ad_analysis_ads_new" dataNode="datanodeUserBehavior" ></table>
+			<table name="g_ad_analysis_content" dataNode="datanodeUserBehavior" ></table>
+			<table name="g_ad_analysis_exchange" dataNode="datanodeUserBehavior" ></table>
+			<table name="g_ad_analysis_exchange_detail" dataNode="datanodeUserBehavior" ></table>
+			<table name="g_ad_analysis_goods" dataNode="datanodeUserBehavior" ></table>
+			<table name="g_ad_analysis_mall" dataNode="datanodeUserBehavior" ></table>
+			<table name="g_ad_analysis_place" dataNode="datanodeUserBehavior" ></table>
+			<table name="g_ad_analysis_question" dataNode="datanodeUserBehavior" ></table>
+			<table name="g_ad_analysis_raise" dataNode="datanodeUserBehavior" ></table>
+			<table name="g_ad_analysis_reward" dataNode="datanodeUserBehavior" ></table>
+			<table name="g_ad_analysis_reward_range" dataNode="datanodeUserBehavior" ></table>
+			<table name="g_ad_analysis_reward_range0922" dataNode="datanodeUserBehavior" ></table>
+			<table name="g_ad_analysis_reward_range_new" dataNode="datanodeUserBehavior" ></table>
+			<table name="g_ad_analysis_run_log" dataNode="datanodeUserBehavior" ></table>
+			<table name="g_ad_analysis_time_division" dataNode="datanodeUserBehavior" ></table>
+			<table name="g_ad_analysis_time_division_new" dataNode="datanodeUserBehavior" ></table>
+			<table name="g_ad_analysis_user" dataNode="datanodeUserBehavior" ></table>
+			<table name="g_ad_analysis_user_new" dataNode="datanodeUserBehavior" ></table>
+	</schema>
+	
+	<dataNode name="datanodeGolive"   dataHost="hostGolive" database="golivetest" />
+	<dataNode name="datanodeUserBehavior"   dataHost="hostUserBehavior" database="userbehavior" />
+	
+	<dataHost name="hostGolive" maxCon="20" minCon="10" balance="0" writeType="0" dbType="mysql" dbDriver="native" switchType="1"  slaveThreshold="100">
+		<heartbeat>select user()</heartbeat>
+		<!-- can have multi write hosts -->
+		<writeHost host="hostM1" url="183.60.142.159:3306" user="cmstest" password="!mI65DU9B5">
+		<!-- <writeHost host="hostM1" url="xsfcjy.oicp.net:3306" user="root" password="root"> -->
+			<!-- can have multi read hosts -->
+		</writeHost>
+	</dataHost>
+	<dataHost name="hostUserBehavior" maxCon="20" minCon="10" balance="0" writeType="0" dbType="mysql" dbDriver="native" switchType="1"  slaveThreshold="100">
+		<heartbeat>select user()</heartbeat>
+		<!-- can have multi write hosts -->
+		<writeHost host="hostM2" url="183.60.142.159:3306" user="cmstest" password="!mI65DU9B5">
+		<!-- <writeHost host="hostM1" url="xsfcjy.oicp.net:3306" user="root" password="root"> -->
+			<!-- can have multi read hosts -->
+		</writeHost>
+	</dataHost>
+</mycat:schema>

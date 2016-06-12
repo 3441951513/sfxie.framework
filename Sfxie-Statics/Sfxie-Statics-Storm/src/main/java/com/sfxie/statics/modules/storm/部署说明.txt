@@ -1,0 +1,54 @@
+虚拟机路径： J:\xsf\workspace\linux\distribute\CentOS 64-bit.vmx
+
+############################################安装和启动storm#############################################################
+0) 首先请先安装好"storm实验环境前提环境安装.docx"里面的软件
+
+
+1) 用实验用户(我这边是sfxie用户)替换/home/sfxie/java的zookeeper和storm文件夹.
+2) 用root用户替换/etc/hosts文件
+
+######以下用实验用户(我这边是sfxie用户)
+3) 启动zookeeper: 
+	/home/sfxie/java/zookeeper/zookeeper-3.4.6/bin/zkServer.sh start
+4) 查看zkserver是否成功启动: 
+	/home/sfxie/java/zookeeper/zookeeper-3.4.6/bin/zkServer.sh status
+5) 启动storm nimbus: 
+	/home/sfxie/java/storm/storm-0.10.0/bin/storm nimbus&
+6) 启动storm supervisor:
+	/home/sfxie/java/storm/storm-0.10.0/bin/storm supervisor&
+7) 启动storm ui: 
+	/home/sfxie/java/storm/storm-0.10.0/bin/storm ui&
+8) 查看ui: http://localhost:8080
+############################################安装和启动storm#############################################################
+
+
+############################################eclipse中测试storm#############################################################
+%PYTHON%;
+############################################eclipse中测试storm#############################################################
+
+
+
+############################################利用maven打包storm应用#############################################################
+C:\Users\xsf\workspace\java\eclipse\workspace\XSF-Document\trunk\document\java\storm\storm实验\单机环境\storm\storm-0.10.0\examples\storm-starter
+mvn assembly:assembly
+############################################maven打包storm应用#############################################################
+
+############################################发布storm应用到linux#############################################################	
+/home/sfxie/java/storm/storm-0.10.0/bin/storm jar /home/sfxie/java/storm/workspace/storm-worldcount.jar sfxie.test2.MyWordCountTopology worldcount arg2 arg3
+
+/home/sfxie/java/storm/storm-0.10.0/bin/storm jar /home/sfxie/java/storm/workspace/storm-starter-0.10.0-beta1.jar sfxie.rabbitmq.RabbitMQWordCountTopology rabbitmqworldcount arg2 arg3
+############################################发布storm应用到linux#############################################################
+
+############################################kill storm进程#############################################################
+/home/sfxie/java/storm/storm-0.10.0/bin/storm kill rabbitmqworldcount
+############################################kill storm进程#############################################################
+
+############################################重新启动 storm进程#############################################################
+/home/sfxie/java/storm/storm-0.10.0/bin/storm activate rabbitmqworldcount
+############################################重新启动 storm进程#############################################################
+
+
+############################################storm日记目录#############################################################
+/home/sfxie/java/storm/storm-0.10.0/logs
+############################################storm日记目录#############################################################
+		

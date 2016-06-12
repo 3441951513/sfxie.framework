@@ -1,0 +1,18 @@
+package aop;
+
+import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+
+public class SpringAOPTest {
+	
+	@Test
+	public void inteceptorTest(){
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("aop/aop.xml");
+		PersonServer bean = (PersonServer)ctx.getBean("personServiceBean");
+		bean.save(null);
+	}
+	
+
+}

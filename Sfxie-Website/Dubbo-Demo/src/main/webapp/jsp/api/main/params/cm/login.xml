@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<request website="http://xxxx" description="用户登录">
+	<data>
+		<user><user_name>谢声锋</user_name></user>
+	</data>
+	<header><appId>1</appId></header>
+</request>

@@ -1,0 +1,34 @@
+#######################################################windows下安装maven环境#######################################################
+1.	配置windows的环境变量,添加MAVEN_HOME变量名,变量值为GoLive-Aggregation\tool\apache-maven-3.1.0.zip解压后的路径
+2.	修改apache-maven-3.1.0\conf目录下的settings.xml文件中的 <localRepository>D:\workspace\maven\repository</localRepository>节点,节点的文件夹路径改成你自己的系统路径
+#######################################################windows下安装maven环境#######################################################
+
+
+
+#######################################################mvn安装jar到远程服务器命令#######################################################
+cd F:\网站建设\workspace\20160324\GoLive-Aggregation
+f:
+mvn deploy
+
+
+
+cd D:\workspace\sfxie\workspace\GoLive-Aggregation>cd D:\workspace\sfxie\workspace\GoLive-Aggregation
+d:
+mvn deploy
+
+
+cd D:\workspace\sfxie\workspace\GoLive-Soa
+d:
+mvn deploy
+
+
+cd D:\workspace\sfxie\workspace\GoLive-Statics
+d:
+mvn deploy
+
+#######################################################mvn安装jar到远程服务器命令#######################################################
+
+
+#######################################################查找maven 依赖树命令#######################################################
+mvn dependency:tree -->D:\workspace\sfxie\workspace\GoLive-Aggregation\doc\svn-maven\GoLive-Aggregation-dependency.txt
+#######################################################查找maven 依赖树命令#######################################################

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.sfxie</groupId>
+		<artifactId>Sfxie-Aggregation</artifactId>
+		<version>${sfxie.version}</version>
+	</parent>
+	<groupId>com.sfxie.extension</groupId>
+	<artifactId>Sfxie-Extension-Amqp</artifactId>
+	<name>Sfxie-Extension-Amqp</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>com.sfxie.extension</groupId>
+			<artifactId>Sfxie-Extension-Logger</artifactId>
+	  		<version>${sfxie.version}</version>
+	  		<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.amqp</groupId>
+			<artifactId>spring-rabbit</artifactId>
+			<version>1.5.3.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>4.2.1.RELEASE</version>
+		</dependency>
+	</dependencies> 
+</project>

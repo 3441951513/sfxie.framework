@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.sfxie.soa</groupId>
+	<artifactId>Sfxie-Soa</artifactId>
+	<version>0.0.1-RELEASE</version>
+	<packaging>pom</packaging>
+	<name>Sfxie-Soa</name>
+	<modules>
+		<module>Sfxie-Soa-Core</module>
+    	<module>Sfxie-Soa-Povider</module>
+    	<module>Sfxie-Soa-Interface</module>
+    	<module>Sfxie-Soa-NettyMvc</module>
+	</modules>
+	<distributionManagement>
+		<repository>
+			<id>nexus-releases</id>
+			<url>http://${nexus.url}/nexus-2.6.4-02/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus-snapshots</id>
+			<url>http://${nexus.url}/nexus-2.6.4-02/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+	<build>
+		<plugins>
+		 <plugin> 
+           <artifactId>maven-deploy-plugin</artifactId> 
+           <version>2.3</version> 
+         </plugin> 
+         </plugins>
+    </build>
+	<properties>
+		<sfxie.version>0.0.1-RELEASE</sfxie.version>
+		<sfxie.soa.version>0.0.1-RELEASE</sfxie.soa.version>
+		<sfxie.encoding>UTF-8</sfxie.encoding>
+		<!-- 项目编码设置，仅对maven有效，方便CI -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- nexus Servers -->
+		<nexus.url>xsfcjy.oicp.net:8888</nexus.url>
+	</properties>
+</project>

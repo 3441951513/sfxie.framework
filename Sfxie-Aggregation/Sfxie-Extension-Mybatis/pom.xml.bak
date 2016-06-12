@@ -1,0 +1,65 @@
+﻿<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>GoLive-Aggregation</artifactId>
+    <groupId>com.golive</groupId>
+    <version>0.0.1-RELEASE</version>
+  </parent>
+  <groupId>com.sfxie.extension</groupId>
+  <artifactId>GoLive-Extension-Mybatis</artifactId>
+  <name>GoLive-Extension-Mybatis</name>
+  <properties>
+        <!-- mybatis版本号 -->
+        <mybatis.version>3.2.6</mybatis.version>
+  </properties>
+  <dependencies>
+  		<dependency>
+			<groupId>com.sfxie.extension</groupId>
+			<artifactId>GoLive-Extension-Spring4</artifactId>
+	  		<version>${golive.version}</version> 
+		</dependency>
+		<dependency>
+		   <groupId>com.sfxie.extension</groupId>
+		   <artifactId>GoLive-Extension-Datasource</artifactId>
+	  		<version>${golive.version}</version> 
+		</dependency>
+		<!-- <dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId> 
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency> -->
+  		<dependency> 
+	        <groupId>com.oracle</groupId> 
+	        <artifactId>ojdbc6</artifactId>
+	        <version>1.0</version>
+      	</dependency>
+      	<!-- <dependency>
+	        <groupId>mysql</groupId> 
+	        <artifactId>mysql-connector-java</artifactId>
+	        <version>5.1.6</version>
+      	</dependency> -->
+      	<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.18</version>
+		</dependency>
+        <!-- mybatis核心包 -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>${mybatis.version}</version>
+        </dependency>  
+        <!-- mybatis/spring包 -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>1.2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+  </dependencies>
+</project>

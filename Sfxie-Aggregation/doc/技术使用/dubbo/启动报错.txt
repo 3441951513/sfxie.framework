@@ -1,0 +1,31 @@
+
+    报错：类中关于override的方法的报错
+
+解决：把依赖的jdk1.5换成jdk1.6
+
+    报错：dubbo:service interface="com.mycompany.app.EchoService" ref="echoService" />
+
+    提示：cvc-complex-type.2.4.c: The matching wildcard is strict, but no declaration can be found for element 'dubbo:service'.
+
+解决：dubbo的问题是因为他的官网关了 对应的xsd无法获取到
+
+    对于spring来说这个文件需要从本地读取才能正常
+
+    修改方法是提取dubbo项目中的dubbo.xsd文件，
+
+    打开Eclipse的Window - preferences 选择 XMLCatalog 
+
+    右边user specified entries 下add两条记录
+
+    1.Location选择你的dubbo.xsd文件
+
+    key type选Namespace name
+
+    key填入http://code.alibabatech.com/schema/dubbo
+
+
+    2.Location选择你的dubbo.xsd文件
+
+    key type选schema location
+
+    key填入http://code.alibabatech.com/schema/dubbo/dubbo.xsd
