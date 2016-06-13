@@ -6,10 +6,11 @@
 	<parent>
 		<groupId>com.sfxie</groupId>
 		<artifactId>Sfxie-Aggregation</artifactId>
-		<version>${sfxie.version}</version>
+		<version>0.0.1-RELEASE</version>
 	</parent>
 	<groupId>com.sfxie.extension</groupId>
 	<artifactId>Sfxie-Extension-Spring4</artifactId>
+	<version>${sfxie.version}</version>
 	<name>Sfxie-Extension-Spring4</name>
 	<url>http://maven.apache.org</url>
 	<properties>

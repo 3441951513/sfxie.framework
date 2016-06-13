@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.sfxie</groupId>
 		<artifactId>Sfxie-Aggregation</artifactId>
-		<version>${sfxie.version}</version>
+		<version>0.0.1-RELEASE</version>
 	</parent>
 	<groupId>com.sfxie.test</groupId>
 	<artifactId>Sfxie-Extension-Test</artifactId>

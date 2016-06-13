@@ -3,7 +3,7 @@
   <parent>
     <artifactId>Sfxie-Aggregation</artifactId>
     <groupId>com.sfxie</groupId>
-    <version>${sfxie.version}</version>
+    <version>0.0.1-RELEASE</version>
   </parent>
   <groupId>com.sfxie.extension</groupId>
   <artifactId>Sfxie-Extension-Datasource</artifactId>
@@ -17,12 +17,14 @@
 			<groupId>com.sfxie.extension</groupId>
 			<artifactId>Sfxie-Extension-Spring4</artifactId>
 	  		<version>${sfxie.version}</version> 
+	  		<scope>compile</scope>
 		</dependency>
-		<dependency>
+		<dependency> 
 		   <groupId>com.sfxie.extension</groupId>
 		   <artifactId>Sfxie-Extension-Zookeeper</artifactId>
 	  		<version>${sfxie.version}</version> 
-		</dependency>
+	  		<scope>compile</scope>
+		</dependency>  
 		<!-- <dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId> 

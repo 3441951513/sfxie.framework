@@ -6,10 +6,10 @@
 	<parent>
 		<groupId>com.sfxie</groupId>
 		<artifactId>Sfxie-Aggregation</artifactId>
-		<version>${sfxie.version}</version>
 	</parent>
 	<groupId>com.sfxie.extension</groupId>
 	<artifactId>Sfxie-Extension-Jedis</artifactId>
+	<version>${sfxie.version}</version>
 	<name>Sfxie-Extension-Jedis</name>
 	<url>http://maven.apache.org</url>
 	<properties>

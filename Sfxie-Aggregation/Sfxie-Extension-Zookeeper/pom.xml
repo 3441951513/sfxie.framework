@@ -3,7 +3,7 @@
   <parent>
     <artifactId>Sfxie-Aggregation</artifactId>
     <groupId>com.sfxie</groupId>
-    <version>${sfxie.version}</version>
+    <version>0.0.1-RELEASE</version>
   </parent>
   <groupId>com.sfxie.extension</groupId>
   <artifactId>Sfxie-Extension-Zookeeper</artifactId>
