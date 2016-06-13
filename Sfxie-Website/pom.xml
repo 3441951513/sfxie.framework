@@ -84,7 +84,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
-				<version>2.4</version>
+				<version>2.1.1</version>
 				<configuration>
 					<source>1.7</source>
 					<target>1.7</target>
@@ -126,7 +126,7 @@
 	</dependencies>
  
 	<properties>
-		<golive.version>0.0.1-RELEASE</golive.version>
+		<sfxie.version>0.0.1-RELEASE</sfxie.version>
 	</properties>
 	<modules>
 			<module>Sfxie-Web-Demo</module>

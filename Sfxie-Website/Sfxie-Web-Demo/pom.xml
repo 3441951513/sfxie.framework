@@ -17,7 +17,7 @@
 	  <artifactId>spring-data-mongodb</artifactId>
 	  <version>1.8.1.RELEASE</version>
 	  <exclusions>    
-           <exclusion>        
+           <exclusion>
                 <groupId>org.springframework</groupId>            
                 <artifactId>spring-beans</artifactId>    
            </exclusion>  
@@ -42,7 +42,7 @@
 	<dependency>
 		<groupId>com.sfxie.extension</groupId>
   		<artifactId>Sfxie-Extension-Mybatis</artifactId>
-  		<version>${golive.version}</version>
+  		<version>${sfxie.version}</version>
   		<scope>compile</scope> 
 	</dependency>  
 	<dependency>
@@ -81,37 +81,37 @@
 	<dependency> 
 		<groupId>com.sfxie.extension</groupId>
   		<artifactId>Sfxie-Message-Memcached</artifactId>
-  		<version>${golive.version}</version>
+  		<version>${sfxie.version}</version>
   		<scope>compile</scope> 
 	</dependency> 
 	<dependency>
 		<groupId>com.sfxie.extension</groupId>
 		<artifactId>Sfxie-Extension-Spring4</artifactId>
-  		<version>${golive.version}</version>
+  		<version>${sfxie.version}</version>
   		<scope>compile</scope> 
 	</dependency> 
 	<dependency>
 	  <groupId>com.sfxie.extension</groupId>
 	  <artifactId>Sfxie-Extension-Zookeeper</artifactId>
-  		<version>${golive.version}</version>
+  		<version>${sfxie.version}</version>
   		<scope>compile</scope> 
 	</dependency> 
 	<dependency>
 		<groupId>com.sfxie.soa.provider</groupId>
 		<artifactId>Sfxie-Soa-Povider</artifactId>
-  		<version>${golive.version}</version>
+  		<version>${sfxie.version}</version>
   		<scope>compile</scope> 
 	</dependency> 
 	<!-- <dependency>
 		<groupId>com.sfxie.extension</groupId>
 	  	<artifactId>Sfxie-Extension-Cxf</artifactId>
-  		<version>${golive.version}</version>
+  		<version>${sfxie.version}</version>
   		<scope>compile</scope> 
 	</dependency> --> 
 	<!-- <dependency>
 		<groupId>com.sfxie.extension</groupId>
 	  	<artifactId>Sfxie-Extension-Jedis</artifactId>
-  		<version>${golive.version}</version>
+  		<version>${sfxie.version}</version>
   		<scope>compile</scope> 
 	</dependency> -->
     <dependency>

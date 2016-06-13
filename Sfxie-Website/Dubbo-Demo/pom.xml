@@ -42,7 +42,7 @@
 	<dependency>
 		<groupId>com.sfxie.extension</groupId>
   		<artifactId>Sfxie-Extension-Mybatis</artifactId>
-  		<version>${golive.version}</version>
+  		<version>${sfxie.version}</version>
   		<scope>compile</scope> 
 	</dependency>  
     <dependency>
@@ -59,37 +59,37 @@
 	<dependency> 
 		<groupId>com.sfxie.extension</groupId>
   		<artifactId>Sfxie-Message-Memcached</artifactId>
-  		<version>${golive.version}</version>
+  		<version>${sfxie.version}</version>
   		<scope>compile</scope> 
 	</dependency> 
 	<dependency>
 		<groupId>com.sfxie.extension</groupId>
 		<artifactId>Sfxie-Extension-Spring4</artifactId>
-  		<version>${golive.version}</version>
+  		<version>${sfxie.version}</version>
   		<scope>compile</scope> 
 	</dependency> 
 	<dependency>
 	  <groupId>com.sfxie.extension</groupId>
 	  <artifactId>Sfxie-Extension-Zookeeper</artifactId>
-  		<version>${golive.version}</version>
+  		<version>${sfxie.version}</version>
   		<scope>compile</scope> 
 	</dependency> 
 	<dependency>
 		<groupId>com.sfxie.soa.interface</groupId>
 		<artifactId>Sfxie-Soa-Interface</artifactId>
-  		<version>${golive.version}</version>
+  		<version>${sfxie.version}</version>
   		<scope>compile</scope> 
 	</dependency> 
 	<!-- <dependency>
 		<groupId>com.sfxie.extension</groupId>
 	  	<artifactId>Sfxie-Extension-Cxf</artifactId>
-  		<version>${golive.version}</version>
+  		<version>${sfxie.version}</version>
   		<scope>compile</scope> 
 	</dependency> --> 
 	<!-- <dependency>
 		<groupId>com.sfxie.extension</groupId>
 	  	<artifactId>Sfxie-Extension-Jedis</artifactId>
-  		<version>${golive.version}</version>
+  		<version>${sfxie.version}</version>
   		<scope>compile</scope> 
 	</dependency> -->
     <dependency>
@@ -126,7 +126,7 @@
 		    <groupId>org.jboss.resteasy</groupId>
 		    <artifactId>resteasy-jackson-provider</artifactId>
 		    <version>3.0.7.Final</version>
-		</dependency>
+		</dependency> 
 		
 		<!-- 如果要使用xml序列化 -->
 		<dependency>

@@ -20,7 +20,7 @@
 		<dependency>
 			<groupId>com.sfxie.soa.core</groupId>
 	  		<artifactId>Sfxie-Soa-Core</artifactId>
-			<version>0.0.1-RELEASE</version>
+			<version>${sfxie.soa.version}</version>
 	  		<scope>compile</scope> 
 		</dependency>
 	</dependencies> 

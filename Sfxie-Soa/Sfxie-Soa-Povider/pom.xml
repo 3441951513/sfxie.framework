@@ -20,7 +20,7 @@
 		<dependency>
 			<groupId>com.sfxie.soa.interface</groupId>
 			<artifactId>Sfxie-Soa-Interface</artifactId>
-			<version>0.0.1-RELEASE</version>
+			<version>${sfxie.soa.version}</version>
 	  		<scope>compile</scope> 
 		</dependency>
 		<!-- 如果要使用json序列化 -->
