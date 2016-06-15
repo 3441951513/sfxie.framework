@@ -7,33 +7,15 @@
     <artifactId>Sfxie-Aggregation</artifactId>
 	<version>0.0.1-RELEASE</version>
   </parent>
-  <groupId>com.sfxie.core</groupId> 
-  <artifactId>Sfxie-Core</artifactId>
-  <name>Sfxie-Core</name>
+  <groupId>com.sfxie.exception</groupId> 
+  <artifactId>Sfxie-Exception</artifactId>
+  <name>Sfxie-Exception</name>
   <url>http://maven.apache.org</url>
   <dependencies>
   	<dependency>
 		<groupId>org.springframework</groupId>
 		<artifactId>spring-tx</artifactId>
 		<version>4.2.1.RELEASE</version>
-	</dependency>
-  	<dependency>
-	  	<groupId>com.sfxie.exception</groupId> 
-	  	<artifactId>Sfxie-Exception</artifactId>
-  		<version>${sfxie.version}</version>
-  		<scope>compile</scope>
-	</dependency>
-  	<dependency>
-		<groupId>com.sfxie.utils</groupId>
-		<artifactId>Sfxie-Utils</artifactId>
-  		<version>${sfxie.version}</version>
-  		<scope>compile</scope>
-	</dependency>
-	<dependency>
-		<groupId>javax.servlet</groupId>
-		<artifactId>servlet-api</artifactId> 
-		<version>2.5</version>
-		<scope>provided</scope>
 	</dependency>
   </dependencies>
 </project>

@@ -1,7 +1,6 @@
 package com.sfxie.extension.spring4.mvc.exception;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlRootElement;
@@ -12,9 +11,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sfxie.core.exception.ExceptionEvent;
-import com.sfxie.core.exception.ExceptionEventListener;
-import com.sfxie.core.exception.FrameworkException;
+import com.sfxie.exception.framework.ExceptionEventListener;
+import com.sfxie.exception.framework.FrameworkException;
 import com.sfxie.extension.spring4.mvc.exception.event.logger.LoggerEventHandlerImpl;
 import com.sfxie.extension.spring4.mvc.exception.info.ExceptionEntity;
 
@@ -31,14 +29,7 @@ public class MvcException extends FrameworkException {
 	/**	异常信息实体	*/
 	private ExceptionEntity exceptionEntity;
 
-	/**
-	 * 异常事件监听器列表
-	 */
-	protected List<ExceptionEventListener<? extends ExceptionEvent>> listeners = new LinkedList<ExceptionEventListener<? extends ExceptionEvent>>(); 
-	/**
-	 * 异常代码
-	 */
-	private String errorCode;
+	
 	/**	方法执行时的参数(没有注解的pojo)	*/
 	protected Object[] parameters;
 	/**	方法执行时的参数(有@XmlRootElement注解的pojo)	*/
@@ -81,12 +72,7 @@ public class MvcException extends FrameworkException {
 		super(t.getMessage(),t);
 		initEventListeners();
 	}
-	public String getErrorCode() {
-		return errorCode;
-	}
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
+	
 	private void mappedExceptionEntity(){
 		if(null==exceptionEntity){
 			exceptionEntity = new ExceptionEntity();
@@ -102,44 +88,13 @@ public class MvcException extends FrameworkException {
 		initEventListener();
 	}
 	
-	@Override
-	public void addEventListener(
-			ExceptionEventListener<? extends ExceptionEvent> listener) {
-		listeners.add(listener);  
-	}
-	@Override
-	public void removeEventListener(
-			ExceptionEventListener<? extends ExceptionEvent> listener) {
-		listeners.remove(listener);  
-	}
-	
-	/**
-	 * 通知特定event的异常处理handler
-	 */
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	@Override
-	public void notifyListeners(ExceptionEvent event) {
-		for (ExceptionEventListener listener : listeners) {  
-            try {  
-                listener.handleEvent(event);  
-            } catch (ClassCastException e) { 
-            	//不是自己的ExceptionEvent不处理
-            }  
-        }  
-	}
 	/**
 	 * 通知所有的异常处理监听器处理异常
 	 */
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	public void notifyAllListeners( ) {
+		super.notifyAllListeners();
 		mappedExceptionEntity();
-		for (ExceptionEventListener listener : listeners) {  
-            try {  
-                listener.handleEvent(null);  
-            } catch (ClassCastException e) {  
-            }  
-        }  
 	}
 
 	public Object[] getParameters() {

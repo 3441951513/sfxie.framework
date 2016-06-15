@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
-import com.sfxie.core.exception.FrameworkException;
+import com.sfxie.exception.framework.FrameworkException;
 import com.sfxie.extension.spring4.mvc.exception.ControllerException;
 import com.sfxie.extension.spring4.mvc.exception.DaoException;
 import com.sfxie.extension.spring4.mvc.exception.MvcException;

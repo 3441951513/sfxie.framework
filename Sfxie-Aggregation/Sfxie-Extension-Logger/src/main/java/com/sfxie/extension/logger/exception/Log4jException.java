@@ -1,8 +1,8 @@
 package com.sfxie.extension.logger.exception;
 
-import com.sfxie.core.exception.ExceptionEvent;
-import com.sfxie.core.exception.ExceptionEventListener;
-import com.sfxie.core.exception.FrameworkException;
+import com.sfxie.exception.framework.ExceptionEvent;
+import com.sfxie.exception.framework.ExceptionEventListener;
+import com.sfxie.exception.framework.FrameworkException;
 
 public class Log4jException extends FrameworkException {
 
@@ -18,16 +18,6 @@ public class Log4jException extends FrameworkException {
 	@Override
 	public void removeEventListener(
 			ExceptionEventListener<? extends ExceptionEvent> listener) {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
-	public void notifyListeners(ExceptionEvent event) {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
-	public void notifyAllListeners() {
 		// TODO Auto-generated method stub
 		
 	}

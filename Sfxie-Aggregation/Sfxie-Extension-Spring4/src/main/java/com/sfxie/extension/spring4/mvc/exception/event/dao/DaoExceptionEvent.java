@@ -1,6 +1,6 @@
 package com.sfxie.extension.spring4.mvc.exception.event.dao;
 
-import com.sfxie.core.exception.ExceptionEvent;
+import com.sfxie.exception.framework.ExceptionEvent;
 /**
  * dao异常事件处理定义
  * @TODO	

@@ -3,14 +3,17 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.sfxie</groupId>
-    <artifactId>Sfxie-Aggregation</artifactId>
-	<version>0.0.1-RELEASE</version>
+    <groupId>com.golive</groupId>
+    <artifactId>GoLive-Aggregation</artifactId>
+    <version>0.0.1-RELEASE</version>
   </parent>
   <groupId>com.sfxie.core</groupId> 
-  <artifactId>Sfxie-Core</artifactId>
-  <name>Sfxie-Core</name>
+  <artifactId>GoLive-Core</artifactId>
+  <name>GoLive-Core</name>
   <url>http://maven.apache.org</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
   <dependencies>
   	<dependency>
 		<groupId>org.springframework</groupId>
@@ -18,15 +21,9 @@
 		<version>4.2.1.RELEASE</version>
 	</dependency>
   	<dependency>
-	  	<groupId>com.sfxie.exception</groupId> 
-	  	<artifactId>Sfxie-Exception</artifactId>
-  		<version>${sfxie.version}</version>
-  		<scope>compile</scope>
-	</dependency>
-  	<dependency>
-		<groupId>com.sfxie.utils</groupId>
-		<artifactId>Sfxie-Utils</artifactId>
-  		<version>${sfxie.version}</version>
+		<groupId>com.sfxie.utils</groupId> 
+	    <artifactId>GoLive-Utils</artifactId>
+  		<version>${golive.version}</version>
   		<scope>compile</scope>
 	</dependency>
 	<dependency>

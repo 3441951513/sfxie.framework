@@ -2,7 +2,7 @@ package com.sfxie.extension.spring4.mvc.exception.event.logger;
 
 import java.io.Serializable;
 
-import com.sfxie.core.exception.ExceptionEventListener;
+import com.sfxie.exception.framework.ExceptionEventListener;
 import com.sfxie.extension.spring4.mvc.exception.MvcException;
 /**
  * 异常事件监听器-日记

@@ -61,8 +61,8 @@ public class GetGoodsDetailController extends SpringMvcController{
 				GetGoodsDetailRequest request = (GetGoodsDetailRequest) parameters[0];
 //				System.out.println(testRegistryService.hello("sfxie"));
 				SfxieSysCompany sfxieSysCompany = new SfxieSysCompany();
-				sfxieSysCompany.setUserId("sfxie");
-				sfxieSysCompany.setPassword("111111");
+//				sfxieSysCompany.setUserId("sfxie");
+//				sfxieSysCompany.setPassword("111111");
 				sfxieSysCompany.setCompany_name_cn("谢声锋");
 				Object obj = companyService.querySfxieCompanyList(sfxieSysCompany);
 //				return getGoodsDetailServiceImpl.getGoodsDetail(request);

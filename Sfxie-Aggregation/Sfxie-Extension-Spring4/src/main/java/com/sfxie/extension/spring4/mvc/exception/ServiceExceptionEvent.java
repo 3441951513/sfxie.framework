@@ -1,6 +1,6 @@
 package com.sfxie.extension.spring4.mvc.exception;
 
-import com.sfxie.core.exception.ExceptionEvent;
+import com.sfxie.exception.framework.ExceptionEvent;
 
 public class ServiceExceptionEvent implements ExceptionEvent {
 

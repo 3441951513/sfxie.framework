@@ -1,6 +1,6 @@
 package com.sfxie.extension.spring4.mvc.exception.event.logger;
 
-import com.sfxie.core.exception.ExceptionEvent;
+import com.sfxie.exception.framework.ExceptionEvent;
 /**
  * 日记异常处理事件定义
  * @TODO	

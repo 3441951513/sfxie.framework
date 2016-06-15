@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.sfxie.core.exception.FrameworkException;
+import com.sfxie.exception.framework.FrameworkException;
 import com.sfxie.extension.spring4.jedis.JedisTransactionManager;
 import com.sfxie.extension.spring4.mvc.context.Context;
 import com.sfxie.extension.spring4.mvc.context.SpringContextHolder;
