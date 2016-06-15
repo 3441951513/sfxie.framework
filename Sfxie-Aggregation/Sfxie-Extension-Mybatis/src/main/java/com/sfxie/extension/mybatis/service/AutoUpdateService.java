@@ -7,7 +7,8 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Service;
 
 import com.sfxie.extension.mybatis.dao.AutoUpdateMapper;
-import com.sfxie.core.service.BaseService;
+import com.sfxie.core.service.TransactionService;
+import com.sfxie.core.service.IBaseService;
 import com.sfxie.extension.spring4.mvc.exception.MvcException;
 
 /**
@@ -20,7 +21,7 @@ import com.sfxie.extension.spring4.mvc.exception.MvcException;
  *
  */
 @Service
-public class AutoUpdateService extends BaseService {
+public class AutoUpdateService extends TransactionService implements IBaseService{
 
 	@Resource
 	private AutoUpdateMapper autoUpdateMapper;
