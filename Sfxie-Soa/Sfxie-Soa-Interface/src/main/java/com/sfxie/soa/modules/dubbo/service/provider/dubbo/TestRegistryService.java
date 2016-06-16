@@ -1,8 +1,9 @@
 package com.sfxie.soa.modules.dubbo.service.provider.dubbo;
 
 
-import com.sfxie.extension.mybatis.service.IAutoUpdateService;
-public interface TestRegistryService  extends IAutoUpdateService{
+import com.sfxie.core.service.IBaseService;
+
+public interface TestRegistryService   extends IBaseService{
 
 	public abstract String hello(String name);
 

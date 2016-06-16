@@ -1,5 +1,6 @@
 package com.sfxie.soa.modules.dubbo.service.cm.dubbo;
 
+import com.sfxie.core.service.IBaseService;
 import com.sfxie.soa.common.request.SecurityObject;
 import com.sfxie.soa.modules.dubbo.service.cm.exception.LoginException;
 import com.sfxie.soa.modules.dubbo.service.cm.exception.LogoutException;
@@ -14,7 +15,7 @@ import com.sfxie.soa.modules.dubbo.service.cm.exception.RegisterException;
  * @example		
  *
  */
-public interface LLRService {
+public interface LLRService extends IBaseService{
 
 	/**	登录	*/
 	public void login(SecurityObject scurityObject) throws LoginException;

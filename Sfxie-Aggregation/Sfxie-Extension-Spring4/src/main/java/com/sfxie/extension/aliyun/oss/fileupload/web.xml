@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
+
+    <filter>
+		<filter-name>ossImgFilter</filter-name>
+		<filter-class>com.sfxie.extension.aliyun.oss.filter.OssImgFilter</filter-class>
+		<init-param>
+			<param-name>endpoint</param-name>
+            <param-value>oss-cn-shenzhen.aliyuncs.com</param-value>
+        </init-param>
+        <init-param>
+			<param-name>accessKeyId</param-name>
+            <param-value>sfxie</param-value>
+        </init-param>
+        <init-param>
+			<param-name>accessKeySecret</param-name>
+            <param-value>sfxie</param-value>
+        </init-param>
+        <init-param>
+			<param-name>bucketName</param-name>
+            <param-value>sfxie</param-value>
+        </init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>ossImgFilter</filter-name>
+		<url-pattern>/uploadfile/*</url-pattern>
+	</filter-mapping>
+
+</web-app>

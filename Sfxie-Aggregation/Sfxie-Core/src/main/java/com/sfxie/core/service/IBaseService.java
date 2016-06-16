@@ -11,11 +11,12 @@ import com.sfxie.exception.framework.FrameworkException;
  */
 public interface IBaseService {
 
+	/**	新增实体	*/
 	public void insertEntity(Object entity) throws FrameworkException;
-	
+	/**	新增实体	*/
 	public void insertEntity(Object entity1,Object entity2) throws FrameworkException;
-	
+	/**	更新实体	*/
 	public void updateEntity(Object entity) throws FrameworkException;
-	
+	/**	删除实体	*/
 	public void deleteEntity(Object entity) throws FrameworkException;
 }

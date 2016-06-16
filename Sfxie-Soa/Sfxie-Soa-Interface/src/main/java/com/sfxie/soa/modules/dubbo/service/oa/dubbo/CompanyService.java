@@ -2,12 +2,12 @@ package com.sfxie.soa.modules.dubbo.service.oa.dubbo;
 
 import java.util.List;
 
-import com.sfxie.extension.mybatis.service.IAutoUpdateService;
+import com.sfxie.core.service.IBaseService;
 import com.sfxie.soa.modules.dubbo.service.oa.pojo.SfxieSysCompany;
 
 
 
-public interface CompanyService extends IAutoUpdateService{
+public interface CompanyService  extends IBaseService{
 
 	/**
 	 * 查询公司列表 

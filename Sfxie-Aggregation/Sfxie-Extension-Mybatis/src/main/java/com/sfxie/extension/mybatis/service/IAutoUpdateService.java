@@ -1,6 +1,7 @@
 package com.sfxie.extension.mybatis.service;
 
 
+import com.sfxie.core.service.IBaseService;
 import com.sfxie.extension.spring4.mvc.exception.MvcException;
 
 /**
@@ -12,7 +13,7 @@ import com.sfxie.extension.spring4.mvc.exception.MvcException;
  * @example		
  *
  */
-public interface IAutoUpdateService {
+public interface IAutoUpdateService  extends IBaseService{
 
 
 	/**
