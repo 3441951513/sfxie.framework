@@ -3,7 +3,7 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sfxie.soa.modules.dubbo.dao.oa.mapper.CompanyMapper">
-	<select id="getSfxieCompanyList" parameterType="sfxieSysCompany" resultType="sfxieSysCompany">
+	<select id="querySfxieCompanyList" parameterType="sfxieSysCompany" resultType="sfxieSysCompany">
         select * from sfxie_sys_company c 
     </select>
 </mapper>

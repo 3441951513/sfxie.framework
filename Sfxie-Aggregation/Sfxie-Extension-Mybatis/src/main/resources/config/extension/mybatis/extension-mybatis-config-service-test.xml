@@ -21,7 +21,7 @@
        class="org.mybatis.spring.SqlSessionFactoryBean" >
        <property name="dataSource" ref="dynamicDataSource"></property>
        <property name="configLocation" value="classpath:config/soa/mybatis/definition/mybatis-configuration.xml"></property>
-       <property name="mapperLocations" value="classpath*:com/golive/*/modules/**/sql/**.xml"></property>
+       <property name="mapperLocations" value="classpath*:com/sfxie/*/modules/**/sql/**.xml"></property>
   </bean>
        
  <!-- spring与mybatis整合配置，扫描所有basePackage配置路径的所有dao -->
