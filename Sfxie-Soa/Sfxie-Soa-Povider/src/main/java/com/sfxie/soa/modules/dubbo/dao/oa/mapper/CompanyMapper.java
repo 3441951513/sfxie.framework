@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.sfxie.extension.mybatis.annotation.MyBatisRepository;
 import com.sfxie.extension.mybatis.dao.AutoUpdateMapper;
+import com.sfxie.extension.mybatis.interceptor.Page;
 import com.sfxie.soa.modules.dubbo.service.oa.pojo.SfxieSysCompany;
 
 @MyBatisRepository(Object.class)
@@ -20,4 +21,6 @@ public interface CompanyMapper extends AutoUpdateMapper{
 	 *
 	 */
 	public List<SfxieSysCompany> querySfxieCompanyList(SfxieSysCompany entity);
+	
+	public List<SfxieSysCompany> querySfxieCompanyPage(Page page);
 }
