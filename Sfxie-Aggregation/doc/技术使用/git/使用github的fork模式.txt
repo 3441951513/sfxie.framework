@@ -1,0 +1,17 @@
+
+使用fork代码步骤：
+
+1.先登陆自己的账号到github
+2.查找想要的github项目
+3.fork这个项目
+4.把fork后的自己账号的github项目地址复制
+5.clone此地址对应的项目
+6.操作此项目之前先使用以下命令更新代码
+
+git remote add sri https://github.com/kraih/mojo
+git fetch sri
+git merge sri/master
+
+7.修改代码并提交代码
+8.在自己的账号上的github使用pull request功能提交代码
+9.下次重复1-8步骤操作代码

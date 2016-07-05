@@ -28,6 +28,14 @@ import com.sfxie.extension.mybatis.inform.AbstractInformInterceptor;
 import com.sfxie.extension.mybatis.inform.IInformInterceptor;
 import com.sfxie.extension.spring4.mvc.context.Context;
 
+/**
+ * mybatis的查询拦截器
+ * 已经实现的拦截功能：<br>
+ * 	1)	sql监控处理(监控处理时间)<br>
+ *  2)	基于Page参数的分页匹配处理<br>
+ * @author xiesf
+ *
+ */
 @Intercepts({ @Signature(method = "query", type = Executor.class, args = {
 		MappedStatement.class, Object.class, RowBounds.class,
 		ResultHandler.class }) })
@@ -43,7 +51,7 @@ public class QueryInterceptor extends AbstractInformInterceptor implements
 	public Object intercept(Invocation invocation) throws Throwable {
 		Long startTimeMillionSecord = System.currentTimeMillis();
 		try{
-			parseBoundSql(invocation);
+			paging(invocation);
 		}catch(Exception e){
 			e.printStackTrace();
 			throw e;
@@ -57,7 +65,8 @@ public class QueryInterceptor extends AbstractInformInterceptor implements
 		return result;
 	}
 
-	private void parseBoundSql(Invocation invocation) throws Throwable {
+	/**	分页处理 */
+	private void paging(Invocation invocation) throws Throwable {
 		// 当前环境 MappedStatement，BoundSql，及sql取得
 		MappedStatement mappedStatement = (MappedStatement) invocation.getArgs()[0];
 		Object parameter = invocation.getArgs()[1];
