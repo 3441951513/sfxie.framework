@@ -1,6 +1,5 @@
 package com.sfxie.soa.modules.dubbo.service.oa.pojo;
 
-import com.sfxie.soa.common.request.SecurityObject;
 
 import java.util.Date;
 
@@ -15,7 +14,7 @@ import com.sfxie.extension.mybatis.annotation.ColumnName;
  */
 @XmlRootElement
 @TableName(value="sfxie_sys_menu")
-public class SfxieSysMenu extends SecurityObject{
+public class SfxieSysMenu extends OaBaseEntity{
 
 	/**	记录主键	*/
 	@ColumnName(field="id_")

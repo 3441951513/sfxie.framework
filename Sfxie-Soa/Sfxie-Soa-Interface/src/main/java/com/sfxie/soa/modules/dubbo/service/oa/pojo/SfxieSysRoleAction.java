@@ -1,6 +1,5 @@
 package com.sfxie.soa.modules.dubbo.service.oa.pojo;
 
-import com.sfxie.soa.common.request.SecurityObject;
 
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -13,7 +12,7 @@ import com.sfxie.extension.mybatis.annotation.ColumnName;
  */
 @XmlRootElement
 @TableName(value="sfxie_sys_role_action")
-public class SfxieSysRoleAction extends SecurityObject{
+public class SfxieSysRoleAction extends OaBaseEntity{
 
 	/**	记录主键	*/
 	@ColumnName(field="id_")

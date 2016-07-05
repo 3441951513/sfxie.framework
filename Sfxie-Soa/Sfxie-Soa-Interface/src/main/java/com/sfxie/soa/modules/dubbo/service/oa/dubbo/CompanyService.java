@@ -6,7 +6,13 @@ import com.sfxie.core.service.IBaseService;
 import com.sfxie.soa.modules.dubbo.service.oa.pojo.SfxieSysCompany;
 
 
-
+/**
+ * 公司操作服务类
+ * @author 	xieshengfeng
+ * @email  	xsfcy@126.com
+ * @since 	下午1:45:10 2016年4月19日
+ *
+ */
 public interface CompanyService  extends IBaseService{
 
 	/**

@@ -1,6 +1,5 @@
 package com.sfxie.soa.modules.dubbo.service.oa.pojo;
 
-import com.sfxie.soa.common.request.SecurityObject;
 
 import java.util.Date;
 
@@ -16,7 +15,7 @@ import com.sfxie.extension.mybatis.annotation.ColumnName;
  */
 @XmlRootElement
 @TableName(value="sfxie_sys_authorization")
-public class SfxieSysAuthorization extends SecurityObject{
+public class SfxieSysAuthorization extends OaBaseEntity{
 
 	/**	记录主键	*/
 	@ColumnName(field="id_")
