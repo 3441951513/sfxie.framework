@@ -21,15 +21,20 @@ import javax.annotation.Resource;
 import javax.sql.DataSource;
 
 /**
- * User: wquan
- * Date: 13-6-21
- * Time: 下午4:33
+ * 测试基础抽象类
+ * @author 	xieshengfeng
+ * @email  	xsfcy@126.com
+ * @since 	下午1:45:10 2016年4月19日
+ * @note BaseTest&lt;Service extends IBaseService,Entity extends IEntity&gt; <br>
+ * 		第一个范型是spring注册的服务类(实现了{@link com.sfxie.core.service.IBaseService})<br>
+ * 		第二个范型是对应数据库表的实体类(实现了{@link com.sfxie.core.base.IEntity})
+ *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {
         "classpath*:config/extension/spring/xml/applicationContext-service-test.xml"
         })
-public abstract class BaseTest<Service,Entity> extends AbstractTransactionalJUnit4SpringContextTests {
+public abstract class BaseTest<Service extends IBaseService,Entity extends IEntity> extends AbstractTransactionalJUnit4SpringContextTests {
 	
 	/**	范型的真实类型	*/
 	private Class<? extends Service> serviceClass ;

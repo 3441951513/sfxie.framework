@@ -6,5 +6,8 @@
 	<select id="querySfxieCompanyList" parameterType="sfxieSysCompany" resultType="sfxieSysCompany">
         select * from sfxie_sys_company c 
     </select>
+    <select id="querySfxieCompanyPage" parameterType="com.sfxie.extension.mybatis.interceptor.Page" resultType="sfxieSysCompany">
+        select * from sfxie_sys_company c where c.company_code = #{params.companyCode}
+    </select>
 </mapper>
 
