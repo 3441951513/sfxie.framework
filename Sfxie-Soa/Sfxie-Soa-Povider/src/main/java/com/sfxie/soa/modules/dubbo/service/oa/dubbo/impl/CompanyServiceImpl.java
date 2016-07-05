@@ -6,7 +6,6 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.sfxie.extension.spring4.mvc.exception.BusinessException;
 import com.sfxie.soa.dubbo.service.BaseRestfulService;
 import com.sfxie.soa.modules.dubbo.dao.oa.mapper.CompanyMapper;
 import com.sfxie.soa.modules.dubbo.service.oa.dubbo.CompanyService;
@@ -22,7 +21,7 @@ public class CompanyServiceImpl  extends BaseRestfulService implements CompanySe
 	 */
 	@Override
 	public List<SfxieSysCompany> querySfxieCompanyList(SfxieSysCompany sfxieSysCompany){
-		throw new BusinessException("测试dubbo环境下的service异常");
-//		return companyMapper.getSfxieCompanyList(sfxieSysCompany);
+//		throw new BusinessException("测试dubbo环境下的service异常");
+		return companyMapper.querySfxieCompanyList(sfxieSysCompany);
 	}
 }

@@ -5,22 +5,18 @@ import java.util.List;
 import java.util.UUID;
 
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.test.annotation.Rollback;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.sfxie.base.BaseTest;
 import com.sfxie.soa.modules.dubbo.service.oa.dubbo.CompanyService;
 import com.sfxie.soa.modules.dubbo.service.oa.pojo.SfxieSysCompany;
 
 
-public class CompanyServiceTest extends BaseTest {
+public class CompanyServiceTest extends BaseTest<CompanyService> {
 
 	@Test
 	public void queryCompanyList(){
-		CompanyService companyService = this.getBeanByName("companyService");
-		List<SfxieSysCompany> list =  companyService.querySfxieCompanyList(new SfxieSysCompany());
+		List<SfxieSysCompany> list =  getService().querySfxieCompanyList(new SfxieSysCompany());
 		System.out.println(list);
 	}
 	
@@ -28,7 +24,6 @@ public class CompanyServiceTest extends BaseTest {
 	@Test
 	public void insertSfxieSysCompany(){
 		String create_company_id = UUID.randomUUID().toString();
-		CompanyService companyService = this.getBeanByName("companyService");
 		SfxieSysCompany sfxieSysCompany = new SfxieSysCompany();
 		sfxieSysCompany.setCompany_code("sfxie"+create_company_id);
 		sfxieSysCompany.setCompany_name_cn("测试");
@@ -37,6 +32,6 @@ public class CompanyServiceTest extends BaseTest {
 		sfxieSysCompany.setCreate_user("sfxie");
 		sfxieSysCompany.setCreate_time(new Date());
 		sfxieSysCompany.setId_(create_company_id);
-		companyService.insertEntity(sfxieSysCompany);
+		getService().insertEntity(sfxieSysCompany);
 	}
 }

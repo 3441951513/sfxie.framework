@@ -19,5 +19,5 @@ public interface CompanyMapper extends AutoUpdateMapper{
 	 * @return	
 	 *
 	 */
-	public List<SfxieSysCompany> getSfxieCompanyList(SfxieSysCompany sfxieSysCompany);
+	public List<SfxieSysCompany> querySfxieCompanyList(SfxieSysCompany entity);
 }
