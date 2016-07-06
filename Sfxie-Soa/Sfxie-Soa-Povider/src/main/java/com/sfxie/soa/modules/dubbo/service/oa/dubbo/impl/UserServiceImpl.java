@@ -17,8 +17,7 @@ public class UserServiceImpl  extends BaseRestfulService implements UserService 
 	private UserMapper mapper;
 
 	@Override
-	public List<SfxieSysUserinfo> querySfxieSysUserinfoList(
-			SfxieSysUserinfo entity) {
+	public List<SfxieSysUserinfo> querySfxieSysUserinfoList(SfxieSysUserinfo entity) {
 		return mapper.getSfxieSysUserinfoList(entity);
 	}
 	
