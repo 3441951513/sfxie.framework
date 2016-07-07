@@ -8,11 +8,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>全球播广告接口系统</title>
+<title>接口测试系统</title>
 <link rel="stylesheet" type="text/css" href="${ctx}/jsp/api/jquery-easyui-1.4.2/themes/gray/easyui.css">
 <link rel="stylesheet" type="text/css" href="${ctx}/jsp/api/jquery-easyui-1.4.2/themes/icon.css">
 <link rel="stylesheet" type="text/css" href="${ctx}/jsp/api/prettyprint/prettify.css">
 <script type="text/javascript" src="${ctx}/jsp/api/jquery-easyui-1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="${ctx}/jsp/api/jquery-easyui-1.4.2/JSON2.js"></script>
 <script type="text/javascript" src="${ctx}/jsp/api/jquery-easyui-1.4.2/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="${ctx}/jsp/api/prettyprint/prettify.js"></script>
 
@@ -90,14 +91,18 @@
 		var ctx = "${ctx}"+"/springmvc";
 		var actionUrl = ctx+node.attributes['url'];
 		
-// 		if(node.attributes['contentType']){
-// 			$('#'+apiId+'ContentType').val(actionUrl);
-// 		}
+		if(node.attributes['dataType']){
+			$('#'+apiId+'dataType').val(node.attributes['dataType']);
+		}
+		
 		$('#'+apiId+'InputUrl').val(actionUrl);
 		$('#'+apiId+'URLId').text(hostName+actionUrl);
 		var test = getParameter(node);
+		var dataType = node.attributes['dataType'];
 		if(test){
-			test = test.replaceAll('\r','').replaceAll('\n','').replaceAll('<','&lt;').replaceAll('>','&gt;\n');
+			if(dataType !='json'){
+				test = test.replaceAll('\r','').replaceAll('\n','').replaceAll('<','&lt;').replaceAll('>','&gt;\n');
+			}
 		}else{
 			test = "";
 		}
@@ -133,8 +138,11 @@
 			    		$('#'+apiId+'XMLId').html(text);
 			    		prettyPrint();
 			    		$('#'+apiId+'XMLId').show(); */
-			    		var text = $('#'+apiId).val().replaceAll('\n','').replaceAll('\r','');
-			    		text = text.replaceAll('<','&lt;').replaceAll('>','&gt;\n');
+			    		var text = $('#'+apiId).val();
+			    		if(dataType !='json'){
+			    			text = text.replaceAll('\n','').replaceAll('\r','');
+				    		text = text.replaceAll('<','&lt;').replaceAll('>','&gt;\n');
+			    		}
 			    		removeParamsInput(node,text);
 			    		flag[apiId] = false;
 		    		}
@@ -248,6 +256,7 @@
 		var returnText = null;
 		var timestamp=new Date().getTime();
 		var url = '';
+		var dataType = 'text';
 		if(node.attributes['xmlParam']){
 			url = node.attributes['xmlParam']+'?_seq='+timestamp;
 		}else{
@@ -255,12 +264,15 @@
 			if(node.attributes['fileType']){
 				fileType = node.attributes['fileType'];
 			}
+			if(node.attributes['dataType']){
+				dataType = node.attributes['dataType'];
+			}
 			 url = 'params/'+node.attributes['parentId']+'/'+node.attributes['id']+'.'+fileType+'?_seq='+timestamp
 		}
 		$.ajax({
 			  url: url,
 			  async:false,
-			  dataType:"text",
+			  dataType: 'text',
 			  success: function(data){
 				  returnText = data;
 			  }
@@ -270,9 +282,16 @@
 	function contentOnUpdate (title,index){
     }
 	function submitForm(apiId){
+		
 		var actionUrl = $('#'+apiId+'InputUrl').val();
 		var param = $('#'+apiId+'XMLId').text();
-		var contentType = $('#'+apiId+'ContentType').val() || "text/xml; charset=utf-8";
+		
+		var contentType ='text/xml; charset=utf-8' ;
+		var dataType = $('#'+apiId+'dataType').val() || "xml";
+		if(dataType == 'json'){
+			contentType ='application/json; charset=utf-8' ;
+		}
+
 		$.ajax({
 	        "url": actionUrl,
 	        "data": param,
@@ -280,7 +299,7 @@
 	        async:false,
 	        "type": "POST",
 	        "contentType": contentType,
-	        "dataType": "xml",
+	        "dataType": dataType,
 	        "success": function (data, textStatus, jqXHR) {
 	        	$.messager.show({
 	                    title:'提示框',
@@ -292,7 +311,7 @@
 	                        bottom:''
 	                    }
 	             });
-	        	if(contentType.indexOf('xml')>=0){
+	        	if(dataType == 'xml'){
 		            data = XMLtoString(data);
 		        	data = data.replaceAll('<','&lt;').replaceAll('>','&gt;\n');
 		    		$('#'+apiId+'OutXMLId').html(data);
@@ -336,7 +355,12 @@
 		var msg = "";
 		for(var i=0;i<nodes.length;i++){
 			var actionUrl = ctx + nodes[i]['attributes'].url;
-			var contentType = nodes[i]['attributes'].ContentType || "text/xml; charset=utf-8";
+			var contentType ='text/xml; charset=utf-8' ;
+			var dataType = nodes[i]['attributes']['dataType'] || "xml";
+			if(dataType == 'json'){
+				contentType ='application/json; charset=utf-8' ;
+			}
+			
 			$.ajax({
 		        "url": actionUrl,
 		        "data": {},
@@ -344,7 +368,7 @@
 		        async:false,
 		        "type": "POST",
 		        "contentType": contentType,
-		        "dataType": "xml",
+		        "dataType": dataType,
 		        "success": function (data, textStatus, jqXHR) {
 		        	msg = "操作成功";
 		        },

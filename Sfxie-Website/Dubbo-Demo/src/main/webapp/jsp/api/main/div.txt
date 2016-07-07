@@ -20,5 +20,5 @@
         <a id="s#######s" href="javascript:void(0)" class="easyui-linkbutton"  onclick="submitForm('s#######s')" style="color:red;">发送请求</a>
     </div>
     <input id="s#######sInputUrl"  type="hidden"  >	
-    <input id="s#######sContentType"  type="hidden"  >	
+    <input id="s#######sdataType"  type="hidden"  >	
 </div>

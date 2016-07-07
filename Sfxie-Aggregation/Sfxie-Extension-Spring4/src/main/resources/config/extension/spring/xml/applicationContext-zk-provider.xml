@@ -24,7 +24,7 @@
             <list>
             	<value>classpath*:config/enviroment.properties</value>
             	<value>classpath*:config/extension/*/properties/*.properties</value>
-            	<value>classpath*:config/*/project/properties/*.properties</value>
+            	<value>classpath*:config/soa/project/properties/*.properties</value>
             </list>
         </property>
 	</bean>

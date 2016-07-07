@@ -52,16 +52,16 @@ public class LLRController extends SpringMvcController{
 	 *
 	 */
 	@RequestMapping(value="/cm/login", method = RequestMethod.POST)
-	public @ResponseBody Object login(final Request request ) {
+	public @ResponseBody Object login(@RequestBody final Request request ) {
 		
 		return (Object) ExceptionContainer.controller(new AbstractExceptionWrapper(){
 			@Override
 			public Object doMethod(Object... parameters) throws MvcException {
 //				Request<UserEntity> request = new Request<UserEntity>();
-				llRService.login(request);
+				llRService.login((Request)parameters[0]);
 				return "success";
 			}
-		});
+		},request);
 	}
 	/**
 	 * 注销
