@@ -2,7 +2,6 @@ package com.sfxie.soa.common.request;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.fasterxml.jackson.annotation.JsonRootName;
 
 /**
  * 全局参数请求对象
@@ -14,11 +13,26 @@ import com.fasterxml.jackson.annotation.JsonRootName;
  *
  */
 @XmlRootElement
-@JsonRootName("request") 
 public class Request  extends SecurityObject{
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
+	private String test;
+
+	public String getTest() {
+		return test;
+	}
+
+	public void setTest(String test) {
+		this.test = test;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
+	
 
 }

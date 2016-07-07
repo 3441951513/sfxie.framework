@@ -11,7 +11,8 @@ apiArray.push({
 	id:'login',
 	url:'/cm/login',
 	type:'POST',
-	fileType:'xml',
+	fileType:'js',
+	dataType: 'json',
 	developer:"谢声锋",
 	interceptor:dubboExceptionInterceptor
 });
