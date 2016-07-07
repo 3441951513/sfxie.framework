@@ -102,8 +102,9 @@ public class Context implements ApplicationContextAware,InitializingBean{
 	 * @param clsName
 	 * @return
 	 */
-	public static Object getBeanByName(String clsName){
-		return getInstance().webApplicationContext.getBean(clsName);
+	@SuppressWarnings("unchecked")
+	public static <T> T getBeanByName(String clsName){
+		return (T) getInstance().webApplicationContext.getBean(clsName);
 	}
 	/**
 	 * 获取bean
@@ -111,7 +112,7 @@ public class Context implements ApplicationContextAware,InitializingBean{
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
-	public static Map<String, Object> getBeansOfType(Class cls){
+	public static Map<String, Object> getBeansOfType(@SuppressWarnings("rawtypes") Class cls){
 		return getInstance().webApplicationContext.getBeansOfType(cls);
 	}
 	/**

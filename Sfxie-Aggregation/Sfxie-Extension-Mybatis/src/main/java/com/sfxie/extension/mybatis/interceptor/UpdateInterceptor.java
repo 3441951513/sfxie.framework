@@ -28,8 +28,12 @@ import org.apache.ibatis.plugin.Signature;
 import org.apache.ibatis.session.ResultHandler;
 import org.apache.ibatis.session.RowBounds;
 
+import com.sfxie.data.security.ISqlDecorator;
+import com.sfxie.data.security.ISqlSecurity;
 import com.sfxie.extension.logger.LoggerUtil;
 import com.sfxie.extension.mybatis.annotation.MyBatisRepository;
+import com.sfxie.extension.mybatis.annotation.SqlDecorator;
+import com.sfxie.extension.mybatis.annotation.SqlSecurity;
 import com.sfxie.extension.mybatis.inform.AbstractInformInterceptor;
 import com.sfxie.extension.mybatis.inform.IInformInterceptor;
 import com.sfxie.extension.spring4.mvc.context.Context;
@@ -62,23 +66,44 @@ public class UpdateInterceptor extends AbstractInformInterceptor implements Inte
     private void  processIntercept(Invocation invocation) throws Exception {
     	MappedStatement mappedStatement=(MappedStatement)invocation.getArgs()[0];        
     	Object parameterObject = invocation.getArgs()[1]; 
-    	String mapperSQL = mappedStatement.getBoundSql(parameterObject).getSql();
+    	BoundSql boundSql = mappedStatement.getBoundSql(parameterObject);
+    	
+		
+    	String mapperSQL = boundSql.getSql();
     	boolean interceptorUpdate = mapperSQL.matches(_sql_regex_update);
     	List<ParameterMapping> parameterMappingList =  null;
     	//实体增删改操作
     	if(interceptorUpdate){
     		Class<?> entityclazz = MappedStatmentHelper.getEntityClazz(mappedStatement.getResource());
-            BoundSql boundSql = mappedStatement.getBoundSql(parameterObject); 
-            String originalSql = boundSql.getSql().trim(); 
+            boundSql = mappedStatement.getBoundSql(parameterObject); 
             Object[] ddd = invocation.getArgs();
             BoundSql boundSQL = mappedStatement.getBoundSql(parameterObject);
             parameterMappingList =   createUpdateParameterMappingList(parameterObject,mappedStatement);
-            String new_sql = MapperSqlHelper.getExecuSQL(mapperSQL,parameterObject);
-            BoundSql newBoundSql = new BoundSql(mappedStatement.getConfiguration(), new_sql,parameterMappingList,boundSql.getParameterObject()); 
+            String originalSql = MapperSqlHelper.getExecuSQL(mapperSQL,parameterObject);
+
+        	//sql安全处理
+        	SqlSecurity sqlScAnnotation = parameterObject.getClass().getAnnotation(SqlSecurity.class);
+        	if(null!=sqlScAnnotation){
+        		ISqlSecurity sqlSc = sqlScAnnotation.securitor().newInstance();
+        		sqlSc.securitySql(originalSql, parameterObject);
+        	}
+        	//sql安全处理
+        	
+        	
+        	//sql装潢处理
+        	SqlDecorator sqlDtAnnotation = parameterObject.getClass().getAnnotation(SqlDecorator.class);
+        	if(null!=sqlDtAnnotation){
+        		ISqlDecorator sqlDt = sqlDtAnnotation.decorator().newInstance();
+        		sqlDt.decoratedSql(originalSql,parameterObject);
+        	}
+        	
+            BoundSql newBoundSql = new BoundSql(mappedStatement.getConfiguration(), originalSql,parameterMappingList,boundSql.getParameterObject()); 
             MappedStatement newMs = MappedStatmentHelper.copyFromMappedStatement(mappedStatement,new BoundSqlSqlSource(newBoundSql),parameterObject); 
             invocation.getArgs()[0]= newMs; 
     	}
     }
+    
+	//sql装潢处理
     /**
      * 重新构造增删改sql的参数列表集合
      * @param parameterObject

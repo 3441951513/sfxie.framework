@@ -23,7 +23,11 @@ import org.apache.ibatis.scripting.defaults.DefaultParameterHandler;
 import org.apache.ibatis.session.ResultHandler;
 import org.apache.ibatis.session.RowBounds;
 
+import com.sfxie.data.security.ISqlDecorator;
+import com.sfxie.data.security.ISqlSecurity;
 import com.sfxie.extension.logger.LoggerUtil;
+import com.sfxie.extension.mybatis.annotation.SqlDecorator;
+import com.sfxie.extension.mybatis.annotation.SqlSecurity;
 import com.sfxie.extension.mybatis.inform.AbstractInformInterceptor;
 import com.sfxie.extension.mybatis.inform.IInformInterceptor;
 import com.sfxie.extension.spring4.mvc.context.Context;
@@ -47,7 +51,7 @@ public class QueryInterceptor extends AbstractInformInterceptor implements
 	private boolean openSqlInterceptor = false;
 	/** sql监控列表拦截器 */
 	private List<IInformInterceptor> informInterceptors;
-
+	
 	public Object intercept(Invocation invocation) throws Throwable {
 		Long startTimeMillionSecord = System.currentTimeMillis();
 		try{
@@ -71,12 +75,32 @@ public class QueryInterceptor extends AbstractInformInterceptor implements
 		MappedStatement mappedStatement = (MappedStatement) invocation.getArgs()[0];
 		Object parameter = invocation.getArgs()[1];
 		BoundSql boundSql = mappedStatement.getBoundSql(parameter);
+		String originalSql = null;
 
 		// Page对象获取，“信使”到达拦截器！
 		Page page = searchPageWithXpath(boundSql.getParameterObject(), ".","page", "*/page");
 
+		//sql安全处理
+		SqlSecurity sqlScAnnotation = parameter.getClass().getAnnotation(SqlSecurity.class);
+		if(null!=sqlScAnnotation){
+			ISqlSecurity sqlSc = sqlScAnnotation.securitor().newInstance();
+			sqlSc.securitySql(originalSql, parameter);
+		}
+		//sql安全处理
+		
+		//sql装潢处理
+		SqlDecorator sqlDtAnnotation = parameter.getClass().getAnnotation(SqlDecorator.class);
+		if(null!=sqlDtAnnotation){
+			originalSql = boundSql.getSql().trim();
+			ISqlDecorator sqlDt = sqlDtAnnotation.decorator().newInstance();
+			originalSql = sqlDt.decoratedSql(originalSql,parameter);
+		}
+		//sql装潢处理
+		
 		if (page != null) {
-			String originalSql = boundSql.getSql().trim();
+			if(null==originalSql){
+				originalSql = boundSql.getSql().trim();
+			}
 			Object parameterObject = boundSql.getParameterObject();
 			// Page对象存在的场合，开始分页处理
 			String countSql = getCountSql(originalSql);
@@ -114,12 +138,10 @@ public class QueryInterceptor extends AbstractInformInterceptor implements
 	public void setProperties(Properties properties) {
 		if (null == informInterceptorList
 				&& null != properties.getProperty("informInterceptorList")) {
-			this.informInterceptorList = properties
-					.getProperty("informInterceptorList");
+			this.informInterceptorList = properties.getProperty("informInterceptorList");
 		}
 		if (null != properties.getProperty("openSqlInterceptor")) {
-			this.openSqlInterceptor = Boolean.parseBoolean(properties
-					.getProperty("openSqlInterceptor"));
+			this.openSqlInterceptor = Boolean.parseBoolean(properties.getProperty("openSqlInterceptor"));
 		}
 	}
 
@@ -221,4 +243,5 @@ public class QueryInterceptor extends AbstractInformInterceptor implements
 			return boundSql;
 		}
 	}
+
 }

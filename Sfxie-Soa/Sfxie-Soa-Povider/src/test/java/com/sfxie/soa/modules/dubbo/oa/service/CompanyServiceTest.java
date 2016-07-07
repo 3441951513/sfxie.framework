@@ -7,7 +7,7 @@ import java.util.UUID;
 import org.junit.Test;
 
 import com.sfxie.base.BaseTest;
-import com.sfxie.extension.mybatis.interceptor.Page;
+import com.sfxie.soa.modules.dubbo.oa.pojo.CompanyPage;
 import com.sfxie.soa.modules.dubbo.service.oa.dubbo.CompanyService;
 import com.sfxie.soa.modules.dubbo.service.oa.pojo.SfxieSysCompany;
 
@@ -21,7 +21,7 @@ public class CompanyServiceTest extends BaseTest<CompanyService,SfxieSysCompany>
 	/**	测试分页获取数据	*/
 	@Test
 	public void queryCompanyPage(){
-		Page page = Page.newBuilder(1, 20);
+		CompanyPage page = new CompanyPage(1, 20);
 		page.getParams().put("companyCode", "ddd");
 		List<SfxieSysCompany> list =  getService().querySfxieCompanyPage(page);
 		page.setResults(list);

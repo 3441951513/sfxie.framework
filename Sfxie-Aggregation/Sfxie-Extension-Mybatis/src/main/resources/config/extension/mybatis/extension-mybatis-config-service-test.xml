@@ -49,4 +49,6 @@
    <bean id="druidDataSourceInitor" class="com.sfxie.extension.datasource.multydatasoure.dynamic.DruidDataSourceInitor" />
    <context:component-scan base-package="com.sfxie.extension.mybatis.service" />
   
+  
+	<import resource="classpath*:test/spring-**.xml" /> 
 </beans>

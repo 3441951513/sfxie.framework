@@ -2,17 +2,20 @@ package com.sfxie.soa.modules.dubbo.service.oa.pojo;
 
 
 
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
 
-import com.sfxie.extension.mybatis.annotation.TableName;
+import com.sfxie.data.security.DefaultSqlDecorator;
 import com.sfxie.extension.mybatis.annotation.ColumnName;
+import com.sfxie.extension.mybatis.annotation.SqlDecorator;
+import com.sfxie.extension.mybatis.annotation.TableName;
 /**
  * SfxieSysUserinfo 实体类
  * Wed Apr 20 13:57:43 CST 2016  sfxie
  */
 @XmlRootElement
 @TableName(value="sfxie_sys_userinfo")
+@SqlDecorator(decorator = DefaultSqlDecorator.class)
 public class SfxieSysUserinfo extends OaBaseEntity{
 
 	/**	用户代码	*/
