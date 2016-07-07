@@ -10,12 +10,15 @@ import org.slf4j.LoggerFactory;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.sfxie.data.security.DefaultSqlDecorator;
+import com.sfxie.extension.mybatis.annotation.SqlDecorator;
 
 /**
  * mybatis分页对象
  * @author xieshengfeng
  *
  */
+@SqlDecorator(decorator = DefaultSqlDecorator.class)
 public class Page {
 
 	private static final Logger logger = LoggerFactory.getLogger(Page.class);
@@ -32,9 +35,19 @@ public class Page {
 	private String pageNoDisp; // 可以显示的页号(分隔符"|"，总页数变更时更新)
 	private List<?> results;
 
-	private Page() {
+	public Page() {
 		pageNo = 1;
 		pageSize = Integer.valueOf(DEFAULT_PAGESIZE);
+		totalRecord = 0;
+		totalPage = 0;
+		params = Maps.newHashMap();
+		paramLists = Maps.newHashMap();
+		searchUrl = "";
+		pageNoDisp = "";
+	}
+	public Page(int pageNo, int pageSize) {
+		this.pageNo = pageNo;
+		this.pageSize = pageSize;
 		totalRecord = 0;
 		totalPage = 0;
 		params = Maps.newHashMap();
