@@ -1,5 +1,6 @@
 ##########################################################################测试代码启动##########################################################################
-1.	进入/GoLive-Soa-Povider/src/main/java/com/golive/soa/modules/dubbo/SoaStartup.java类,右击"Run As Java Application"或者
+1.	先将工程的jdk换成jdk8
+2.	进入/GoLive-Soa-Povider/src/main/java/com/golive/soa/modules/dubbo/SoaStartup.java类,右击"Run As Java Application"或者
 	"Debug As Java Application"进行代码单元测试
 ##########################################################################测试代码启动##########################################################################
 
