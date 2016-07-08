@@ -32,7 +32,7 @@
 	<import resource="classpath*:config/*/modules/**/spring-beans-*.xml" />
 	
 	<context:component-scan base-package="com.sfxie.*.modules.**.service.impl" />
-	<bean class="com.sfxie.extension.spring4.mvc.context.Context"/>
+	<bean id="context" class="com.sfxie.extension.spring4.mvc.context.Context"/>
     
 	<!-- 对数据源进行事务管理 -->
 	<!-- Construct Atomikos UserTransactionManager, needed to configure Spring -->

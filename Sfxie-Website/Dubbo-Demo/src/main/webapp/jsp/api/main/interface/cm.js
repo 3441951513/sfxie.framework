@@ -32,7 +32,8 @@ apiArray.push({
 	id:'register',
 	url:'/cm/register',
 	type:'POST',
-	fileType:'xml',
+	fileType:'js',
+	dataType: 'json',
 	developer:"谢声锋",
 	interceptor:dubboExceptionInterceptor
 });

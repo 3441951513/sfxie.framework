@@ -6,13 +6,9 @@ import javax.xml.bind.annotation.XmlAttribute;
 
 import com.sfxie.core.base.IEntity;
 import com.sfxie.extension.mybatis.annotation.ColumnName;
-import com.sfxie.soa.common.request.SecurityObject;
+import com.sfxie.soa.common.request.Request;
 
-public class OaBaseEntity extends SecurityObject implements IEntity{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public class OaBaseEntity extends Request implements IEntity{
 	/**	创建时间	*/
 	@ColumnName(field="create_time")
 	private Date create_time;

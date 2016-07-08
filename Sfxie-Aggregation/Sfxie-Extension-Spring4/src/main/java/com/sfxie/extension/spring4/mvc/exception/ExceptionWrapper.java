@@ -9,6 +9,8 @@ package com.sfxie.extension.spring4.mvc.exception;
  */
 public interface ExceptionWrapper {
 	
+	public Object[] getParameters();
+	
 	public void supports() throws ControllerException;
 	/**
 	 * 执行方法
@@ -18,7 +20,6 @@ public interface ExceptionWrapper {
 	 * @throws MvcException
 	 */
 	public Object doMethod(Object... parameters ) throws MvcException; 
-	
 	/**
 	 * 产成dao层异常信息
 	 * @param e
