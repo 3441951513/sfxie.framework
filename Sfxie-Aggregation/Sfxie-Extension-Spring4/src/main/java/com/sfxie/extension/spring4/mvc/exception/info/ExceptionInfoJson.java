@@ -14,10 +14,15 @@ import com.sfxie.extension.spring4.mvc.exception.event.logger.LoggerEventHandler
  * @since 2015-7-14上午10:31:23
  */
 public class ExceptionInfoJson extends ExceptionInfo{
+	
 	/**	异常发生时所在的层(service/dao/controller)	*/
 	private String errorLayer;
 	/**	异常代码	*/
 	private String errorCode;
+	/**	如果是sql错误，此字段对应的是sql报错的字段名	*/
+	private String errorDbName;
+	/**	如果是sql错误，此字段对应的是sql报错的具体提示	*/
+	private String errorDbTip;
 	/**	异常的本地化信息	*/
 	private String errorLocalMsg;
 	/**	异常的完整信息	*/
@@ -82,4 +87,17 @@ public class ExceptionInfoJson extends ExceptionInfo{
     	logger.error("##	错误详细信息: "+this.errorFullMsg);
     	logger.error(sb.toString());
     }
+	public String getErrorDbName() {
+		return errorDbName;
+	}
+	public void setErrorDbName(String errorDbName) {
+		this.errorDbName = errorDbName;
+	}
+	public String getErrorDbTip() {
+		return errorDbTip;
+	}
+	public void setErrorDbTip(String errorDbTip) {
+		this.errorDbTip = errorDbTip;
+	}
+	
 }

@@ -25,7 +25,10 @@ import com.sfxie.soa.common.request.Request;
 import com.sfxie.soa.modules.dubbo.service.cm.dubbo.LLRService;
 import com.sfxie.soa.modules.dubbo.service.cm.pojo.UserEntity;
 import com.sfxie.soa.modules.dubbo.service.cm.pojo.xml.LoginRequest;
+import com.sfxie.soa.modules.dubbo.service.oa.dubbo.UserService;
+import com.sfxie.soa.modules.dubbo.service.oa.pojo.SfxieSysUserinfo;
 import com.sfxie.utils.XmlUtils;
+import com.sfxie.website.common.context.SystemContext;
 
 /**
  * 登录,注销,注册控制器
@@ -41,6 +44,9 @@ public class LLRController extends SpringMvcController{
 	@Resource(name="LLRService")
 	private LLRService llRService;
 	
+	@Resource
+	private UserService userService;
+	
 	/**
 	 * 登录
 	 * @TODO	
@@ -54,14 +60,15 @@ public class LLRController extends SpringMvcController{
 	@RequestMapping(value="/cm/login", method = RequestMethod.POST)
 	public @ResponseBody Object login(@RequestBody final Request request ) {
 		
-		return (Object) ExceptionContainer.controller(new AbstractExceptionWrapper(){
+		return (Object) ExceptionContainer.controller(new AbstractExceptionWrapper(request){
 			@Override
-			public Object doMethod(Object... parameters) throws MvcException {
+			public Object doMethod(Object... obj) throws MvcException {
 //				Request<UserEntity> request = new Request<UserEntity>();
-				llRService.login((Request)parameters[0]);
+				Request request = getParameterObj(0);
+				llRService.login(request);
 				return "success";
 			}
-		},request);
+		});
 	}
 	/**
 	 * 注销
@@ -78,7 +85,7 @@ public class LLRController extends SpringMvcController{
 		
 		return (Object) ExceptionContainer.controller(new AbstractExceptionWrapper(){
 			@Override
-			public Object doMethod(Object... parameters) throws MvcException {
+			public Object doMethod(Object... obj) throws MvcException {
 //				Request request = new Request();
 //				llRService.logout(request);
 				return "success";
@@ -97,12 +104,14 @@ public class LLRController extends SpringMvcController{
 	 */
 	@RequestMapping(value="/cm/register", method = RequestMethod.POST)
 //	public @ResponseBody Object register(@RequestBody final Request<UserEntity> request ) {
-	public @ResponseBody Object register( ) {	
-		return (Object) ExceptionContainer.controller(new AbstractExceptionWrapper(){
+	public @ResponseBody Object register(@RequestBody SfxieSysUserinfo entity ) {	
+		return (Object) ExceptionContainer.controller(new AbstractExceptionWrapper(entity){
 			@Override
-			public Object doMethod(Object... parameters) throws MvcException {
-//				Request request = new Request();
-//				llRService.register(request);
+			public Object doMethod(Object... obj) throws MvcException {
+				SfxieSysUserinfo userInfo = getParameterObj(0);
+				userInfo.setCreate_company_id(SystemContext.getCurrentSfxieSysUserinfo().getCreate_company_id());
+				userInfo.setCreate_user(SystemContext.getCurrentSfxieSysUserinfo().getUser_id());
+				userService.register(userInfo);
 				return "success";
 			}
 		});

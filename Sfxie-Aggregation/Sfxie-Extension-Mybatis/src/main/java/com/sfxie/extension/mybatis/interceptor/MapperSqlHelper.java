@@ -2,6 +2,8 @@ package com.sfxie.extension.mybatis.interceptor;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import com.sfxie.extension.mybatis.annotation.ColumnName;
@@ -79,10 +81,11 @@ public class MapperSqlHelper {
 			}
 			sql.append("INSERT INTO " + tableName);
 		}
-		Field[] fields = clazz.getDeclaredFields();
+		List<Field> col = new ArrayList<Field>();
+		ReflectUtils.getBeanAllFields(col, clazz, null);
 		intosql.append("(");
 		valuessql.append(" values (");
-		for (Field field : fields) {
+		for (Field field : col) {
 			//非数据库字段跳过sql生成
 			if (field.isAnnotationPresent(MYBATISNOTDBFIELD)) {
 				continue;
@@ -133,10 +136,11 @@ public class MapperSqlHelper {
 				sql.append("UPDATE  " + antable.value());
 			}
 		}
-		Field[] files = clazz.getDeclaredFields();
+		List<Field> col = new ArrayList<Field>();
+		ReflectUtils.getBeanAllFields(col, clazz, null);
 		set.append(" set ");
 		wheresql.append(" where 1=1 ");
-		for (Field field : files) {
+		for (Field field : col) {
 			//非数据库字段跳过sql生成
 			if (field.isAnnotationPresent(MYBATISNOTDBFIELD)) {
 				continue;

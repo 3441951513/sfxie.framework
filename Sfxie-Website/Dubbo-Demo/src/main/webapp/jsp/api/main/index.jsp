@@ -316,7 +316,7 @@
 		        	data = data.replaceAll('<','&lt;').replaceAll('>','&gt;\n');
 		    		$('#'+apiId+'OutXMLId').html(data);
 	        	}else{
-	        		$('#'+apiId+'OutXMLId').html(data);
+	        		$('#'+apiId+'OutXMLId').text(JSON.stringify(data, null, "\t"));
 	        	}
 	    		prettyPrint();
 	        },

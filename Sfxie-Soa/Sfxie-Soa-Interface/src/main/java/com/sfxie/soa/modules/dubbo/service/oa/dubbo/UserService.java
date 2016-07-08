@@ -3,6 +3,7 @@ package com.sfxie.soa.modules.dubbo.service.oa.dubbo;
 import java.util.List;
 
 import com.sfxie.core.service.IBaseService;
+import com.sfxie.soa.modules.dubbo.service.oa.exception.RegisterException;
 import com.sfxie.soa.modules.dubbo.service.oa.pojo.SfxieSysUserinfo;
 
 
@@ -26,5 +27,12 @@ public interface UserService  extends IBaseService{
 	 *
 	 */
 	public List<SfxieSysUserinfo> querySfxieSysUserinfoList(SfxieSysUserinfo entity);
+	/**
+	 * 用户注册
+	 * @param sfxieSysUserinfo
+	 * 			用户信息
+	 * @return
+	 */
+	public Object register(SfxieSysUserinfo sfxieSysUserinfo ) throws RegisterException;
 
 }

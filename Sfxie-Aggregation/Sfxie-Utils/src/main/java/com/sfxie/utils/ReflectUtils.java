@@ -182,11 +182,16 @@ public class ReflectUtils {
 		}
 		Field [] fields = clazz.getDeclaredFields();
 		for(Field field : fields){
-			col.add(field);
+			if(!filterFileds(field))
+				col.add(field);
 		}
 		if(null!=clazz.getSuperclass()){
 			getBeanAllFields(col,clazz.getSuperclass(),parentClazz);
 		}
+	}
+	
+	private static boolean filterFileds(Field field){
+		return field.getName().equals("serialVersionUID");
 	}
 	
 	/**

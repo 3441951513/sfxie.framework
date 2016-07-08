@@ -35,7 +35,7 @@ public class Context implements ApplicationContextAware,InitializingBean{
 	 */
 	private static final ThreadLocal<HttpServletRequest> requestThreadLocal = new ThreadLocal<HttpServletRequest>();
 	
-	private Context() {
+	protected Context() {
 	}
 	
 	public static void setRequest(HttpServletRequest request){

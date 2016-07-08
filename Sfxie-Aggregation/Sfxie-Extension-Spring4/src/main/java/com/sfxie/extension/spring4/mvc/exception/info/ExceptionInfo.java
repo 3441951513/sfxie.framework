@@ -6,12 +6,14 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import com.sfxie.exception.framework.FrameworkException;
+import com.sfxie.extension.spring4.mvc.exception.BusinessException;
 import com.sfxie.extension.spring4.mvc.exception.ControllerException;
 import com.sfxie.extension.spring4.mvc.exception.DaoException;
 import com.sfxie.extension.spring4.mvc.exception.MvcException;
 import com.sfxie.extension.spring4.mvc.exception.RedisException;
 import com.sfxie.extension.spring4.mvc.exception.ServiceException;
 import com.sfxie.extension.spring4.mvc.exception.SqlException;
+import com.sfxie.utils.StringUtils;
 
 /**
  * 异常信息抽象类
@@ -20,7 +22,9 @@ import com.sfxie.extension.spring4.mvc.exception.SqlException;
  * @since 2015年7月20日下午1:40:31
  */
 public abstract class ExceptionInfo {
-	
+
+	public abstract void setErrorDbName(String errorCode);
+	public abstract void setErrorDbTip(String errorCode);
 	public abstract void setErrorCode(String errorCode);
 	public abstract void setErrorLocalMsg(String errorLocalMsg);
 	public abstract void setErrorFullMsg(String errorFullMsg) ;
@@ -55,17 +59,20 @@ public abstract class ExceptionInfo {
 		}else if(t instanceof DaoException){										//dao层执行异常
 			exceptionInfo.setErrorLayer("dao");										
 			exceptionInfo.setErrorCode(((DaoException)t).getErrorCode());
-		}else if(t instanceof SqlException){									//controller层执行异常
-			exceptionInfo.setErrorLayer("sql");
-			exceptionInfo.setErrorCode(((SqlException)t).getErrorCode());
-		}else if(t instanceof RedisException){										//redis层执行异常
-			exceptionInfo.setErrorLayer("redis");
-			exceptionInfo.setErrorCode(((RedisException)t).getErrorCode());
+		}else if(t instanceof BusinessException){									//业务层执行异常
+			exceptionInfo.setErrorLayer("business");
+			exceptionInfo.setErrorCode(((BusinessException)t).getErrorCode());
 		}else if(t instanceof ControllerException){									//controller层执行异常
 			exceptionInfo.setErrorLayer("controller");
 			exceptionInfo.setErrorCode(((ControllerException)t).getErrorCode());
-		}
-		else if(t instanceof MvcException){										//mvc执行异常
+		}else if(t instanceof SqlException){									//controller层执行异常
+			exceptionInfo.setErrorLayer("sql");
+			exceptionInfo.setErrorCode(((SqlException)t).getErrorCode());
+			getErrorDbFieldName(exceptionInfo,t);
+		}else if(t instanceof RedisException){										//redis层执行异常
+			exceptionInfo.setErrorLayer("redis");
+			exceptionInfo.setErrorCode(((RedisException)t).getErrorCode());
+		}else if(t instanceof MvcException){										//mvc执行异常
 			exceptionInfo.setErrorLayer("mvc");
 			exceptionInfo.setErrorCode(((MvcException)t).getErrorCode());
 		}else{																		//其它执行异常
@@ -75,6 +82,28 @@ public abstract class ExceptionInfo {
 		exceptionInfo.setErrorLocalMsg(t.getLocalizedMessage());
 		exceptionInfo.setErrorFullMsg(getExceptionMsg(t));
 		return exceptionInfo;
+	}
+	
+	private static String getErrorDbFieldName(ExceptionInfo exceptionInfo,Throwable t){
+		String dbType = "mysql";
+		String name = "";
+		String tip = "";
+		String message = t.getLocalizedMessage();
+		if(dbType.equals("mysql")){
+			if(message.contains("Duplicate entry")){
+				name = "primary_key";
+				tip = "主键冲突";
+			}else{
+				name = StringUtils.substringBetween(t.getLocalizedMessage(), "'", "'");
+			}
+			
+			if(message.contains("Data too long")){
+				tip = "数据太长";
+			}
+		}
+		exceptionInfo.setErrorDbName(name);
+		exceptionInfo.setErrorDbTip(tip);
+		return name;
 	}
 	/**
 	 * 从异常堆栈中找到MvcException异常<br>

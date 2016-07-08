@@ -9,10 +9,16 @@ package com.sfxie.extension.spring4.mvc.exception;
  * @since 2015年7月20日上午9:46:20
  */
 public abstract class AbstractExceptionWrapper implements ExceptionWrapper {
+	
+	private Object [] parameters ;
+	
+	public AbstractExceptionWrapper(Object... parameters){
+		this.parameters = parameters;
+	}
 
 	@Override
 	public abstract Object doMethod(Object... parameters) throws MvcException;
-
+	
 	/**
 	 * 此方法用于执行doMethod前做一些前置处理,比如身份验证等<br>
 	 * 如果不让执行后续的doMethod方法,则抛出ControllerException即可
@@ -116,4 +122,18 @@ public abstract class AbstractExceptionWrapper implements ExceptionWrapper {
 		exception.setParameters(parameters);
 		return exception;
 	}
+	
+	@SuppressWarnings("unchecked")
+	protected <T> T getParameterObj(int index){
+		if(null!=parameters){
+			return (T) parameters[index];
+		}
+		return null;
+	}
+
+	public Object[] getParameters() {
+		return parameters;
+	}
+	
+	
 }

@@ -17,4 +17,7 @@
 	<import resource="classpath*:config/website/modules/dubbo-protocol-registry.xml"/>  
 	<import resource="classpath*:config/website/modules/*/dubbo/*/dubbo-*-*.xml" />
 	<import resource="classpath*:config/website/project/xml/spring-beans-*.xml" /> 
+	
+	
+	<bean id="systemContext" parent="context" class="com.sfxie.website.common.context.SystemContext"/> 
 </beans>

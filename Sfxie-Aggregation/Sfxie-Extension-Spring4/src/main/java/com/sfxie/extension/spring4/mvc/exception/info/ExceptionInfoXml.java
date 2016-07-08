@@ -16,10 +16,15 @@ import com.sfxie.extension.spring4.mvc.exception.event.logger.LoggerEventHandler
  */
 @XmlRootElement(name = "exception")
 public class ExceptionInfoXml  extends ExceptionInfo{
+
 	/**	异常发生时所在的层(service/dao/controller)	*/
 	private String errorLayer;
 	/**	异常代码	*/
 	private String errorCode;
+	/**	如果是sql错误，此字段对应的是sql报错的字段名	*/
+	private String errorDbName;
+	/**	如果是sql错误，此字段对应的是sql报错的具体提示	*/
+	private String errorDbTip;
 	/**	异常的本地化信息	*/
 	private String errorLocalMsg;
 	/**	异常的完整信息	*/
@@ -78,7 +83,18 @@ public class ExceptionInfoXml  extends ExceptionInfo{
 	public void setErrorLineNumber(int errorLineNumber) {
 		this.errorLineNumber = errorLineNumber;
 	}
-	
+	public String getErrorDbName() {
+		return errorDbName;
+	}
+	public void setErrorDbName(String errorDbName) {
+		this.errorDbName = errorDbName;
+	}
+	public String getErrorDbTip() {
+		return errorDbTip;
+	}
+	public void setErrorDbTip(String errorDbTip) {
+		this.errorDbTip = errorDbTip;
+	}
 	public void logErrorInfo(){
 		Logger logger = LoggerUtil.instance(LoggerEventHandlerImpl.class);
 		logger.error("##	错误代码: "+this.errorCode);

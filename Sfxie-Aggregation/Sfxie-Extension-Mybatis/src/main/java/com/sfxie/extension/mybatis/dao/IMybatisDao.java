@@ -130,6 +130,12 @@ public interface IMybatisDao<T,PK> {
   @Insert("cniemp.mybatis.autosql.update.insert.entity")
   public void insertEntity(T entity) throws DaoException;
   /**
+   * 基于cobar代理层的添加记录操作
+   * @param entity
+   */
+  @Insert("cniemp.mybatis.autosql.update.insert.batch.entity")
+  public void insertBatchEntities(T entity) throws DaoException;
+  /**
    * 基于cobar代理层的修改记录操作
    * @param entity
    */

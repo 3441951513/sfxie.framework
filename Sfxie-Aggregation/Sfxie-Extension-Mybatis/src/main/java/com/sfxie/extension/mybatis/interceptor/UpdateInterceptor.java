@@ -111,9 +111,11 @@ public class UpdateInterceptor extends AbstractInformInterceptor implements Inte
      * @return
      */
     public  List<ParameterMapping> createUpdateParameterMappingList(Object parameterObject,MappedStatement mappedStatement){
-    	Field[] fields = parameterObject.getClass().getDeclaredFields();
+//    	Field[] fields = parameterObject.getClass().getDeclaredFields();
+    	List<Field> col = new ArrayList<Field>();
+		ReflectUtils.getBeanAllFields(col, parameterObject.getClass(), null);
     	List<ParameterMapping>  parameterMappingList = new ArrayList<ParameterMapping> ();
-    	for(Field field : fields){
+    	for(Field field : col){
     		String fName = field.getName();
     		if(null!=ReflectUtils.getFieldValue(fName,parameterObject)){
 				try {

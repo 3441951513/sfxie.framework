@@ -1,10 +1,12 @@
 package com.sfxie.extension.spring4.mvc.exception;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.BadSqlGrammarException;
 
 import com.sfxie.extension.spring4.jedis.JedisTransactionManager;
@@ -71,9 +73,9 @@ public class ExceptionContainer {
 	public static Object controller(ExceptionWrapper exceptionWrapper,Object... parameters) throws MvcException{
 		boolean notException = true;
 		try{
-			setParameters(parameters);
+			setParameters(getParams(exceptionWrapper.getParameters(),parameters));
 			exceptionWrapper.supports();
-			Object result = exceptionWrapper.doMethod(parameters);
+			Object result = exceptionWrapper.doMethod(getParams(exceptionWrapper.getParameters(),parameters));
 			clearParameters();
 			return result;
 		}catch(ServiceException e){
@@ -82,12 +84,19 @@ public class ExceptionContainer {
 		}catch(DaoException e){
 			notException = false;
 			throw  e;
+		}catch(BusinessException e){
+			notException = false;
+			throw e;
 		}catch(BadSqlGrammarException e){
 			notException = false;
-			throw exceptionWrapper.generateSqlException(e, parameters);
+			throw exceptionWrapper.generateSqlException(e, getParams(exceptionWrapper.getParameters(),parameters));
 		}catch(Exception e){
 			notException = false;
-			throw exceptionWrapper.generateControllerException(e, parameters);
+//			DataAccessException.class.isAssignableFrom(e.getClass()) || SQLException.class.isAssignableFrom(e.getClass())
+			if(e instanceof DataAccessException  || e instanceof SQLException || (null!=e.getCause() && e.getCause() instanceof SQLException)){
+				throw exceptionWrapper.generateSqlException(e, getParams(exceptionWrapper.getParameters(),parameters));
+			}
+			throw exceptionWrapper.generateControllerException(e, getParams(exceptionWrapper.getParameters(),parameters));
 		}finally{
 			//如果发生异常,则暂时不进行释放当前线程的jedis资源 
 			if(!notException){
@@ -105,6 +114,10 @@ public class ExceptionContainer {
 			}
 		}
 	}
+	
+	private static Object[] getParams(Object[] objs1 ,Object[] objs2){
+		return null!=objs1 ?objs1 :objs2;
+	}
 	/**
 	 * service层执行方法
 	 * @param exceptionWrapper
@@ -116,13 +129,13 @@ public class ExceptionContainer {
 	 */
 	public static Object service(ExceptionWrapper exceptionWrapper,Object... parameters) throws MvcException{
 		try{
-			return exceptionWrapper.doMethod(parameters);
+			return exceptionWrapper.doMethod(getParams(exceptionWrapper.getParameters(),parameters));
 		}catch(DaoException e){
 			throw e;
 		}catch(RedisException e){
 			throw e;
 		}catch(Exception e){
-			ServiceException serviceException = exceptionWrapper.generateServiceException(e, parameters);
+			ServiceException serviceException = exceptionWrapper.generateServiceException(e, getParams(exceptionWrapper.getParameters(),parameters));
 			throw serviceException;
 		}
 	}
@@ -137,11 +150,11 @@ public class ExceptionContainer {
 	 */
 	public static Object dao(ExceptionWrapper exceptionWrapper,Object... parameters) throws DaoException{
 		try{
-			return exceptionWrapper.doMethod(parameters);
+			return exceptionWrapper.doMethod(getParams(exceptionWrapper.getParameters(),parameters));
 		}catch(RedisException e){
 			throw e;
 		}catch(Exception e){
-			throw exceptionWrapper.generateDaoException(e, parameters);
+			throw exceptionWrapper.generateDaoException(e, getParams(exceptionWrapper.getParameters(),parameters));
 		}
 	}
 	/**
@@ -155,9 +168,9 @@ public class ExceptionContainer {
 	 */
 	public static Object redis(ExceptionWrapper exceptionWrapper,Object... parameters) throws RedisException{
 		try{
-			return exceptionWrapper.doMethod(parameters);
+			return exceptionWrapper.doMethod(getParams(exceptionWrapper.getParameters(),parameters));
 		}catch(Exception e){
-			throw exceptionWrapper.generateRedisException(e, parameters);
+			throw exceptionWrapper.generateRedisException(e, getParams(exceptionWrapper.getParameters(),parameters));
 		}
 	}
 	/**
@@ -171,9 +184,9 @@ public class ExceptionContainer {
 	 */
 	public static Object mvc(ExceptionWrapper exceptionWrapper,Object... parameters) throws MvcException{
 		try{
-			return exceptionWrapper.doMethod(parameters);
+			return exceptionWrapper.doMethod(getParams(exceptionWrapper.getParameters(),parameters));
 		}catch(Exception e){
-			throw exceptionWrapper.generateMvcException(e, parameters);
+			throw exceptionWrapper.generateMvcException(e, getParams(exceptionWrapper.getParameters(),parameters));
 		}
 	}
 	/**
@@ -187,7 +200,7 @@ public class ExceptionContainer {
 	 */
 	public static Object other(ExceptionWrapper exceptionWrapper,Object... parameters) throws Exception{
 		try{
-			return exceptionWrapper.doMethod(parameters);
+			return exceptionWrapper.doMethod(getParams(exceptionWrapper.getParameters(),parameters));
 		}catch(Exception e){
 			throw e;
 		}
