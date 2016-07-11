@@ -12,7 +12,5 @@
       ">
       
   	<!-- 要暴露的服务接口 -->  
-<!--    	<dubbo:service interface="com.sfxie.soa.modules.dubbo.service.cm.dubbo.LLRService" ref="LLRService" registry="oaRegistry"/>  -->
-	<dubbo:service interface="com.sfxie.soa.modules.dubbo.service.cm.dubbo.LLRService" ref="${dubbo.service.cm.LLRService.ref}" registry="${dubbo.service.cm.LLRService.register}"/>
-
+   	<dubbo:service interface="com.sfxie.soa.modules.dubbo.service.page.dubbo.BarService" ref="barService" registry="oaRegistry"/> 
 </beans>  
