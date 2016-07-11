@@ -9,7 +9,8 @@ import javax.annotation.Resource;
 
 
 
-import javax.xml.bind.JAXBException;
+
+
 
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,12 +23,11 @@ import com.sfxie.extension.spring4.mvc.exception.AbstractExceptionWrapper;
 import com.sfxie.extension.spring4.mvc.exception.ExceptionContainer;
 import com.sfxie.extension.spring4.mvc.exception.MvcException;
 import com.sfxie.soa.common.request.Request;
+import com.sfxie.soa.common.request.SecurityUser;
 import com.sfxie.soa.modules.dubbo.service.cm.dubbo.LLRService;
-import com.sfxie.soa.modules.dubbo.service.cm.pojo.UserEntity;
-import com.sfxie.soa.modules.dubbo.service.cm.pojo.xml.LoginRequest;
+import com.sfxie.soa.modules.dubbo.service.cm.pojo.LoginRequest;
 import com.sfxie.soa.modules.dubbo.service.oa.dubbo.UserService;
 import com.sfxie.soa.modules.dubbo.service.oa.pojo.SfxieSysUserinfo;
-import com.sfxie.utils.XmlUtils;
 import com.sfxie.website.common.context.SystemContext;
 
 /**
@@ -58,14 +58,13 @@ public class LLRController extends SpringMvcController{
 	 *
 	 */
 	@RequestMapping(value="/cm/login", method = RequestMethod.POST)
-	public @ResponseBody Object login(@RequestBody final Request request ) {
+	public @ResponseBody Object login(@RequestBody final LoginRequest request ) {
 		
 		return (Object) ExceptionContainer.controller(new AbstractExceptionWrapper(request){
 			@Override
 			public Object doMethod(Object... obj) throws MvcException {
 //				Request<UserEntity> request = new Request<UserEntity>();
-				Request request = getParameterObj(0);
-				llRService.login(request);
+				llRService.login((SecurityUser)request);
 				return "success";
 			}
 		});

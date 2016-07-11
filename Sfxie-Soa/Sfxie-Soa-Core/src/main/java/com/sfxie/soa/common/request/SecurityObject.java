@@ -1,8 +1,10 @@
 package com.sfxie.soa.common.request;
 
+
 import java.io.Serializable;
 
 import javax.xml.bind.annotation.XmlElement;
+
 
 /**
  * 安全控制传输实体
@@ -14,7 +16,6 @@ import javax.xml.bind.annotation.XmlElement;
  *
  */
 public class SecurityObject implements Serializable{
-
 	/**
 	 * 
 	 */
@@ -31,7 +32,7 @@ public class SecurityObject implements Serializable{
 	public void setHeader(Header header) {
 		this.header = header;
 	}
-	
+
 	
 	/*private String userId;
 	

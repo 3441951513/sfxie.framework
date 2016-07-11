@@ -2,12 +2,23 @@ package com.sfxie.soa.modules.dubbo.service.cm.exception;
 
 import com.sfxie.extension.spring4.mvc.exception.BusinessException;
 
+/**
+ * 密码为空异常
+ * @author xiesf
+ *
+ */
 public class RegisterException extends BusinessException {
 
-	public RegisterException(String message) {
-		super(message);
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	public RegisterException(String msg ) {
+		super(msg);
 	}
-	public RegisterException() {
-		super("注册错误");
+	public RegisterException(String message,String code) {
+		super(message,code);
 	}
+	
 }

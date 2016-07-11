@@ -1,10 +1,9 @@
 package com.sfxie.soa.modules.dubbo.service.cm.dubbo;
 
 import com.sfxie.core.service.IBaseService;
-import com.sfxie.soa.common.request.SecurityObject;
+import com.sfxie.soa.common.request.SecurityUser;
 import com.sfxie.soa.modules.dubbo.service.cm.exception.LoginException;
 import com.sfxie.soa.modules.dubbo.service.cm.exception.LogoutException;
-import com.sfxie.soa.modules.dubbo.service.cm.exception.RegisterException;
 
 /**
  * 登录,注销,注册接口服务
@@ -18,9 +17,7 @@ import com.sfxie.soa.modules.dubbo.service.cm.exception.RegisterException;
 public interface LLRService extends IBaseService{
 
 	/**	登录	*/
-	public void login(SecurityObject scurityObject) throws LoginException;
+	public void login(SecurityUser scurityObject) throws LoginException;
 	/**	注销	*/
-	public void logout(SecurityObject scurityObject) throws LogoutException;
-	/**	注册	*/
-	public void register(SecurityObject scurityObject) throws RegisterException;
+	public void logout(SecurityUser scurityObject) throws LogoutException;
 }
