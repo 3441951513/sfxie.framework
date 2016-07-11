@@ -2,16 +2,9 @@ package com.sfxie.soa.modules.dubbo.service.provider.rest.impl;
 
 import java.util.Date;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
 
 import org.springframework.stereotype.Service;
 
-import com.alibaba.dubbo.rpc.protocol.rest.support.ContentType;
 import com.sfxie.soa.dubbo.service.BaseRestfulService;
 import com.sfxie.soa.modules.dubbo.service.provider.pojo.Entity;
 import com.sfxie.soa.modules.dubbo.service.provider.rest.RestfulService;

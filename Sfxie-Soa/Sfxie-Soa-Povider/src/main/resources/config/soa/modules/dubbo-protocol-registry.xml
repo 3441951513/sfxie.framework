@@ -19,6 +19,6 @@
     <dubbo:protocol name="rest" port="8880" threads="500" server="tomcat" accepts="500"/>
     
    	<!-- 使用zookeeper注册中心暴露服务地址 -->  
-   	<dubbo:registry address="${dubbo.address.zk}" check="false" subscribe="true" register="true" id="testRegistry"></dubbo:registry>
-   	<dubbo:registry address="${dubbo.address.zk}" check="false" subscribe="true" register="true" id="oaRegistry"></dubbo:registry>
+   	<dubbo:registry address="${dubbo.address.zk.testRegistry}" check="false" subscribe="true" register="true" id="testRegistry" timeout="${dubbo.registry.testRegistry.timeout}"></dubbo:registry>
+   	<dubbo:registry address="${dubbo.address.zk.oaRegistry}" check="false" subscribe="true" register="true" id="oaRegistry" timeout="${dubbo.registry.oaRegistry.timeout}"></dubbo:registry>
 </beans>  
