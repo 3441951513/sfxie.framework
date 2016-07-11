@@ -2,7 +2,6 @@ package com.sfxie.soa.modules.dubbo.service.cm.dubbo.impl;
 
 import org.springframework.stereotype.Service;
 
-import com.sfxie.extension.spring4.properties.SwitchPropertyPlaceholderConfigurer;
 import com.sfxie.soa.common.request.SecurityUser;
 import com.sfxie.soa.dubbo.service.BaseRestfulService;
 import com.sfxie.soa.modules.common.context.Properties;
