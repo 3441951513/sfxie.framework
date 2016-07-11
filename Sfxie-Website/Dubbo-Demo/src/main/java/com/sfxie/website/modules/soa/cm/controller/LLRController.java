@@ -12,6 +12,7 @@ import javax.annotation.Resource;
 
 
 
+
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,6 +24,7 @@ import com.sfxie.extension.spring4.mvc.exception.AbstractExceptionWrapper;
 import com.sfxie.extension.spring4.mvc.exception.ExceptionContainer;
 import com.sfxie.extension.spring4.mvc.exception.MvcException;
 import com.sfxie.soa.common.request.Request;
+import com.sfxie.soa.common.request.SecurityContext;
 import com.sfxie.soa.common.request.SecurityUser;
 import com.sfxie.soa.modules.dubbo.service.cm.dubbo.LLRService;
 import com.sfxie.soa.modules.dubbo.service.cm.pojo.LoginRequest;
@@ -108,8 +110,8 @@ public class LLRController extends SpringMvcController{
 			@Override
 			public Object doMethod(Object... obj) throws MvcException {
 				SfxieSysUserinfo userInfo = getParameterObj(0);
-				userInfo.setCreate_company_id(SystemContext.getCurrentSfxieSysUserinfo().getCreate_company_id());
-				userInfo.setCreate_user(SystemContext.getCurrentSfxieSysUserinfo().getUser_id());
+				userInfo.setCreate_company_id(SecurityContext.getSecurityUser().getOrgId());
+//				userInfo.setCreate_user(SecurityContext.getSecurityUser().getUserId());
 				userService.register(userInfo);
 				return "success";
 			}
