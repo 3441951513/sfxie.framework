@@ -1,2 +1,9 @@
 1。先将工程的jdk换成jdk8
 2。启动工程并且访问：http://xxxxx:xx/Dubbo-Demo/jsp/api/main/index.jsp
+
+
+
+
+
+
+http://localhost:8080/Dubbo-Demo/jsp/api/main/index.jsp

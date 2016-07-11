@@ -7,8 +7,9 @@ import javax.xml.bind.annotation.XmlAttribute;
 import com.sfxie.core.base.IEntity;
 import com.sfxie.extension.mybatis.annotation.ColumnName;
 import com.sfxie.soa.common.request.Request;
+import com.sfxie.soa.common.request.SecurityUser;
 
-public class OaBaseEntity extends Request implements IEntity{
+public class OaBaseEntity extends Request implements IEntity,SecurityUser{
 	/**	创建时间	*/
 	@ColumnName(field="create_time")
 	private Date create_time;
@@ -78,6 +79,21 @@ public class OaBaseEntity extends Request implements IEntity{
 	 @XmlAttribute
 	public Date getUpdate_time(){
 		return update_time;
+	}
+
+	@Override
+	public String getUserId() {
+		return null;
+	}
+
+	@Override
+	public String getUserPassword() {
+		return null;
+	}
+
+	@Override
+	public String getOrgId() {
+		return null;
 	}
 
 }

@@ -9,6 +9,11 @@ import com.sfxie.extension.spring4.mvc.exception.BusinessException;
  */
 public class RegisterException extends BusinessException {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	public RegisterException(String msg ) {
 		super(msg);
 	}

@@ -18,6 +18,12 @@ import com.sfxie.extension.mybatis.annotation.TableName;
 @SqlDecorator(decorator = DefaultSqlDecorator.class)
 public class SfxieSysUserinfo extends OaBaseEntity{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	
 	/**	用户代码	*/
 	@ColumnName(field="user_id")
 	private String user_id;
@@ -160,6 +166,17 @@ public class SfxieSysUserinfo extends OaBaseEntity{
 	 @XmlAttribute
 	public String getPartition_company(){
 		return partition_company;
+	}
+	 
+	 
+	@Override
+	public String getUserId() {
+		return user_id;
+	}
+
+	@Override
+	public String getUserPassword() {
+		return user_password;
 	}
 }
 

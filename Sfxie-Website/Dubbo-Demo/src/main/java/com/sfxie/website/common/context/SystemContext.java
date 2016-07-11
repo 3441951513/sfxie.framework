@@ -10,9 +10,6 @@ public class SystemContext extends Context {
 	}
 	
 	public static SfxieSysUserinfo getCurrentSfxieSysUserinfo (){
-		SfxieSysUserinfo user = new SfxieSysUserinfo();
-		user.setCreate_company_id("00000000");
-		user.setUser_id("13246779797");
-		return user;
+		return getCurrentSfxieSysUserinfo();
 	}
 }
