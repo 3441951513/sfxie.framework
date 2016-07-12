@@ -40,6 +40,14 @@
 		height: 20px;
 		line-height: 20px;
 	}
+	.span-url{
+		padding-left:30px;
+		color: blue;
+	}
+	.span-dataType{
+		padding-left:5px;
+		color: red;
+	}
 </style>
 <script type="text/javascript">
 	var flag = {};
@@ -91,12 +99,14 @@
 		var ctx = "${ctx}"+"/springmvc";
 		var actionUrl = ctx+node.attributes['url'];
 		
+		var dataType = "xml";
 		if(node.attributes['dataType']){
 			$('#'+apiId+'dataType').val(node.attributes['dataType']);
+			dataType = node.attributes['dataType'];
 		}
 		
 		$('#'+apiId+'InputUrl').val(actionUrl);
-		$('#'+apiId+'URLId').text(hostName+actionUrl);
+		$('#'+apiId+'URLId').html('<span class="span-dataType">参数类型：'+dataType+'<span class="span-url">URL：'+hostName+actionUrl+'</span>');
 		var test = getParameter(node);
 		var dataType = node.attributes['dataType'];
 		if(test){

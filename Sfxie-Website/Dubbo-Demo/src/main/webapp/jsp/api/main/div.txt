@@ -1,7 +1,7 @@
 <div id="s#######scontentDivId" class="easyui-layout" data-options="fit:true">
     <div data-options="region:'north',footer:'#s#######stab-tools'" style="height:400px">
-    	<div class="easyui-panel" title="URL" style="height:50px">
-    		<span style="color:blue;" id="s#######sURLId" ></span>
+    	<div class="easyui-panel" title="配置信息" style="height:50px">
+    		<div style="color:blue;" id="s#######sURLId" ></div>
     	</div>
     	<div  class="easyui-panel" title="参数" style="height:300px">
         	<pre id="s#######sXMLId" class="prettyprint" style="min-height:200px;height:82%;width:98%;" >
