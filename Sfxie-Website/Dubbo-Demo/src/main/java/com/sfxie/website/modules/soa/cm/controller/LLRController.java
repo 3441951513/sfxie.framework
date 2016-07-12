@@ -65,7 +65,7 @@ public class LLRController extends SpringMvcController{
 			public Object doMethod(Object... obj) throws MvcException {
 //				Request<UserEntity> request = new Request<UserEntity>();
 				llRService.login((SecurityUser)request);
-				return "success";
+				return request;
 			}
 		});
 	}
