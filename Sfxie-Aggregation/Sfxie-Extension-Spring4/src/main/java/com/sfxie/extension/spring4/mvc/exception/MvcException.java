@@ -11,7 +11,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sfxie.exception.framework.ExceptionEventListener;
 import com.sfxie.exception.framework.FrameworkException;
 import com.sfxie.extension.spring4.mvc.exception.event.logger.LoggerEventHandlerImpl;
 import com.sfxie.extension.spring4.mvc.exception.info.ExceptionEntity;

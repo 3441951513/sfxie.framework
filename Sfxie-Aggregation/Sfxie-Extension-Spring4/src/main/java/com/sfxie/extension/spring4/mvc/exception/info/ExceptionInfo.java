@@ -99,6 +99,8 @@ public abstract class ExceptionInfo {
 			
 			if(message.contains("Data too long")){
 				tip = "数据太长";
+			}else if(message.contains("have a default value")){
+				tip = "不能为空";
 			}
 		}
 		exceptionInfo.setErrorDbName(name);

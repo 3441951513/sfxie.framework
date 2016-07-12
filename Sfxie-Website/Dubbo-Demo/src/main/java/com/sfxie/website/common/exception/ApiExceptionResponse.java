@@ -4,7 +4,6 @@ package com.sfxie.website.common.exception;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.sfxie.utils.jacson.codehaus.JsonUtil;
 import com.sfxie.website.modules.api3.common.model.response.Response;
 
 

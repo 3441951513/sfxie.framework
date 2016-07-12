@@ -23,14 +23,12 @@ import com.sfxie.extension.spring4.mvc.controller.SpringMvcController;
 import com.sfxie.extension.spring4.mvc.exception.AbstractExceptionWrapper;
 import com.sfxie.extension.spring4.mvc.exception.ExceptionContainer;
 import com.sfxie.extension.spring4.mvc.exception.MvcException;
-import com.sfxie.soa.common.request.Request;
 import com.sfxie.soa.common.request.SecurityContext;
 import com.sfxie.soa.common.request.SecurityUser;
 import com.sfxie.soa.modules.dubbo.service.cm.dubbo.LLRService;
 import com.sfxie.soa.modules.dubbo.service.cm.pojo.LoginRequest;
 import com.sfxie.soa.modules.dubbo.service.oa.dubbo.UserService;
 import com.sfxie.soa.modules.dubbo.service.oa.pojo.SfxieSysUserinfo;
-import com.sfxie.website.common.context.SystemContext;
 
 /**
  * 登录,注销,注册控制器
@@ -111,7 +109,7 @@ public class LLRController extends SpringMvcController{
 			public Object doMethod(Object... obj) throws MvcException {
 				SfxieSysUserinfo userInfo = getParameterObj(0);
 				userInfo.setCreate_company_id(SecurityContext.getSecurityUser().getOrgId());
-//				userInfo.setCreate_user(SecurityContext.getSecurityUser().getUserId());
+				userInfo.setCreate_user(SecurityContext.getSecurityUser().getUserId());
 				userService.register(userInfo);
 				return "success";
 			}
