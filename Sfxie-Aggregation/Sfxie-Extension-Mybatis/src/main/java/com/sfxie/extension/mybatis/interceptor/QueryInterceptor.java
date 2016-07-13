@@ -1,8 +1,11 @@
 package com.sfxie.extension.mybatis.interceptor;
 
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Field;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
@@ -26,11 +29,15 @@ import org.apache.ibatis.session.RowBounds;
 import com.sfxie.data.security.ISqlDecorator;
 import com.sfxie.data.security.ISqlSecurity;
 import com.sfxie.extension.logger.LoggerUtil;
+import com.sfxie.extension.mybatis.annotation.ColumnName;
 import com.sfxie.extension.mybatis.annotation.SqlDecorator;
 import com.sfxie.extension.mybatis.annotation.SqlSecurity;
 import com.sfxie.extension.mybatis.inform.AbstractInformInterceptor;
 import com.sfxie.extension.mybatis.inform.IInformInterceptor;
+import com.sfxie.extension.mybatis.interceptor.UpdateInterceptor.BoundSqlSqlSource;
 import com.sfxie.extension.spring4.mvc.context.Context;
+import com.sfxie.utils.ReflectUtils;
+import com.sfxie.utils.StringUtils;
 
 /**
  * mybatis的查询拦截器
@@ -45,6 +52,10 @@ import com.sfxie.extension.spring4.mvc.context.Context;
 		ResultHandler.class }) })
 public class QueryInterceptor extends AbstractInformInterceptor implements
 		Interceptor {
+
+	public static final Class<? extends Annotation> MYBATISCOLUMN = ColumnName.class;
+	
+    private final static String _sql_regex_query = ".*cniemp.mybatis.autosql.find.*";
 	/** sql监控列表拦截器名称 */
 	private String informInterceptorList = null;
 	/** 是否启动sql监控功能 */
@@ -80,24 +91,53 @@ public class QueryInterceptor extends AbstractInformInterceptor implements
 		// Page对象获取，“信使”到达拦截器！
 		Page page = searchPageWithXpath(boundSql.getParameterObject(), ".","page", "*/page");
 
-		//sql安全处理
-		SqlSecurity sqlScAnnotation = parameter.getClass().getAnnotation(SqlSecurity.class);
-		if(null!=sqlScAnnotation){
-			ISqlSecurity sqlSc = sqlScAnnotation.securitor().newInstance();
-			sqlSc.securitySql(originalSql, parameter);
-		}
-		//sql安全处理
+		String mapperSQL = boundSql.getSql();
+		boolean interceptorQuery = mapperSQL.matches(_sql_regex_query);
 		
-		//sql装潢处理
-		SqlDecorator sqlDtAnnotation = parameter.getClass().getAnnotation(SqlDecorator.class);
-		if(null!=sqlDtAnnotation){
-			originalSql = boundSql.getSql().trim();
-			ISqlDecorator sqlDt = sqlDtAnnotation.decorator().newInstance();
-			originalSql = sqlDt.decoratedSql(originalSql,parameter);
-		}
-		//sql装潢处理
-		
-		if (page != null) {
+		if(interceptorQuery){
+			originalSql = interceptorQuery(mapperSQL,parameter);
+			//sql安全处理
+			SqlSecurity sqlScAnnotation = parameter.getClass().getAnnotation(SqlSecurity.class);
+			if(null!=sqlScAnnotation){
+				ISqlSecurity sqlSc = sqlScAnnotation.securitor().newInstance();
+				sqlSc.securitySql(originalSql, parameter);
+			}
+			//sql安全处理
+			
+			//sql装潢处理
+			SqlDecorator sqlDtAnnotation = parameter.getClass().getAnnotation(SqlDecorator.class);
+			if(null!=sqlDtAnnotation){
+				if(StringUtils.isEmpty(originalSql)){
+					originalSql = boundSql.getSql().trim();
+				}
+				ISqlDecorator sqlDt = sqlDtAnnotation.decorator().newInstance();
+				originalSql = sqlDt.decoratedSql(originalSql,parameter);
+			}
+			//sql装潢处理
+			List<ParameterMapping> parameterMappingList = createUpdateParameterMappingList(parameter,mappedStatement);
+			BoundSql newBoundSql = new BoundSql(mappedStatement.getConfiguration(), originalSql,parameterMappingList,boundSql.getParameterObject()); 
+            MappedStatement newMs = MappedStatmentHelper.copyFromMappedStatement(mappedStatement,new BoundSqlSqlSource(newBoundSql),parameter); 
+            invocation.getArgs()[0]= newMs; 
+			System.out.println(originalSql);
+		}else if (page != null) {
+			//sql安全处理
+			SqlSecurity sqlScAnnotation = parameter.getClass().getAnnotation(SqlSecurity.class);
+			if(null!=sqlScAnnotation){
+				ISqlSecurity sqlSc = sqlScAnnotation.securitor().newInstance();
+				sqlSc.securitySql(originalSql, parameter);
+			}
+			//sql安全处理
+			
+			//sql装潢处理
+			SqlDecorator sqlDtAnnotation = parameter.getClass().getAnnotation(SqlDecorator.class);
+			if(null!=sqlDtAnnotation){
+				if(StringUtils.isEmpty(originalSql)){
+					originalSql = boundSql.getSql().trim();
+				}
+				ISqlDecorator sqlDt = sqlDtAnnotation.decorator().newInstance();
+				originalSql = sqlDt.decoratedSql(originalSql,parameter);
+			}
+			//sql装潢处理
 			if(null==originalSql){
 				originalSql = boundSql.getSql().trim();
 			}
@@ -130,6 +170,38 @@ public class QueryInterceptor extends AbstractInformInterceptor implements
 			invocation.getArgs()[0] = newMs;
 		}
 	}
+	
+	private String interceptorQuery(String mapperDBsql,Object param){
+		return MapperSqlHelper.getExecuSQL(mapperDBsql, param);
+	}
+	/**
+     * 重新构造增删改sql的参数列表集合
+     * @param parameterObject
+     * @param mappedStatement
+     * @return
+     */
+    private  List<ParameterMapping> createUpdateParameterMappingList(Object parameterObject,MappedStatement mappedStatement){
+//    	Field[] fields = parameterObject.getClass().getDeclaredFields();
+    	List<Field> col = new ArrayList<Field>();
+		ReflectUtils.getBeanAllFields(col, parameterObject.getClass(), null);
+    	List<ParameterMapping>  parameterMappingList = new ArrayList<ParameterMapping> ();
+    	for(Field field : col){
+    		String fName = field.getName();
+    		if (field.isAnnotationPresent(MYBATISCOLUMN)) {
+				ColumnName columnName = (ColumnName) field.getAnnotation(MYBATISCOLUMN);
+				if (columnName.isId()) {
+					try {
+						Class<?> fClass = ReflectUtils.getFieldGenericType(field);
+						ParameterMapping.Builder parameterMappingBuilder = new ParameterMapping.Builder(mappedStatement.getConfiguration(),fName,fClass);
+						parameterMappingList.add(parameterMappingBuilder.build());
+					} catch (ClassNotFoundException e) {
+						e.printStackTrace();
+					}
+				}
+			} 
+    	}
+     	return parameterMappingList;
+    }
 
 	public Object plugin(Object target) {
 		return Plugin.wrap(target, this);

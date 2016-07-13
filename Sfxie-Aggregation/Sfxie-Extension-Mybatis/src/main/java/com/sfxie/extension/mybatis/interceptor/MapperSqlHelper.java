@@ -255,15 +255,15 @@ public class MapperSqlHelper {
 	    Field[] files = clazz.getDeclaredFields();
 	    boolean falg = false;
 	    for(Field file : files){
-	      file.setAccessible(true);
-	      if(file.isAnnotationPresent(ColumnName.class)){
+//	      file.setAccessible(true);
+	      if(file.isAnnotationPresent(MYBATISCOLUMN)){
 	    	  ColumnName anColumn = (ColumnName)file.getAnnotation(MYBATISCOLUMN);
 	        if(anColumn.isId()){//判断字段为主键
 	          falg = true;
 	          if(anColumn.field().equals("")){
-	            sql.append(" and "+file.getName()+" = #{"+file.getName()+"},");
+	            sql.append(" and "+file.getName()+" = "+PARAMETER_PLACEHOLDER+",");
 	          }else{
-	            sql.append(" and "+file.getName()+" = #{"+file.getName()+"},");
+	            sql.append(" and "+file.getName()+" = "+PARAMETER_PLACEHOLDER+",");
 	          }
 	        }
 	      }

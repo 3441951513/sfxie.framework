@@ -1,5 +1,6 @@
 package com.sfxie.soa.modules.dubbo.service.cm.pojo;
 
+import com.sfxie.extension.mybatis.annotation.ColumnName;
 import com.sfxie.soa.common.request.Request;
 import com.sfxie.soa.common.request.SecurityContext;
 import com.sfxie.soa.common.request.SecurityUser;
@@ -12,9 +13,11 @@ public class LoginRequest extends Request implements SecurityUser{
 	private static final long serialVersionUID = 1L;
 	
 	/**	用户名(前端传递过来)	*/
+	@ColumnName(field="user_id",isId=true)
 	private String user_id;
 
 	/**	用户密码(前端传递过来)	*/
+	@ColumnName(field="user_password")
 	private String user_password;
 	
 	/**	用户名(前端传递过来) */

@@ -8,6 +8,11 @@ import com.sfxie.extension.spring4.mvc.context.Context;
 
 
 public class SpringMvcController {
+	/**
+	 * 操作成功返回默认对象-有业务意义的返回对象可用自己声明的对象替换(用于返回json格式数据需要)
+	 */
+	protected static final SuccessObject SUCCESS_OBJECT = new SuccessObject();
+	
     protected static final Log logger = LogFactory.getLog(SpringMvcController.class);
 
     /**

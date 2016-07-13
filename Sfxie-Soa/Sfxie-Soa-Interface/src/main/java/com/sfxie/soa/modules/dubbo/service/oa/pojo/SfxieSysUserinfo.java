@@ -25,7 +25,7 @@ public class SfxieSysUserinfo extends OaBaseEntity{
 
 	
 	/**	用户代码	*/
-	@ColumnName(field="user_id")
+	@ColumnName(field="user_id",isId=true)
 	private String user_id;
 
 	/**	用户密码	*/

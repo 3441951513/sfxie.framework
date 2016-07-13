@@ -6,6 +6,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Service;
 
+import com.sfxie.exception.framework.FrameworkException;
 import com.sfxie.extension.mybatis.dao.AutoUpdateMapper;
 import com.sfxie.core.service.TransactionService;
 import com.sfxie.core.service.IBaseService;
@@ -65,6 +66,11 @@ public class AutoUpdateService extends TransactionService implements IBaseServic
 				autoUpdateMapper.deleteEntity(entity);
 			}
 		}
+	}
+	@Override
+	public Object findEntity(Object entity) throws FrameworkException {
+		// TODO Auto-generated method stub
+		return autoUpdateMapper.find(entity);
 	}
 
 }

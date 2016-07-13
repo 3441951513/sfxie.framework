@@ -17,4 +17,6 @@ public interface IBaseService {
 	public void updateEntity(Object... entity) throws FrameworkException;
 	/**	删除实体	*/
 	public void deleteEntity(Object... entity) throws FrameworkException;
+	/**	查找实体	*/
+	public Object findEntity(Object entity) throws FrameworkException;
 }

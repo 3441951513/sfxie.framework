@@ -151,8 +151,8 @@ public interface IMybatisDao<T,PK> {
    * 基于cobar代理层的删除记录操作
    * @param entity
    */
-  @Select("cniemp.mybatis.autosql.query.entity")
-  public void select(String sql) throws DaoException;
+  @Select("cniemp.mybatis.autosql.find.entity.byId")
+  public T find(T entity) throws DaoException;
   
   /**
    * 获取自增主键 SELECT LAST_INSERT_ID()

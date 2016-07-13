@@ -9,6 +9,7 @@ import com.sfxie.soa.modules.dubbo.service.cm.dubbo.LLRService;
 import com.sfxie.soa.modules.dubbo.service.cm.exception.LoginException;
 import com.sfxie.soa.modules.dubbo.service.cm.exception.LogoutException;
 import com.sfxie.soa.modules.dubbo.service.cm.pojo.LoginRequest;
+import com.sfxie.soa.modules.dubbo.service.oa.pojo.SfxieSysUserinfo;
 import com.sfxie.utils.MD5Util;
 
 /**
@@ -25,6 +26,8 @@ public class LLRServiceImpl extends BaseRestfulService implements LLRService {
 
 	public void login(SecurityUser request) throws LoginException {
 		judgeUserInfo(request);
+		SfxieSysUserinfo user = (SfxieSysUserinfo) findEntity(request);
+		System.out.println(user.getUserId());
 		if(!request.getUserPassword().equals(MD5Util.string2MD5(((LoginRequest)request).getUser_password()))){
 			throw new LoginException(Properties.getProperty("login.error.password"),"login.error.password");
 		}
@@ -36,10 +39,10 @@ public class LLRServiceImpl extends BaseRestfulService implements LLRService {
 
 	/**	判断用户信息	*/
 	private void judgeUserInfo(SecurityUser request) throws LoginException,LogoutException{
-		if(null==((LoginRequest)request).getUser_password()){
+		if(null==((SfxieSysUserinfo)request).getUser_password()){
 			throw new LoginException(Properties.getProperty("login.empty.password"),"login.empty.password");
 		}
-		if(null==((LoginRequest)request).getUser_id()){
+		if(null==((SfxieSysUserinfo)request).getUser_id()){
 			throw new LoginException(Properties.getProperty("login.empty.username"),"login.empty.username");
 		}
 	}
