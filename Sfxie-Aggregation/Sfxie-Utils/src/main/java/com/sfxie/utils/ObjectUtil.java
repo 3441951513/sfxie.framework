@@ -1,5 +1,9 @@
 package com.sfxie.utils;
 
+import java.util.Map;
+
+import org.apache.commons.beanutils.BeanMap;
+
 /**
  * 对象辅助类
  * @TODO	
@@ -33,5 +37,16 @@ public class ObjectUtil {
 			}
 		}
 		return obj;
+	}
+	/**
+	 * 对象转map
+	 * @param obj
+	 * @return
+	 */
+	public static Map<?, ?> objectToMap(Object obj) {
+		if (obj == null)
+			return null;
+
+		return new BeanMap(obj);
 	}
 }

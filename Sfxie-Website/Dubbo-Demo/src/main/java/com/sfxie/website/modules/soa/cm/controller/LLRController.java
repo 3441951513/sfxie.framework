@@ -24,7 +24,6 @@ import com.sfxie.extension.spring4.mvc.exception.AbstractExceptionWrapper;
 import com.sfxie.extension.spring4.mvc.exception.ExceptionContainer;
 import com.sfxie.extension.spring4.mvc.exception.MvcException;
 import com.sfxie.soa.common.request.SecurityContext;
-import com.sfxie.soa.common.request.SecurityUser;
 import com.sfxie.soa.modules.dubbo.service.cm.dubbo.LLRService;
 import com.sfxie.soa.modules.dubbo.service.cm.pojo.LoginRequest;
 import com.sfxie.soa.modules.dubbo.service.oa.dubbo.UserService;
@@ -63,8 +62,12 @@ public class LLRController extends SpringMvcController{
 		return (Object) ExceptionContainer.controller(new AbstractExceptionWrapper(request){
 			@Override
 			public Object doMethod(Object... obj) throws MvcException {
-//				Request<UserEntity> request = new Request<UserEntity>();
-				llRService.login((SecurityUser)request);
+
+				LoginRequest lr = getParameterObj(0);
+				SfxieSysUserinfo userInfo = new SfxieSysUserinfo ();
+				userInfo.setUser_id(lr.getUser_id());
+				userInfo.setUser_password(lr.getUser_password());
+				llRService.login(userInfo);
 				return request;
 			}
 		});
@@ -87,7 +90,7 @@ public class LLRController extends SpringMvcController{
 			public Object doMethod(Object... obj) throws MvcException {
 //				Request request = new Request();
 //				llRService.logout(request);
-				return "success";
+				return SUCCESS_OBJECT;
 			}
 		});
 	}
@@ -103,15 +106,20 @@ public class LLRController extends SpringMvcController{
 	 */
 	@RequestMapping(value="/cm/register", method = RequestMethod.POST)
 //	public @ResponseBody Object register(@RequestBody final Request<UserEntity> request ) {
-	public @ResponseBody Object register(@RequestBody SfxieSysUserinfo entity ) {	
+	public @ResponseBody Object register(@RequestBody LoginRequest entity ) {	
 		return (Object) ExceptionContainer.controller(new AbstractExceptionWrapper(entity){
 			@Override
 			public Object doMethod(Object... obj) throws MvcException {
-				SfxieSysUserinfo userInfo = getParameterObj(0);
+				LoginRequest lr = getParameterObj(0);
+				SfxieSysUserinfo userInfo = new SfxieSysUserinfo ();
 				userInfo.setCreate_company_id(SecurityContext.getSecurityUser().getOrgId());
 				userInfo.setCreate_user(SecurityContext.getSecurityUser().getUserId());
+				userInfo.setPartition_company("00000000");
+				userInfo.setUser_id(lr.getUser_id());
+				userInfo.setUser_password(lr.getUser_password());
+				
 				userService.register(userInfo);
-				return "success";
+				return SUCCESS_OBJECT;
 			}
 		});
 	}

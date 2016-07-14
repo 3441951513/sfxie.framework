@@ -1,5 +1,8 @@
 package com.sfxie.extension.mybatis.service;
 
+import java.util.List;
+import java.util.Map;
+
 import javax.annotation.Resource;
 
 import org.apache.commons.logging.Log;
@@ -11,6 +14,8 @@ import com.sfxie.extension.mybatis.dao.AutoUpdateMapper;
 import com.sfxie.core.service.TransactionService;
 import com.sfxie.core.service.IBaseService;
 import com.sfxie.extension.spring4.mvc.exception.MvcException;
+import com.sfxie.utils.CollectionUtil;
+import com.sfxie.utils.MapUtil;
 
 /**
  * 封装的有根据实体自动生成增、删、改功能sql的service
@@ -67,10 +72,22 @@ public class AutoUpdateService extends TransactionService implements IBaseServic
 			}
 		}
 	}
+	/**
+	 * 根据主键获取实体
+	 */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
-	public Object findEntity(Object entity) throws FrameworkException {
+	public <T> T findByKey(T entity) throws FrameworkException {
 		// TODO Auto-generated method stub
-		return autoUpdateMapper.find(entity);
+		List<Map> list = autoUpdateMapper.findByKey(entity);
+		if(CollectionUtil.isNotEmpty(list)){
+			try {
+				return (T) MapUtil.mapToObject(list.get(0), entity.getClass());
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return null;
 	}
 
 }

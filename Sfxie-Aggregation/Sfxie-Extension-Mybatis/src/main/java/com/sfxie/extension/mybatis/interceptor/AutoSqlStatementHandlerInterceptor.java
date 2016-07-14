@@ -42,7 +42,7 @@ public class AutoSqlStatementHandlerInterceptor implements Interceptor {
 	/** 更新操作标志*/
 	public final static String _sql_regex_update = "cniemp.mybatis.autosql.update";
 	/** 查询操作标志*/
-	public final static String _sql_regex_query = "cniemp.mybatis.autosql.query";
+	public final static String _sql_regex_query = "cniemp.mybatis.autosql.find";
 	/** 参数标志*/
 	private final static String PARAMETER_PLACEHOLDER = "\\[parameter\\]";
 	/** 数据库类型，不同的数据库有不同的分页方法*/
@@ -67,6 +67,10 @@ public class AutoSqlStatementHandlerInterceptor implements Interceptor {
 				//执行新增和修改操作
 				doSaveOrUpdate(boundSql);
 			}
+			//根据实体主键查询实体功能
+			else if(boundSql.getSql().startsWith(_sql_regex_query)){
+				doFindEntityByKey(boundSql);
+			}
 			//处理获取自增主键
 			else if(boundSql.getSql().startsWith("cniemp.mybatis.autosql.selectKeyId")) {
 				selectKeyId(boundSql);
@@ -90,6 +94,9 @@ public class AutoSqlStatementHandlerInterceptor implements Interceptor {
 	}
 	private void doSaveOrUpdate(BoundSql boundSql){
 		ReflectUtils.setFieldValue(boundSql, "sql", boundSql.getSql().replaceAll(_sql_regex_update, "").replaceAll(PARAMETER_PLACEHOLDER, "?"));
+	}
+	private void doFindEntityByKey(BoundSql boundSql){
+		ReflectUtils.setFieldValue(boundSql, "sql", boundSql.getSql().replaceAll(_sql_regex_query, "").replaceAll(PARAMETER_PLACEHOLDER, "?"));
 	}
 	private void doSelectPage(Invocation invocation) throws SQLException{
 		//对于StatementHandler其实只有两个实现类，一个是RoutingStatementHandler，另一个是抽象类BaseStatementHandler，

@@ -31,4 +31,12 @@ public class UserServiceTest extends BaseTest<UserService,SfxieSysUserinfo> {
 	protected SfxieSysUserinfo getUpdateEntity() {
 		return null;
 	}
+	@Test
+	public void testFindEntityById(){
+		SfxieSysUserinfo entity = new SfxieSysUserinfo();
+		entity.setUser_id("eeeeee");
+		UserService service = getService();
+		SfxieSysUserinfo e = service.findByKey(entity);
+		System.out.println(e);
+	}
 }

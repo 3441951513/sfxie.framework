@@ -1,6 +1,9 @@
 package com.sfxie.extension.mybatis.dao;
 
 
+import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
@@ -151,8 +154,9 @@ public interface IMybatisDao<T,PK> {
    * 基于cobar代理层的删除记录操作
    * @param entity
    */
+  @SuppressWarnings("rawtypes")
   @Select("cniemp.mybatis.autosql.find.entity.byId")
-  public T find(T entity) throws DaoException;
+  public  List<Map> findByKey(T entity) throws DaoException;
   
   /**
    * 获取自增主键 SELECT LAST_INSERT_ID()

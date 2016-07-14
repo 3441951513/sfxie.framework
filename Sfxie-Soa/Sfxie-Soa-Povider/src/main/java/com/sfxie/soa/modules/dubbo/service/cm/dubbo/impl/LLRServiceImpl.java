@@ -2,13 +2,11 @@ package com.sfxie.soa.modules.dubbo.service.cm.dubbo.impl;
 
 import org.springframework.stereotype.Service;
 
-import com.sfxie.soa.common.request.SecurityUser;
 import com.sfxie.soa.dubbo.service.BaseRestfulService;
 import com.sfxie.soa.modules.common.context.Properties;
 import com.sfxie.soa.modules.dubbo.service.cm.dubbo.LLRService;
 import com.sfxie.soa.modules.dubbo.service.cm.exception.LoginException;
 import com.sfxie.soa.modules.dubbo.service.cm.exception.LogoutException;
-import com.sfxie.soa.modules.dubbo.service.cm.pojo.LoginRequest;
 import com.sfxie.soa.modules.dubbo.service.oa.pojo.SfxieSysUserinfo;
 import com.sfxie.utils.MD5Util;
 
@@ -24,25 +22,29 @@ import com.sfxie.utils.MD5Util;
 @Service("LLRService")
 public class LLRServiceImpl extends BaseRestfulService implements LLRService {
 
-	public void login(SecurityUser request) throws LoginException {
+	public void login(SfxieSysUserinfo request) throws LoginException {
 		judgeUserInfo(request);
-		SfxieSysUserinfo user = (SfxieSysUserinfo) findEntity(request);
-		System.out.println(user.getUserId());
-		if(!request.getUserPassword().equals(MD5Util.string2MD5(((LoginRequest)request).getUser_password()))){
+		SfxieSysUserinfo userInfo = new SfxieSysUserinfo();
+		userInfo.setUser_id(request.getUser_id());
+		userInfo = findByKey(userInfo);
+		if(null==userInfo){
+			throw new LoginException(Properties.getProperty("login.error.notuser"),"login.error.notuser");
+		}
+		if(!userInfo.getUser_password().equals(MD5Util.string2MD5(request.getUser_password()))){
 			throw new LoginException(Properties.getProperty("login.error.password"),"login.error.password");
 		}
 	}
 
-	public void logout(SecurityUser request) throws LogoutException {
+	public void logout(SfxieSysUserinfo request) throws LogoutException {
 		judgeUserInfo(request);
 	}
 
 	/**	判断用户信息	*/
-	private void judgeUserInfo(SecurityUser request) throws LoginException,LogoutException{
-		if(null==((SfxieSysUserinfo)request).getUser_password()){
+	private void judgeUserInfo(SfxieSysUserinfo request) throws LoginException,LogoutException{
+		if(null==request.getUser_password()){
 			throw new LoginException(Properties.getProperty("login.empty.password"),"login.empty.password");
 		}
-		if(null==((SfxieSysUserinfo)request).getUser_id()){
+		if(null==request.getUser_id()){
 			throw new LoginException(Properties.getProperty("login.empty.username"),"login.empty.username");
 		}
 	}

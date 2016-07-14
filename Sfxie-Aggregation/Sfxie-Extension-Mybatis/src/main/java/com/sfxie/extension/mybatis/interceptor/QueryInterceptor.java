@@ -34,7 +34,6 @@ import com.sfxie.extension.mybatis.annotation.SqlDecorator;
 import com.sfxie.extension.mybatis.annotation.SqlSecurity;
 import com.sfxie.extension.mybatis.inform.AbstractInformInterceptor;
 import com.sfxie.extension.mybatis.inform.IInformInterceptor;
-import com.sfxie.extension.mybatis.interceptor.UpdateInterceptor.BoundSqlSqlSource;
 import com.sfxie.extension.spring4.mvc.context.Context;
 import com.sfxie.utils.ReflectUtils;
 import com.sfxie.utils.StringUtils;
@@ -113,12 +112,13 @@ public class QueryInterceptor extends AbstractInformInterceptor implements
 				ISqlDecorator sqlDt = sqlDtAnnotation.decorator().newInstance();
 				originalSql = sqlDt.decoratedSql(originalSql,parameter);
 			}
+			originalSql = AutoSqlStatementHandlerInterceptor._sql_regex_query + originalSql;
 			//sql装潢处理
 			List<ParameterMapping> parameterMappingList = createUpdateParameterMappingList(parameter,mappedStatement);
 			BoundSql newBoundSql = new BoundSql(mappedStatement.getConfiguration(), originalSql,parameterMappingList,boundSql.getParameterObject()); 
             MappedStatement newMs = MappedStatmentHelper.copyFromMappedStatement(mappedStatement,new BoundSqlSqlSource(newBoundSql),parameter); 
             invocation.getArgs()[0]= newMs; 
-			System.out.println(originalSql);
+//			System.out.println(originalSql);
 		}else if (page != null) {
 			//sql安全处理
 			SqlSecurity sqlScAnnotation = parameter.getClass().getAnnotation(SqlSecurity.class);

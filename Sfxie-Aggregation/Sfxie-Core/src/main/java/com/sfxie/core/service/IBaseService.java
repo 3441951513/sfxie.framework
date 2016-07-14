@@ -1,5 +1,8 @@
 package com.sfxie.core.service;
 
+import java.util.List;
+import java.util.Map;
+
 import com.sfxie.exception.framework.FrameworkException;
 
 /**
@@ -17,6 +20,7 @@ public interface IBaseService {
 	public void updateEntity(Object... entity) throws FrameworkException;
 	/**	删除实体	*/
 	public void deleteEntity(Object... entity) throws FrameworkException;
-	/**	查找实体	*/
-	public Object findEntity(Object entity) throws FrameworkException;
+	/**	查找实体	
+	 * @param <T>*/
+	public <T> T findByKey(T entity)  throws FrameworkException;
 }
