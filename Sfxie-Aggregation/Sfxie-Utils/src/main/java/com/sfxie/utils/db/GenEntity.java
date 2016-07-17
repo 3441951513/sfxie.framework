@@ -171,7 +171,7 @@ public class GenEntity {
 		// 判断是否导入工具包
 		sb.append("package "+packager+";\r\n");
 		
-		sb.append("\r\nimport com.sfxie.soa.modules.dubbo.common.pojo.SecurityObject;");
+		sb.append("\r\nimport com.sfxie.soa.common.request.SecurityObject;");
 		if (f_util) {
 			sb.append("\r\nimport java.util.Date;");
 		}
@@ -291,19 +291,47 @@ public class GenEntity {
 	 */
 	public static void main(String[] args) {
 		CobarSchema cs1 = new CobarSchema ();
-		cs1.getDbMetaMap().put("golivetest", "jdbc:mysql://183.60.142.159:3306/golivetest");
-		cs1.setUserName("cmstest");
-		cs1.setUserPassword("!mI65DU9B5");
+		cs1.getDbMetaMap().put("sfxie_oa", "jdbc:mysql://xsfcjy.oicp.net/sfxie_oa");
+		cs1.setUserName("root");
+		cs1.setUserPassword("root");
 		List<Table> tableList = new ArrayList<Table>();
-		Table table1 = new Table();
-		table1.setDataNode("golivetest");
-		table1.setName("g_ad3_goods_attr");
-		tableList.add(table1);
-		
-		String packagePath = "com.sfxie.website.modules.api3.common.memcached.pojo";
+		addGeoTable(tableList);
+		String packagePath = "com.sfxie.soa.modules.dubbo.service.geo.pojo";
 		new GenEntity(packagePath,"",cs1,tableList,new DefaultSqlType2JavaType());
 	}
 	
+	private static void addGeoTable(List<Table> tableList){
+
+		Table table1 = new Table();
+		table1.setDataNode("sfxie_oa");
+		table1.setName("sfxie_geo_city");
+		tableList.add(table1);
+		
+		Table table2 = new Table();
+		table2.setDataNode("sfxie_oa");
+		table2.setName("sfxie_geo_country");
+		tableList.add(table2);
+		
+		Table table3 = new Table();
+		table3.setDataNode("sfxie_oa");
+		table3.setName("sfxie_geo_detail");
+		tableList.add(table3);
+		
+		Table table4 = new Table();
+		table4.setDataNode("sfxie_oa");
+		table4.setName("sfxie_geo_district");
+		tableList.add(table4);
+		
+		Table table5 = new Table();
+		table5.setDataNode("sfxie_oa");
+		table5.setName("sfxie_geo_province");
+		tableList.add(table5);
+		
+		Table table6 = new Table();
+		table6.setDataNode("sfxie_oa");
+		table6.setName("sfxie_geo_street");
+		tableList.add(table6);
+	}
 	/*public static void generatedPojoCode(){
 		CobarSchema cs1 = new CobarSchema ();
 		cs1.getDbMetaMap().put("dn10", "jdbc:mysql://183.60.142.159:3306/golivetest");

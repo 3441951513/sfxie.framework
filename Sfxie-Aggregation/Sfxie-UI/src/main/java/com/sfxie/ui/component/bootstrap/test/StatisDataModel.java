@@ -1,6 +1,5 @@
 package com.sfxie.ui.component.bootstrap.test;
 
-import com.sfxie.extension.spring4.mvc.context.Context;
 import com.sfxie.ui.component.bootstrap.BootstrapDefaultModelVisitor;
 import com.sfxie.ui.component.bootstrap.a.ABstpMD;
 import com.sfxie.ui.component.bootstrap.button.BtnGroupJustifiedMD;
@@ -19,7 +18,8 @@ public class StatisDataModel {
 	
 	public static ImgBstpMD getImgBstpMD(){
 		ImgBstpMD img = new ImgBstpMD();
-		img.setSrc(Context.getContextUrl()+"/jsp/sfxie/images/nz/nz1.jpg");
+//		img.setSrc(Context.getContextUrl()+"/jsp/sfxie/images/nz/nz1.jpg");
+		img.setSrc("/jsp/sfxie/images/nz/nz1.jpg");
 		return img;
 	}
 	
