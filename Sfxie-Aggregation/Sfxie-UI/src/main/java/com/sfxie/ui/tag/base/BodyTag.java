@@ -11,7 +11,7 @@ import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspTagException;
 import javax.servlet.jsp.tagext.BodyTagSupport;
 
-import com.sfxie.core.context.Context;
+import com.sfxie.extension.spring4.mvc.context.Context;
 import com.sfxie.ui.component.base.annotation.HtmlTag;
 import com.sfxie.ui.component.base.model.AbstractModelDataProvider;
 import com.sfxie.ui.component.html.model.HtmlModel;
@@ -53,7 +53,8 @@ public abstract class BodyTag extends BodyTagSupport {
 	}
 	
 	protected String getContextPath(){
-		String contextPath = Context.getContextUrl();
+//		String contextPath = Context.getContextUrl();
+		String contextPath = "";
 		return contextPath;
 	}
 
