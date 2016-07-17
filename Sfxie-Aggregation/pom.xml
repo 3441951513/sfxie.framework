@@ -22,6 +22,7 @@
     	<module>Sfxie-Extension-Test</module>
     	<module>Sfxie-Extension-Zookeeper</module>
     	<module>Sfxie-Extension-Datasource</module>
+    	<module>Sfxie-UI</module>
     </modules>
     <distributionManagement>
 		<repository>

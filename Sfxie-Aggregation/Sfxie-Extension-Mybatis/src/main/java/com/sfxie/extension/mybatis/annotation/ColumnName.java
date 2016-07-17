@@ -21,6 +21,6 @@ public @interface ColumnName {
 	 */
 	String field() default "";
 	
-	boolean isId() default false;
+	boolean isKey() default false;
 
 }

@@ -10,6 +10,11 @@ import com.sfxie.soa.common.request.Request;
 import com.sfxie.soa.common.request.SecurityUser;
 
 public class OaBaseEntity extends Request implements IEntity,SecurityUser{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	/**	创建时间	*/
 	@ColumnName(field="create_time")
 	private Date create_time;

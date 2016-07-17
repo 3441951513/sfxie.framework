@@ -258,7 +258,7 @@ public class MapperSqlHelper {
 //	      file.setAccessible(true);
 	      if(file.isAnnotationPresent(MYBATISCOLUMN)){
 	    	  ColumnName anColumn = (ColumnName)file.getAnnotation(MYBATISCOLUMN);
-	        if(anColumn.isId()){//判断字段为主键
+	        if(anColumn.isKey()){//判断字段为主键
 	          falg = true;
 	          if(anColumn.field().equals("")){
 	            sql.append(" and "+file.getName()+" = "+PARAMETER_PLACEHOLDER+",");

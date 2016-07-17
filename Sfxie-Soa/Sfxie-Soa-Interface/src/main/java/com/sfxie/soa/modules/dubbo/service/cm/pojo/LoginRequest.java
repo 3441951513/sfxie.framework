@@ -13,7 +13,7 @@ public class LoginRequest extends Request implements SecurityUser{
 	private static final long serialVersionUID = 1L;
 	
 	/**	用户名(前端传递过来)	*/
-	@ColumnName(field="user_id",isId=true)
+	@ColumnName(field="user_id",isKey=true)
 	private String user_id;
 
 	/**	用户密码(前端传递过来)	*/

@@ -189,7 +189,7 @@ public class QueryInterceptor extends AbstractInformInterceptor implements
     		String fName = field.getName();
     		if (field.isAnnotationPresent(MYBATISCOLUMN)) {
 				ColumnName columnName = (ColumnName) field.getAnnotation(MYBATISCOLUMN);
-				if (columnName.isId()) {
+				if (columnName.isKey()) {
 					try {
 						Class<?> fClass = ReflectUtils.getFieldGenericType(field);
 						ParameterMapping.Builder parameterMappingBuilder = new ParameterMapping.Builder(mappedStatement.getConfiguration(),fName,fClass);

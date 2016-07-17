@@ -7,6 +7,49 @@
   <packaging>pom</packaging>
   <name>Sfxie-Website</name>
   
+  	<profiles>
+        <profile>
+            <id>DEV</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <!-- jdbc -->
+                <property.jdbc.url>10.0.57.182:3306</property.jdbc.url>
+                <web.spring.application.context>classpath:config/extension/spring/xml/applicationContext-zk-customer.xml</web.spring.application.context>
+            </properties>
+        </profile>
+        <profile>
+            <id>SIT</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <!-- jdbc -->
+                <property.jdbc.url>rds20yhny0684z65hz5s.mysql.rds.aliyuncs.com</property.jdbc.url>
+            </properties>
+        </profile>
+        <profile>
+            <id>UAT</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <!-- jdbc -->
+                <property.jdbc.url>rds7r9t99rncci4z0rk9.mysql.rds.aliyuncs.com</property.jdbc.url>
+            </properties>
+        </profile>
+        <profile>
+            <id>PRD</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <!-- jdbc -->
+                <property.jdbc.url>rdsd1999y5w13776q563.mysql.rds.aliyuncs.com</property.jdbc.url>
+            </properties>
+        </profile>
+    </profiles>
   	<build>
 		<!-- 工程路径结构设置 -->
 		<sourceDirectory>src/main/java</sourceDirectory> 

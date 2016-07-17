@@ -16,8 +16,13 @@ import com.sfxie.extension.mybatis.annotation.ColumnName;
 @TableName(value="sfxie_sys_action")
 public class SfxieSysAction extends OaBaseEntity{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	/**	记录主键	*/
-	@ColumnName(field="id_")
+	@ColumnName(field="id_" ,isKey=true)
 	private String id_;
 
 	/**	动作名称	*/
