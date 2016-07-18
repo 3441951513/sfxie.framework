@@ -48,7 +48,9 @@
    
    <bean id="druidDataSourceInitor" class="com.sfxie.extension.datasource.multydatasoure.dynamic.DruidDataSourceInitor" />
    <context:component-scan base-package="com.sfxie.extension.mybatis.service" />
+	<context:component-scan base-package="com.sfxie.soa.modules.dubbo.dao.template" annotation-config="true" />
   
   
 	<import resource="classpath*:test/spring-**.xml" /> 
+	<import resource="extension-mybatis-template.xml"/>
 </beans>

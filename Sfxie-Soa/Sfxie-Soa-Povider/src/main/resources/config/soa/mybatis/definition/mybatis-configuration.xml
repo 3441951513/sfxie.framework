@@ -29,6 +29,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
     <typeAliases>
     	<package name="com.sfxie.soa.modules.dubbo.service.provider.pojo"/>
     	<package name="com.sfxie.soa.modules.dubbo.service.oa.pojo"/>
+    	<package name="com.sfxie.soa.modules.dubbo.service.geo.pojo"/>
+    	<package name="com.sfxie.soa.modules.dubbo.service.app.pojo"/>
     </typeAliases>
 	<plugins>
 		 <plugin interceptor="com.sfxie.extension.mybatis.interceptor.UpdateInterceptor">
