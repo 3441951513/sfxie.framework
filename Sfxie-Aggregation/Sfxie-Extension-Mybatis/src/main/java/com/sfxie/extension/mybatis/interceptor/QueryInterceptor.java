@@ -54,7 +54,7 @@ public class QueryInterceptor extends AbstractInformInterceptor implements
 
 	public static final Class<? extends Annotation> MYBATISCOLUMN = ColumnName.class;
 	
-    private final static String _sql_regex_query = ".*cniemp.mybatis.autosql.find.*";
+    private final static String _sql_regex_query_find = ".*cniemp.mybatis.autosql.find.entity.*";
 	/** sql监控列表拦截器名称 */
 	private String informInterceptorList = null;
 	/** 是否启动sql监控功能 */
@@ -91,9 +91,8 @@ public class QueryInterceptor extends AbstractInformInterceptor implements
 		Page page = searchPageWithXpath(boundSql.getParameterObject(), ".","page", "*/page");
 
 		String mapperSQL = boundSql.getSql();
-		boolean interceptorQuery = mapperSQL.matches(_sql_regex_query);
 		
-		if(interceptorQuery){
+		if(mapperSQL.matches(_sql_regex_query_find)){
 			originalSql = interceptorQuery(mapperSQL,parameter);
 			//sql安全处理
 			SqlSecurity sqlScAnnotation = parameter.getClass().getAnnotation(SqlSecurity.class);
@@ -118,7 +117,6 @@ public class QueryInterceptor extends AbstractInformInterceptor implements
 			BoundSql newBoundSql = new BoundSql(mappedStatement.getConfiguration(), originalSql,parameterMappingList,boundSql.getParameterObject()); 
             MappedStatement newMs = MappedStatmentHelper.copyFromMappedStatement(mappedStatement,new BoundSqlSqlSource(newBoundSql),parameter); 
             invocation.getArgs()[0]= newMs; 
-//			System.out.println(originalSql);
 		}else if (page != null) {
 			//sql安全处理
 			SqlSecurity sqlScAnnotation = parameter.getClass().getAnnotation(SqlSecurity.class);

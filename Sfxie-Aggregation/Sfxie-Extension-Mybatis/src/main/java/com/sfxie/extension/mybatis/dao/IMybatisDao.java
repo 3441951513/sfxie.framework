@@ -157,6 +157,13 @@ public interface IMybatisDao<T,PK> {
   @SuppressWarnings("rawtypes")
   @Select("cniemp.mybatis.autosql.find.entity.byId")
   public  List<Map> findByKey(T entity) throws DaoException;
+  /**
+   * 基于cobar代理层的删除记录操作
+   * @param entity
+   */
+  @SuppressWarnings("rawtypes")
+  @Select("cniemp.mybatis.autosql.find.entity.List")
+  public  List<Map> findList(T entity) throws DaoException;
   
   /**
    * 获取自增主键 SELECT LAST_INSERT_ID()

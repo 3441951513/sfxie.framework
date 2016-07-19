@@ -1,7 +1,6 @@
 package com.sfxie.core.service;
 
 import java.util.List;
-import java.util.Map;
 
 import com.sfxie.exception.framework.FrameworkException;
 
@@ -23,4 +22,7 @@ public interface IBaseService {
 	/**	查找实体	
 	 * @param <T>*/
 	public <T> T findByKey(T entity)  throws FrameworkException;
+	/**	查找实体列表	
+	 * @param <T>*/
+	public <T> List<T> findList(T entity)  throws FrameworkException;
 }

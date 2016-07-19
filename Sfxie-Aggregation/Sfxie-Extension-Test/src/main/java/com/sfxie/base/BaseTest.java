@@ -92,7 +92,7 @@ public abstract class BaseTest<Service extends IBaseService,Entity extends IEnti
     }
     
     protected String getUUID(){
-    	return UUID.randomUUID().toString();
+    	return UUID.randomUUID().toString().replaceAll("-", "");
     }
     /**	生成插入测试实体	*/
     protected abstract Entity getInsertEntity();

@@ -5,6 +5,7 @@ import java.util.List;
 import org.junit.Test;
 
 import com.sfxie.base.BaseTest;
+import com.sfxie.soa.modules.dubbo.dao.template.UserDao;
 import com.sfxie.soa.modules.dubbo.service.oa.dubbo.UserService;
 import com.sfxie.soa.modules.dubbo.service.oa.pojo.SfxieSysUserinfo;
 
@@ -22,9 +23,10 @@ public class UserServiceTest extends BaseTest<UserService,SfxieSysUserinfo> {
 	protected SfxieSysUserinfo getInsertEntity() {
 		
 		SfxieSysUserinfo entity = new SfxieSysUserinfo();
-		entity.setUser_id("User"+getUUID());
+		entity.setUser_id("UserTest");
 		entity.setUser_password("dddd");
 		entity.setCreate_company_id(getUUID());
+		entity.setPartition_company("00000000");
 		return entity;
 	}
 	@Override
@@ -38,5 +40,11 @@ public class UserServiceTest extends BaseTest<UserService,SfxieSysUserinfo> {
 		UserService service = getService();
 		SfxieSysUserinfo e = service.findByKey(entity);
 		System.out.println(e);
+	}
+	
+	@Test
+	public void testTemplate(){
+		UserDao userDao = getBeanByName("userDaoImpl");
+		System.out.println("######################################: "+userDao.getSfxieSysUserinfoList(null).size());
 	}
 }
