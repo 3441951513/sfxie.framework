@@ -1,5 +1,6 @@
 package com.sfxie.extension.mybatis.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -88,6 +89,20 @@ public class AutoUpdateService extends TransactionService implements IBaseServic
 			}
 		}
 		return null;
+	}
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@Override
+	public <T> List<T> findList(T entity) throws FrameworkException {
+		List<Map> list = autoUpdateMapper.findByKey(entity);
+		List<T> result = new ArrayList<T>();
+		if(CollectionUtil.isNotEmpty(list)){
+			try {
+				result.add( (T) MapUtil.mapToObject(list.get(0), entity.getClass()));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
 	}
 
 }

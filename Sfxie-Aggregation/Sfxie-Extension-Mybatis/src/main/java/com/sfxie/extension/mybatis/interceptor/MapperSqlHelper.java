@@ -198,6 +198,11 @@ public class MapperSqlHelper {
 				sql.append("delete from " + antable.value());
 			}
 		}
+		appendWhereSql(clazz,param,wheresql,"delete");
+		sql.append(wheresql.toString());
+		return sql.toString();
+	}
+	private void appendWhereSql(Class<?> clazz,Object param,StringBuilder wheresql , String type){
 		Field[] files = clazz.getDeclaredFields();
 		for (Field field : files) {
 			//非数据库字段跳过sql生成
@@ -234,10 +239,9 @@ public class MapperSqlHelper {
 			}
 		}
 		if (wheresql.equals(" where 1=1 ")) {
-			throw new RuntimeException("实体变量没有设置ID字段值");
+			if("delete".equals(type))
+				throw new RuntimeException("实体变量没有设置ID字段值");
 		}
-		sql.append(wheresql.toString());
-		return sql.toString();
 	}
 	private String findEntityById(Class<?> clazz){
 	    StringBuilder sql = new StringBuilder();
@@ -273,7 +277,24 @@ public class MapperSqlHelper {
 	    }
 	    
 	    return sql.subSequence(0, sql.length()-1).toString();
-	  }
+	}
+	private String findListEntity(Class<?> clazz,Object param){
+	    StringBuilder sql = new StringBuilder();
+	    if(!clazz.isAnnotationPresent(MYBATISTABLE)){
+	      sql.append("select * from  "+clazz.getName());
+	    }else{
+	    	TableName antable = (TableName)clazz.getAnnotation(MYBATISTABLE);
+	      if(antable.value() == ""){
+	        sql.append("select * from  "+clazz.getSimpleName());
+	      }else{
+	        sql.append("select * from  "+antable.value());
+	      }
+	    }
+	    sql.append("  where 1=1 ");
+	    appendWhereSql(clazz,param,sql,"delete");
+	    
+	    return sql.subSequence(0, sql.length()-1).toString();
+	}
 	/*private String selectEntity(Class<?> clazz ){
 		return "";
 	}*/
@@ -289,6 +310,8 @@ public class MapperSqlHelper {
 			return instance.deleteEntity(clazz,param);
 	    }else if(mapperDBsql.equals("cniemp.mybatis.autosql.find.entity.byId")){
 	      return instance.findEntityById(clazz);//id查询实体
+	    }else if(mapperDBsql.equals("cniemp.mybatis.autosql.find.entity.List")){
+	      return instance.findListEntity(clazz, param);//id查询实体
 	    }
 		/*else if(mapperDBsql.equals("cniemp.mybatis.autosql.query.select.entity")){
 			return instance.selectEntity(clazz);	//查询单一实体
