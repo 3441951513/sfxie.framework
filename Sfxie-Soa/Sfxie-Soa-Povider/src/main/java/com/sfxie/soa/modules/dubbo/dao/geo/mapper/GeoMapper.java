@@ -19,35 +19,35 @@ public interface GeoMapper extends AutoUpdateMapper{
 	 * @param entity
 	 * @return
 	 */
-	public List<SfxieGeoCountry> querySfxieGeoCountryList(SfxieGeoCountry entity);
+//	public List<SfxieGeoCountry> querySfxieGeoCountryList(SfxieGeoCountry entity);
 	/**
 	 * 查询省份列表
 	 * @param entity
 	 * @return
 	 */
-	public List<SfxieGeoProvince> querySfxieGeoProvinceList(SfxieGeoProvince entity);
+//	public List<SfxieGeoProvince> querySfxieGeoProvinceList(SfxieGeoProvince entity);
 	/**
 	 * 查询城市列表
 	 * @param entity
 	 * @return
 	 */
-	public List<SfxieGeoCity> querySfxieGeoCityList(SfxieGeoCity entity);
+//	public List<SfxieGeoCity> querySfxieGeoCityList(SfxieGeoCity entity);
 	/**
 	 * 查询区县列表
 	 * @param entity
 	 * @return
 	 */
-	public List<SfxieGeoDistrict> querySfxieGeoDistrictList(SfxieGeoDistrict entity);
+//	public List<SfxieGeoDistrict> querySfxieGeoDistrictList(SfxieGeoDistrict entity);
 	/**
 	 * 查询街道列表
 	 * @param entity
 	 * @return
 	 */
-	public List<SfxieGeoStreet> querySfxieGeoStreetList(SfxieGeoStreet entity);
+//	public List<SfxieGeoStreet> querySfxieGeoStreetList(SfxieGeoStreet entity);
 	/**
 	 * 查询详细列表
 	 * @param entity
 	 * @return
 	 */
-	public List<SfxieGeoDetail> querySfxieGeoDetailList(SfxieGeoDetail entity);
+//	public List<SfxieGeoDetail> querySfxieGeoDetailList(SfxieGeoDetail entity);
 }

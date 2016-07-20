@@ -93,7 +93,7 @@ public class AutoUpdateService extends TransactionService implements IBaseServic
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	public <T> List<T> findList(T entity) throws FrameworkException {
-		List<Map> list = autoUpdateMapper.findByKey(entity);
+		List<Map> list = autoUpdateMapper.findList(entity);
 		List<T> result = new ArrayList<T>();
 		if(CollectionUtil.isNotEmpty(list)){
 			try {

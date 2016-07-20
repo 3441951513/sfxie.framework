@@ -1,10 +1,13 @@
 package com.sfxie.soa.modules.dubbo.service.geo.pojo;
 
 import com.sfxie.soa.common.request.SecurityObject;
+
 import java.util.Date;
+
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlAttribute;
 
+import com.sfxie.extension.mybatis.annotation.ConditionColumn;
 import com.sfxie.extension.mybatis.annotation.TableName;
 import com.sfxie.extension.mybatis.annotation.ColumnName;
 /**
@@ -25,6 +28,7 @@ public class SfxieGeoCountry extends SecurityObject{
 
 	/**	国家名称	*/
 	@ColumnName(field="country_name")
+	@ConditionColumn
 	private String country_name;
 
 	/**	记录创建时间	*/
