@@ -5,6 +5,8 @@ import java.io.Serializable;
 
 import javax.xml.bind.annotation.XmlElement;
 
+import com.sfxie.extension.mybatis.interceptor.Page;
+
 
 /**
  * 安全控制传输实体
@@ -15,7 +17,7 @@ import javax.xml.bind.annotation.XmlElement;
  * @example		
  *
  */
-public class SecurityObject implements Serializable{
+public class SecurityObject extends Page implements Serializable{
 	/**
 	 * 
 	 */

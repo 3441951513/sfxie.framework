@@ -95,6 +95,7 @@ public class QueryInterceptor extends AbstractInformInterceptor implements
 //		Page page = searchPageWithXpath(boundSql.getParameterObject(), ".","page", "*/page");
 
 		String mapperSQL = boundSql.getSql();
+		List<ParameterMapping> parameterMappngList = null;
 		
 		if(mapperSQL.matches(_sql_regex_query_find)){
 			originalSql = interceptorQuery(mapperSQL,parameter);
@@ -117,7 +118,7 @@ public class QueryInterceptor extends AbstractInformInterceptor implements
 			}*/
 			originalSql = AutoSqlStatementHandlerInterceptor._sql_regex_query + originalSql;
 			//sql装潢处理
-			List<ParameterMapping> parameterMappngList = null;
+			
 			if("cniemp.mybatis.autosql.find.entity.List".equals(mapperSQL.trim())){
 				parameterMappngList = createQueryParameterMappingList(parameter,mappedStatement);
 			}else{
@@ -153,10 +154,10 @@ public class QueryInterceptor extends AbstractInformInterceptor implements
 			}
 //			Object parameterObject = boundSql.getParameterObject();
 			// Page对象存在的场合，开始分页处理
-			String countSql = getCountSql(originalSql);
+			String countSql = getCountSql(originalSql.replace(AutoSqlStatementHandlerInterceptor._sql_regex_query, ""));
 			Connection connection = mappedStatement.getConfiguration().getEnvironment().getDataSource().getConnection();
 			PreparedStatement countStmt = connection.prepareStatement(countSql);
-			BoundSql countBS = copyFromBoundSql(mappedStatement, boundSql,countSql);
+			BoundSql countBS = copyFromBoundSql(mappedStatement, boundSql,parameterMappngList,countSql);
 			DefaultParameterHandler parameterHandler = new DefaultParameterHandler(mappedStatement, parameter, countBS);
 			parameterHandler.setParameters(countStmt);
 			ResultSet rs = countStmt.executeQuery();
@@ -330,7 +331,22 @@ public class QueryInterceptor extends AbstractInformInterceptor implements
 		}
 		return newBoundSql;
 	}
-
+	/**
+	 * 复制BoundSql对象
+	 */
+	private BoundSql copyFromBoundSql(MappedStatement ms, BoundSql boundSql,List<ParameterMapping> parameterMappingList,
+			String sql) {
+		BoundSql newBoundSql = new BoundSql(ms.getConfiguration(), sql,
+				boundSql.getParameterMappings(), boundSql.getParameterObject());
+		for (ParameterMapping mapping : parameterMappingList) {
+			String prop = mapping.getProperty();
+			if (boundSql.hasAdditionalParameter(prop)) {
+				newBoundSql.setAdditionalParameter(prop,
+						boundSql.getAdditionalParameter(prop));
+			}
+		}
+		return newBoundSql;
+	}
 	/**
 	 * 根据原Sql语句获取对应的查询总记录数的Sql语句
 	 */
