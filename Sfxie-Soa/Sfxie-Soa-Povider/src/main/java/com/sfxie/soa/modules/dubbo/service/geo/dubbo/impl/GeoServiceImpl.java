@@ -24,34 +24,40 @@ public class GeoServiceImpl extends BaseRestfulService  implements GeoService {
 	
 	@Override
 	public List<SfxieGeoCountry> querySfxieGeoCountryList(SfxieGeoCountry entity) {
-		return mapper.querySfxieGeoCountryList(entity);
+//		return mapper.querySfxieGeoCountryList(entity);
+		return findList(entity);
 	}
 
 	@Override
 	public List<SfxieGeoProvince> querySfxieGeoProvinceList(
 			SfxieGeoProvince entity) {
-		return mapper.querySfxieGeoProvinceList(entity);
+//		return mapper.querySfxieGeoProvinceList(entity);
+		return findList(entity);
 	}
 
 	@Override
 	public List<SfxieGeoCity> querySfxieGeoCityList(SfxieGeoCity entity) {
-		return mapper.querySfxieGeoCityList(entity);
+//		return mapper.querySfxieGeoCityList(entity);
+		return findList(entity);
 	}
 
 	@Override
 	public List<SfxieGeoDistrict> querySfxieGeoDistrictList(
 			SfxieGeoDistrict entity) {
-		return mapper.querySfxieGeoDistrictList(entity);
+//		return mapper.querySfxieGeoDistrictList(entity);
+		return findList(entity);
 	}
 
 	@Override
 	public List<SfxieGeoStreet> querySfxieGeoStreetList(SfxieGeoStreet entity) {
-		return mapper.querySfxieGeoStreetList(entity);
+//		return mapper.querySfxieGeoStreetList(entity);
+		return findList(entity);
 	}
 
 	@Override
 	public List<SfxieGeoDetail> querySfxieGeoDetailList(SfxieGeoDetail entity) {
-		return mapper.querySfxieGeoDetailList(entity);
+//		return mapper.querySfxieGeoDetailList(entity);
+		return findList(entity);
 	}
 
 

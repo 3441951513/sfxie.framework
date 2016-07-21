@@ -14,9 +14,9 @@ import org.apache.commons.jxpath.JXPathNotFoundException;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.mapping.BoundSql;
 import org.apache.ibatis.mapping.MappedStatement;
+import org.apache.ibatis.mapping.MappedStatement.Builder;
 import org.apache.ibatis.mapping.ParameterMapping;
 import org.apache.ibatis.mapping.SqlSource;
-import org.apache.ibatis.mapping.MappedStatement.Builder;
 import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.plugin.Intercepts;
 import org.apache.ibatis.plugin.Invocation;
@@ -92,13 +92,13 @@ public class QueryInterceptor extends AbstractInformInterceptor implements
 		String originalSql = null;
 
 		// Page对象获取，“信使”到达拦截器！
-		Page page = searchPageWithXpath(boundSql.getParameterObject(), ".","page", "*/page");
+//		Page page = searchPageWithXpath(boundSql.getParameterObject(), ".","page", "*/page");
 
 		String mapperSQL = boundSql.getSql();
 		
 		if(mapperSQL.matches(_sql_regex_query_find)){
 			originalSql = interceptorQuery(mapperSQL,parameter);
-			//sql安全处理
+			/*//sql安全处理
 			SqlSecurity sqlScAnnotation = parameter.getClass().getAnnotation(SqlSecurity.class);
 			if(null!=sqlScAnnotation){
 				ISqlSecurity sqlSc = sqlScAnnotation.securitor().newInstance();
@@ -114,19 +114,22 @@ public class QueryInterceptor extends AbstractInformInterceptor implements
 				}
 				ISqlDecorator sqlDt = sqlDtAnnotation.decorator().newInstance();
 				originalSql = sqlDt.decoratedSql(originalSql,parameter);
-			}
+			}*/
 			originalSql = AutoSqlStatementHandlerInterceptor._sql_regex_query + originalSql;
 			//sql装潢处理
-			List<ParameterMapping> parameterMappingList = null;
+			List<ParameterMapping> parameterMappngList = null;
 			if("cniemp.mybatis.autosql.find.entity.List".equals(mapperSQL.trim())){
-				parameterMappingList = createQueryParameterMappingList(parameter,mappedStatement);
+				parameterMappngList = createQueryParameterMappingList(parameter,mappedStatement);
 			}else{
-				parameterMappingList = createUpdateParameterMappingList(parameter,mappedStatement);
+				parameterMappngList = createUpdateParameterMappingList(parameter,mappedStatement);
 			}
-			BoundSql newBoundSql = new BoundSql(mappedStatement.getConfiguration(), originalSql,parameterMappingList,boundSql.getParameterObject()); 
+			BoundSql newBoundSql = new BoundSql(mappedStatement.getConfiguration(), originalSql,parameterMappngList,boundSql.getParameterObject()); 
             MappedStatement newMs = MappedStatmentHelper.copyFromMappedStatement(mappedStatement,new BoundSqlSqlSource(newBoundSql),parameter); 
             invocation.getArgs()[0]= newMs; 
-		}else if (page != null) {
+		}
+//		else if (page != null) {
+		if(Page.class.isAssignableFrom(parameter.getClass())){
+			Page page = (Page) parameter;
 			//sql安全处理
 			SqlSecurity sqlScAnnotation = parameter.getClass().getAnnotation(SqlSecurity.class);
 			if(null!=sqlScAnnotation){
@@ -148,13 +151,13 @@ public class QueryInterceptor extends AbstractInformInterceptor implements
 			if(null==originalSql){
 				originalSql = boundSql.getSql().trim();
 			}
-			Object parameterObject = boundSql.getParameterObject();
+//			Object parameterObject = boundSql.getParameterObject();
 			// Page对象存在的场合，开始分页处理
 			String countSql = getCountSql(originalSql);
 			Connection connection = mappedStatement.getConfiguration().getEnvironment().getDataSource().getConnection();
 			PreparedStatement countStmt = connection.prepareStatement(countSql);
 			BoundSql countBS = copyFromBoundSql(mappedStatement, boundSql,countSql);
-			DefaultParameterHandler parameterHandler = new DefaultParameterHandler(mappedStatement, parameterObject, countBS);
+			DefaultParameterHandler parameterHandler = new DefaultParameterHandler(mappedStatement, parameter, countBS);
 			parameterHandler.setParameters(countStmt);
 			ResultSet rs = countStmt.executeQuery();
 			int totpage = 0;
@@ -209,7 +212,6 @@ public class QueryInterceptor extends AbstractInformInterceptor implements
     	}
      	return parameterMappingList;
     }
-    
     /**
      * 重新构造查询sql的参数列表集合
      * @param parameterObject
@@ -235,7 +237,6 @@ public class QueryInterceptor extends AbstractInformInterceptor implements
     	}
      	return parameterMappingList;
     }
-
 	public Object plugin(Object target) {
 		return Plugin.wrap(target, this);
 	}
