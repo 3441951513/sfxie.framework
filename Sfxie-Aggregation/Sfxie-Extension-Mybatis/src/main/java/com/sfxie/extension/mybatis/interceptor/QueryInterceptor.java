@@ -30,6 +30,8 @@ import com.sfxie.data.security.ISqlDecorator;
 import com.sfxie.data.security.ISqlSecurity;
 import com.sfxie.extension.logger.LoggerUtil;
 import com.sfxie.extension.mybatis.annotation.ColumnName;
+import com.sfxie.extension.mybatis.annotation.ConditionColumn;
+import com.sfxie.extension.mybatis.annotation.PartitionField;
 import com.sfxie.extension.mybatis.annotation.SqlDecorator;
 import com.sfxie.extension.mybatis.annotation.SqlSecurity;
 import com.sfxie.extension.mybatis.inform.AbstractInformInterceptor;
@@ -53,6 +55,8 @@ public class QueryInterceptor extends AbstractInformInterceptor implements
 		Interceptor {
 
 	public static final Class<? extends Annotation> MYBATISCOLUMN = ColumnName.class;
+	public static final Class<? extends Annotation> PARTITIONFIELD = PartitionField.class;
+	public static final Class<? extends Annotation> CONDITIONCOLUMN = ConditionColumn.class;
 	
     private final static String _sql_regex_query_find = ".*cniemp.mybatis.autosql.find.entity.*";
 	/** sql监控列表拦截器名称 */
@@ -113,7 +117,12 @@ public class QueryInterceptor extends AbstractInformInterceptor implements
 			}
 			originalSql = AutoSqlStatementHandlerInterceptor._sql_regex_query + originalSql;
 			//sql装潢处理
-			List<ParameterMapping> parameterMappingList = createUpdateParameterMappingList(parameter,mappedStatement);
+			List<ParameterMapping> parameterMappingList = null;
+			if("cniemp.mybatis.autosql.find.entity.List".equals(mapperSQL.trim())){
+				parameterMappingList = createQueryParameterMappingList(parameter,mappedStatement);
+			}else{
+				parameterMappingList = createUpdateParameterMappingList(parameter,mappedStatement);
+			}
 			BoundSql newBoundSql = new BoundSql(mappedStatement.getConfiguration(), originalSql,parameterMappingList,boundSql.getParameterObject()); 
             MappedStatement newMs = MappedStatmentHelper.copyFromMappedStatement(mappedStatement,new BoundSqlSqlSource(newBoundSql),parameter); 
             invocation.getArgs()[0]= newMs; 
@@ -195,6 +204,32 @@ public class QueryInterceptor extends AbstractInformInterceptor implements
 					} catch (ClassNotFoundException e) {
 						e.printStackTrace();
 					}
+				}
+			} 
+    	}
+     	return parameterMappingList;
+    }
+    
+    /**
+     * 重新构造查询sql的参数列表集合
+     * @param parameterObject
+     * @param mappedStatement
+     * @return
+     */
+    private  List<ParameterMapping> createQueryParameterMappingList(Object parameterObject,MappedStatement mappedStatement){
+//    	Field[] fields = parameterObject.getClass().getDeclaredFields();
+    	List<Field> col = new ArrayList<Field>();
+		ReflectUtils.getBeanAllFields(col, parameterObject.getClass(), null);
+    	List<ParameterMapping>  parameterMappingList = new ArrayList<ParameterMapping> ();
+    	for(Field field : col){
+    		String fName = field.getName();
+    		if (field.isAnnotationPresent(CONDITIONCOLUMN) || field.isAnnotationPresent(PARTITIONFIELD)) {
+				try {
+					Class<?> fClass = ReflectUtils.getFieldGenericType(field);
+					ParameterMapping.Builder parameterMappingBuilder = new ParameterMapping.Builder(mappedStatement.getConfiguration(),fName,fClass);
+					parameterMappingList.add(parameterMappingBuilder.build());
+				} catch (ClassNotFoundException e) {
+					e.printStackTrace();
 				}
 			} 
     	}
