@@ -44,7 +44,7 @@ public class AutoSqlStatementHandlerInterceptor implements Interceptor {
 	/** 查询操作标志*/
 	public final static String _sql_regex_query = "cniemp.mybatis.autosql.find";
 	/** 参数标志*/
-	private final static String PARAMETER_PLACEHOLDER = "\\[parameter\\]";
+	public final static String PARAMETER_PLACEHOLDER = "\\[parameter\\]";
 	/** 数据库类型，不同的数据库有不同的分页方法*/
 	private String databaseType;
 	/** 查询操作的条件类,从前端传过来的参数*/

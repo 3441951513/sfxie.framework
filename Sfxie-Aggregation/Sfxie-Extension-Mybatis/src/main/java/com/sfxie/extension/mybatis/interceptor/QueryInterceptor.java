@@ -86,6 +86,7 @@ public class QueryInterceptor extends AbstractInformInterceptor implements
 	/**	分页处理 */
 	private void paging(Invocation invocation) throws Throwable {
 		// 当前环境 MappedStatement，BoundSql，及sql取得
+		StringBuffer sb = new StringBuffer();
 		MappedStatement mappedStatement = (MappedStatement) invocation.getArgs()[0];
 		Object parameter = invocation.getArgs()[1];
 		BoundSql boundSql = mappedStatement.getBoundSql(parameter);
@@ -124,9 +125,9 @@ public class QueryInterceptor extends AbstractInformInterceptor implements
 			}else{
 				parameterMappngList = createUpdateParameterMappingList(parameter,mappedStatement);
 			}
-			BoundSql newBoundSql = new BoundSql(mappedStatement.getConfiguration(), originalSql,parameterMappngList,boundSql.getParameterObject()); 
-            MappedStatement newMs = MappedStatmentHelper.copyFromMappedStatement(mappedStatement,new BoundSqlSqlSource(newBoundSql),parameter); 
-            invocation.getArgs()[0]= newMs; 
+//			BoundSql newBoundSql = new BoundSql(mappedStatement.getConfiguration(), originalSql,parameterMappngList,boundSql.getParameterObject()); 
+//            MappedStatement newMs = MappedStatmentHelper.copyFromMappedStatement(mappedStatement,new BoundSqlSqlSource(newBoundSql),parameter); 
+//            invocation.getArgs()[0]= newMs; 
 		}
 //		else if (page != null) {
 		if(Page.class.isAssignableFrom(parameter.getClass())){
@@ -154,10 +155,15 @@ public class QueryInterceptor extends AbstractInformInterceptor implements
 			}
 //			Object parameterObject = boundSql.getParameterObject();
 			// Page对象存在的场合，开始分页处理
-			String countSql = getCountSql(originalSql.replace(AutoSqlStatementHandlerInterceptor._sql_regex_query, ""));
+			String countSql = getCountSql(originalSql.replace(AutoSqlStatementHandlerInterceptor._sql_regex_query, "")).replaceAll(AutoSqlStatementHandlerInterceptor.PARAMETER_PLACEHOLDER, "?");
 			Connection connection = mappedStatement.getConfiguration().getEnvironment().getDataSource().getConnection();
 			PreparedStatement countStmt = connection.prepareStatement(countSql);
-			BoundSql countBS = copyFromBoundSql(mappedStatement, boundSql,parameterMappngList,countSql);
+			BoundSql countBS  = null;
+			if(mapperSQL.matches(_sql_regex_query_find)){
+				countBS = new BoundSql(mappedStatement.getConfiguration(),countSql ,parameterMappngList,parameter); 
+			}else{
+				countBS = copyFromBoundSql(mappedStatement, boundSql,parameterMappngList,countSql);
+			}
 			DefaultParameterHandler parameterHandler = new DefaultParameterHandler(mappedStatement, parameter, countBS);
 			parameterHandler.setParameters(countStmt);
 			ResultSet rs = countStmt.executeQuery();
@@ -174,8 +180,15 @@ public class QueryInterceptor extends AbstractInformInterceptor implements
 
 			// 对原始Sql追加limit
 			int offset = (page.getPageNo() - 1) * page.getPageSize();
-			StringBuffer sb = new StringBuffer();
+			
 			sb.append(originalSql).append(" limit ").append(offset).append(",").append(page.getPageSize());
+		}
+		if(mapperSQL.matches(_sql_regex_query_find)){
+			BoundSql newBoundSql = new BoundSql(mappedStatement.getConfiguration(),sb.toString() ,parameterMappngList,parameter);
+			MappedStatement newMs = copyFromMappedStatement(mappedStatement,new BoundSqlSqlSource(newBoundSql));
+			invocation.getArgs()[0] = newMs;
+		}else{
+			
 			BoundSql newBoundSql = copyFromBoundSql(mappedStatement, boundSql,sb.toString());
 			MappedStatement newMs = copyFromMappedStatement(mappedStatement,new BoundSqlSqlSource(newBoundSql));
 			invocation.getArgs()[0] = newMs;
@@ -338,13 +351,16 @@ public class QueryInterceptor extends AbstractInformInterceptor implements
 			String sql) {
 		BoundSql newBoundSql = new BoundSql(ms.getConfiguration(), sql,
 				boundSql.getParameterMappings(), boundSql.getParameterObject());
-		for (ParameterMapping mapping : parameterMappingList) {
-			String prop = mapping.getProperty();
-			if (boundSql.hasAdditionalParameter(prop)) {
-				newBoundSql.setAdditionalParameter(prop,
-						boundSql.getAdditionalParameter(prop));
+		if(null!=parameterMappingList){
+			for (ParameterMapping mapping : parameterMappingList) {
+				String prop = mapping.getProperty();
+				if (boundSql.hasAdditionalParameter(prop)) {
+					newBoundSql.setAdditionalParameter(prop,
+							boundSql.getAdditionalParameter(prop));
+				}
 			}
 		}
+		
 		return newBoundSql;
 	}
 	/**

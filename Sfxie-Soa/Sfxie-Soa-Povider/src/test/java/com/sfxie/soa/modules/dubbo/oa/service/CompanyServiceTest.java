@@ -14,7 +14,7 @@ import com.sfxie.soa.modules.dubbo.service.oa.pojo.SfxieSysCompany;
 
 public class CompanyServiceTest extends BaseTest<CompanyService,SfxieSysCompany> {
 
-	@Test
+//	@Test
 	public void queryCompanyList(){
 		List<SfxieSysCompany> list =  getService().querySfxieCompanyList(new SfxieSysCompany());
 	}
@@ -39,7 +39,7 @@ public class CompanyServiceTest extends BaseTest<CompanyService,SfxieSysCompany>
 		sfxieSysCompany.setCreate_user("sfxie");
 		sfxieSysCompany.setCreate_time(new Date());
 		sfxieSysCompany.setId_(create_company_id);
-		return sfxieSysCompany;
+		return null;
 	}
 
 	@Override
