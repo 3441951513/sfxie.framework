@@ -27,6 +27,7 @@ public class GeoServiceTest extends BaseTest<GeoService,IEntity> {
 		sfxieGeoCountry.setCountry_name("中国");
 		GeoService seoService = getBeanByName("geoService");
 		List<SfxieGeoCountry> list = seoService.findList(sfxieGeoCountry);
+		sfxieGeoCountry.setResults(list);
 		System.out.println("######################################: "+list.size());
 	}
 
