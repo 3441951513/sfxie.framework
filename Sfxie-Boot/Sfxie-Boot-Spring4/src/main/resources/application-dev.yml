@@ -1,0 +1,29 @@
+jdbc: 
+  center:
+    driverClassName: com.mysql.jdbc.Driver
+    username: crmuser
+    password: crm2_develop
+    url: jdbc:mysql://10.0.57.182:3306/vankecrm_center?characterEncoding=utf-8&amp;tinyInt1isBit=false
+    
+mybatis: 
+  center:
+    typeAliasesPackage: com.vankeservice.crm.apigateway.entity.center
+    mapperLocations: classpath:/com/vankeservice/crm/apigateway/dao/center/sql/*.xml
+    configLocation: config/mybatis/mybatis-config.xml
+    
+api:
+  project: /auth
+  version: /v1
+  
+server:
+  port: 8888
+  contextPath: /apigateway
+  tomcat:
+    uriEncoding: UTF-8
+  
+logging:
+  path: D:/temp/logs
+  
+constants:
+  accessTimeout: 100000000
+  
